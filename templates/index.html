@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gun Stats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="index-nav" href="{{ url_for('calculator') }}">Calculator</a>
+        </nav>
+    </header>
+    <main>
+    <h1>Gun Stats</h1>
+    <div>
+        <input type="text" id="search" placeholder="Search by name" onkeyup="filterTable()">
+    </div>
+    <table id="gun-stats">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Damage</th>
+                <th>Damage multiplier</th>
+                <th>Rounds per minute</th>
+                <th>Magazine Size</th>
+                <th>Reload time</th>
+                <th>Gun type</th>
+                <th>RPS</th>
+                <th>DPS</th>
+                <th>DPM</th>
+                <th>Avg DPS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Gun stats will be populated here -->
+        </tbody>
+    </table>
+    <script src="{{ url_for('static', filename='populateTable.js') }}"></script>
+    <script src="{{ url_for('static', filename='filterTable.js') }}"></script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,882 @@
+[
+  {
+    "id": 1,
+    "name": "G18",
+    "damage": 32,
+    "damage_multiplier": 1,
+    "rpm": 550,
+    "mag_size": 18,
+    "reload_time": 2,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 2,
+    "name": "M1911",
+    "damage": 37,
+    "damage_multiplier": 1,
+    "rpm": 580,
+    "mag_size": 8,
+    "reload_time": 1.15,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 3,
+    "name": "M9A",
+    "damage": 31,
+    "damage_multiplier": 1,
+    "rpm": 850,
+    "mag_size": 15,
+    "reload_time": 2,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 4,
+    "name": "M1911MK2",
+    "damage": 48,
+    "damage_multiplier": 1,
+    "rpm": 720,
+    "mag_size": 16,
+    "reload_time": 3,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 5,
+    "name": "Luger",
+    "damage": 58,
+    "damage_multiplier": 1,
+    "rpm": 500,
+    "mag_size": 8,
+    "reload_time": 1.95,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 6,
+    "name": "AK47",
+    "damage": 40,
+    "damage_multiplier": 1,
+    "rpm": 600,
+    "mag_size": 30,
+    "reload_time": 2.1,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 7,
+    "name": "G36",
+    "damage": 42,
+    "damage_multiplier": 1,
+    "rpm": 700,
+    "mag_size": 30,
+    "reload_time": 2.4,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 8,
+    "name": "CRL10",
+    "damage": 75,
+    "damage_multiplier": 1,
+    "rpm": 400,
+    "mag_size": 24,
+    "reload_time": 2.6,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 9,
+    "name": "BRH17",
+    "damage": 58,
+    "damage_multiplier": 1,
+    "rpm": 670,
+    "mag_size": 30,
+    "reload_time": 3.25,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 10,
+    "name": "M4",
+    "damage": 40,
+    "damage_multiplier": 1,
+    "rpm": 700,
+    "mag_size": 30,
+    "reload_time": 2.35,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 11,
+    "name": "M1",
+    "damage": 425,
+    "damage_multiplier": 1,
+    "rpm": 60,
+    "mag_size": 8,
+    "reload_time": 2.8,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 12,
+    "name": "R870",
+    "damage": 92,
+    "damage_multiplier": 6,
+    "rpm": 70,
+    "mag_size": 12,
+    "reload_time": 12,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 13,
+    "name": "R870 (1 Pellet Hit DPS/DPM)",
+    "damage": 92,
+    "damage_multiplier": 1,
+    "rpm": 70,
+    "mag_size": 12,
+    "reload_time": 12,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 14,
+    "name": "Scattergun",
+    "damage": 110,
+    "damage_multiplier": 4,
+    "rpm": 300,
+    "mag_size": 7,
+    "reload_time": 4,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 15,
+    "name": "Scattergun (1 Pellet Hit DPS/DPM)",
+    "damage": 58,
+    "damage_multiplier": 1,
+    "rpm": 300,
+    "mag_size": 7,
+    "reload_time": 4.5,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 16,
+    "name": "Shorty",
+    "damage": 29,
+    "damage_multiplier": 4,
+    "rpm": 185,
+    "mag_size": 8,
+    "reload_time": 3.5,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 17,
+    "name": "Shorty (1 Pellet Hit DPS/DPM)",
+    "damage": 29,
+    "damage_multiplier": 1,
+    "rpm": 185,
+    "mag_size": 8,
+    "reload_time": 3.5,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 18,
+    "name": "AA12",
+    "damage": 22,
+    "damage_multiplier": 4,
+    "rpm": 300,
+    "mag_size": 20,
+    "reload_time": 2.2,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 19,
+    "name": "AA12 (1 Pellet Hit DPS/DPM)",
+    "damage": 22,
+    "damage_multiplier": 1,
+    "rpm": 300,
+    "mag_size": 20,
+    "reload_time": 2.2,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 20,
+    "name": "P90",
+    "damage": 32,
+    "damage_multiplier": 1,
+    "rpm": 900,
+    "mag_size": 50,
+    "reload_time": 3,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 21,
+    "name": "Thompson",
+    "damage": 38,
+    "damage_multiplier": 1,
+    "rpm": 750,
+    "mag_size": 50,
+    "reload_time": 2.5,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 22,
+    "name": "Uzi",
+    "damage": 20,
+    "damage_multiplier": 1,
+    "rpm": 850,
+    "mag_size": 32,
+    "reload_time": 2,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 23,
+    "name": "Vector",
+    "damage": 32,
+    "damage_multiplier": 1,
+    "rpm": 1050,
+    "mag_size": 33,
+    "reload_time": 2,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 24,
+    "name": "MP5",
+    "damage": 23,
+    "damage_multiplier": 1,
+    "rpm": 800,
+    "mag_size": 30,
+    "reload_time": 2.1,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 25,
+    "name": "U10",
+    "damage": 18,
+    "damage_multiplier": 1,
+    "rpm": 750,
+    "mag_size": 65,
+    "reload_time": 2,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 26,
+    "name": "MPX",
+    "damage": 28,
+    "damage_multiplier": 1,
+    "rpm": 780,
+    "mag_size": 30,
+    "reload_time": 2.65,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 27,
+    "name": "UMP45",
+    "damage": 28,
+    "damage_multiplier": 1,
+    "rpm": 600,
+    "mag_size": 25,
+    "reload_time": 2,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 28,
+    "name": "Prototype",
+    "damage": 21,
+    "damage_multiplier": 1,
+    "rpm": 800,
+    "mag_size": 25,
+    "reload_time": 2.5,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 29,
+    "name": "Prototype (Overcharged)",
+    "damage": 21,
+    "damage_multiplier": 1.35,
+    "rpm": 800,
+    "mag_size": 25,
+    "reload_time": 2.5,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 30,
+    "name": "MP40",
+    "damage": 50,
+    "damage_multiplier": 1,
+    "rpm": 550,
+    "mag_size": 32,
+    "reload_time": 3,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 31,
+    "name": "PKM",
+    "damage": 41,
+    "damage_multiplier": 1,
+    "rpm": 750,
+    "mag_size": 100,
+    "reload_time": 5.5,
+    "gunytpe": "LMG"
+  },
+  {
+    "id": 32,
+    "name": "M249",
+    "damage": 42,
+    "damage_multiplier": 1,
+    "rpm": 850,
+    "mag_size": 100,
+    "reload_time": 6,
+    "gunytpe": "LMG"
+  },
+  {
+    "id": 33,
+    "name": "T49",
+    "damage": 48,
+    "damage_multiplier": 1,
+    "rpm": 780,
+    "mag_size": 125,
+    "reload_time": 5.5,
+    "gunytpe": "LMG"
+  },
+  {
+    "id": 34,
+    "name": "T32",
+    "damage": 52,
+    "damage_multiplier": 1,
+    "rpm": 700,
+    "mag_size": 50,
+    "reload_time": 3.25,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 35,
+    "name": "Improved T49",
+    "damage": 48,
+    "damage_multiplier": 1,
+    "rpm": 850,
+    "mag_size": 125,
+    "reload_time": 5.5,
+    "gunytpe": "LMG"
+  },
+  {
+    "id": 36,
+    "name": "Improved T32",
+    "damage": 52,
+    "damage_multiplier": 1,
+    "rpm": 750,
+    "mag_size": 50,
+    "reload_time": 3.25,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 37,
+    "name": "AMR 12.7",
+    "damage": 1000,
+    "damage_multiplier": 1,
+    "rpm": 30,
+    "mag_size": 5,
+    "reload_time": 3.5,
+    "gunytpe": "RIFLE?"
+  },
+  {
+    "id": 38,
+    "name": "Golden Thompson",
+    "damage": 44,
+    "damage_multiplier": 1,
+    "rpm": 800,
+    "mag_size": 50,
+    "reload_time": 2.5,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 39,
+    "name": "MilTech SMGs",
+    "damage": 40,
+    "damage_multiplier": 1,
+    "rpm": 900,
+    "mag_size": 64,
+    "reload_time": 4,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 40,
+    "name": "Eradicator",
+    "damage": 40,
+    "damage_multiplier": 1,
+    "rpm": 1000,
+    "mag_size": 50,
+    "reload_time": 2.45,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 41,
+    "name": "A10",
+    "damage": 1000,
+    "damage_multiplier": 1,
+    "rpm": 3000,
+    "mag_size": 10000000000000000000,
+    "reload_time": 0,
+    "gunytpe": "SPECIAL"
+  },
+  {
+    "id": 42,
+    "name": "Turret (Manual)",
+    "damage": 100,
+    "damage_multiplier": 1,
+    "rpm": 500,
+    "mag_size": 650,
+    "reload_time": 0,
+    "gunytpe": "SPECIAL"
+  },
+  {
+    "id": 43,
+    "name": "Turret (Automatic)",
+    "damage": 100,
+    "damage_multiplier": 1,
+    "rpm": 300,
+    "mag_size": 650,
+    "reload_time": 0,
+    "gunytpe": "SPECIAL"
+  },
+  {
+    "id": 44,
+    "name": "Improved G18",
+    "damage": 38,
+    "damage_multiplier": 1,
+    "rpm": 650,
+    "mag_size": 18,
+    "reload_time": 2,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 45,
+    "name": "Silenced G18",
+    "damage": 38,
+    "damage_multiplier": 1,
+    "rpm": 550,
+    "mag_size": 18,
+    "reload_time": 2,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 46,
+    "name": "RC12",
+    "damage": 50,
+    "damage_multiplier": 4,
+    "rpm": 225,
+    "mag_size": 10,
+    "reload_time": 5,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 47,
+    "name": "RC12 (1 pellet hit)",
+    "damage": 50,
+    "damage_multiplier": 1,
+    "rpm": 225,
+    "mag_size": 10,
+    "reload_time": 5,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 48,
+    "name": "MRL4",
+    "damage": 48.5,
+    "damage_multiplier": 1,
+    "rpm": 550,
+    "mag_size": 30,
+    "reload_time": 2.35,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 49,
+    "name": "Improved MRL4",
+    "damage": 48.5,
+    "damage_multiplier": 1,
+    "rpm": 600,
+    "mag_size": 30,
+    "reload_time": 2.35,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 50,
+    "name": "K4LAS",
+    "damage": 45,
+    "damage_multiplier": 1,
+    "rpm": 600,
+    "mag_size": 32,
+    "reload_time": 2.45,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 51,
+    "name": "Improved K4LAS",
+    "damage": 45,
+    "damage_multiplier": 1,
+    "rpm": 650,
+    "mag_size": 32,
+    "reload_time": 2.45,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 52,
+    "name": "MK49",
+    "damage": 40,
+    "damage_multiplier": 1,
+    "rpm": 625,
+    "mag_size": 100,
+    "reload_time": 4.5,
+    "gunytpe": "LMG"
+  },
+  {
+    "id": 53,
+    "name": "Improved MK49",
+    "damage": 40,
+    "damage_multiplier": 1,
+    "rpm": 700,
+    "mag_size": 100,
+    "reload_time": 4.5,
+    "gunytpe": "LMG"
+  },
+  {
+    "id": 54,
+    "name": "Improved P90",
+    "damage": 32,
+    "damage_multiplier": 1,
+    "rpm": 800,
+    "mag_size": 50,
+    "reload_time": 2.6,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 55,
+    "name": "STEN Gun",
+    "damage": 50,
+    "damage_multiplier": 1,
+    "rpm": 550,
+    "mag_size": 32,
+    "reload_time": 2.5,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 56,
+    "name": "Akimbo G18",
+    "damage": 52,
+    "damage_multiplier": 1,
+    "rpm": 700,
+    "mag_size": 34,
+    "reload_time": 3.5,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 57,
+    "name": "ASR",
+    "damage": 100,
+    "damage_multiplier": 1,
+    "rpm": 440,
+    "mag_size": 18,
+    "reload_time": 3.5,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 58,
+    "name": "Improved ASR",
+    "damage": 100,
+    "damage_multiplier": 1,
+    "rpm": 540,
+    "mag_size": 18,
+    "reload_time": 3.5,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 59,
+    "name": "Improved G36",
+    "damage": 42,
+    "damage_multiplier": 1,
+    "rpm": 780,
+    "mag_size": 30,
+    "reload_time": 2.25,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 60,
+    "name": "Akimbo Voids",
+    "damage": 15,
+    "damage_multiplier": 1,
+    "rpm": 900,
+    "mag_size": 26,
+    "reload_time": 2.5,
+    "gunytpe": "SMG?"
+  },
+  {
+    "id": 61,
+    "name": "Improved Akimbo Voids",
+    "damage": 38,
+    "damage_multiplier": 1,
+    "rpm": 1200,
+    "mag_size": 26,
+    "reload_time": 2,
+    "gunytpe": "SMG?"
+  },
+  {
+    "id": 62,
+    "name": "Improved MP5",
+    "damage": 34,
+    "damage_multiplier": 1,
+    "rpm": 800,
+    "mag_size": 30,
+    "reload_time": 1.5,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 63,
+    "name": "LTL Laser",
+    "damage": 28,
+    "damage_multiplier": 1,
+    "rpm": 200,
+    "mag_size": 2,
+    "reload_time": 3,
+    "gunytpe": "SPECIAL"
+  },
+  {
+    "id": 64,
+    "name": "Improved Vector",
+    "damage": 36,
+    "damage_multiplier": 1,
+    "rpm": 1050,
+    "mag_size": 30,
+    "reload_time": 2,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 65,
+    "name": "T45",
+    "damage": 28,
+    "damage_multiplier": 1,
+    "rpm": 850,
+    "mag_size": 30,
+    "reload_time": 2,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 66,
+    "name": "Improved T45",
+    "damage": 40,
+    "damage_multiplier": 1,
+    "rpm": 850,
+    "mag_size": 30,
+    "reload_time": 2,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 67,
+    "name": "Freeze Ray",
+    "damage": 2,
+    "damage_multiplier": 1,
+    "rpm": 600,
+    "mag_size": 20,
+    "reload_time": 2,
+    "gunytpe": "SPECIAL"
+  },
+  {
+    "id": 68,
+    "name": "Freeze Rifle",
+    "damage": 4,
+    "damage_multiplier": 1,
+    "rpm": 650,
+    "mag_size": 30,
+    "reload_time": 2.35,
+    "gunytpe": "SPECIAL"
+  },
+  {
+    "id": 69,
+    "name": "R416",
+    "damage": 40,
+    "damage_multiplier": 1,
+    "rpm": 830,
+    "mag_size": 30,
+    "reload_time": 2.5,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 70,
+    "name": "Improved R416",
+    "damage": 44,
+    "damage_multiplier": 1,
+    "rpm": 900,
+    "mag_size": 30,
+    "reload_time": 2.5,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 71,
+    "name": "Flare Gun",
+    "damage": 125,
+    "damage_multiplier": 1,
+    "rpm": 480,
+    "mag_size": 1,
+    "reload_time": 1,
+    "gunytpe": "SPECIAL"
+  },
+  {
+    "id": 72,
+    "name": "Improved BRH17",
+    "damage": 58,
+    "damage_multiplier": 1,
+    "rpm": 700,
+    "mag_size": 30,
+    "reload_time": 3.25,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 73,
+    "name": "Deagle",
+    "damage": 70,
+    "damage_multiplier": 1,
+    "rpm": 400,
+    "mag_size": 18,
+    "reload_time": 2.1,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 74,
+    "name": "Akimbo Deagles",
+    "damage": 70,
+    "damage_multiplier": 1,
+    "rpm": 400,
+    "mag_size": 36,
+    "reload_time": 3.5,
+    "gunytpe": "PISTOL"
+  },
+  {
+    "id": 75,
+    "name": "CRL11",
+    "damage": 130,
+    "damage_multiplier": 1,
+    "rpm": 300,
+    "mag_size": 10,
+    "reload_time": 3,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 76,
+    "name": "Scan Rifle",
+    "damage": 30,
+    "damage_multiplier": 1,
+    "rpm": 700,
+    "mag_size": 10,
+    "reload_time": 2,
+    "gunytpe": "RIFLE?"
+  },
+  {
+    "id": 77,
+    "name": "PPSH41",
+    "damage": 28,
+    "damage_multiplier": 1,
+    "rpm": 1000,
+    "mag_size": 71,
+    "reload_time": 2.5,
+    "gunytpe": "UNKOWN"
+  },
+  {
+    "id": 78,
+    "name": "AK74M",
+    "damage": 40,
+    "damage_multiplier": 1,
+    "rpm": 690,
+    "mag_size": 30,
+    "reload_time": 2.5,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 79,
+    "name": "Akimbo Uzi",
+    "damage": 38,
+    "damage_multiplier": 1,
+    "rpm": 800,
+    "mag_size": 64,
+    "reload_time": 4,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 80,
+    "name": "Akimbo MP5",
+    "damage": 42,
+    "damage_multiplier": 1,
+    "rpm": 800,
+    "mag_size": 60,
+    "reload_time": 4,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 81,
+    "name": "Improved Thompson",
+    "damage": 38,
+    "damage_multiplier": 1,
+    "rpm": 800,
+    "mag_size": 50,
+    "reload_time": 2.5,
+    "gunytpe": "SMG"
+  },
+  {
+    "id": 82,
+    "name": "RV9",
+    "damage": 100,
+    "damage_multiplier": 1,
+    "rpm": 400,
+    "mag_size": 12,
+    "reload_time": 2.6,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 83,
+    "name": "SPAS-12",
+    "damage": 24,
+    "damage_multiplier": 8,
+    "rpm": 150,
+    "mag_size": 8,
+    "reload_time": 2.2,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 84,
+    "name": "Akimbo Shotguns",
+    "damage": 51,
+    "damage_multiplier": 8,
+    "rpm": 200,
+    "mag_size": 1000000000000000000000000000000000000000000000000000000000000000,
+    "reload_time": 0,
+    "gunytpe": "SHOTGUN"
+  },
+  {
+    "id": 85,
+    "name": "SK17",
+    "damage": 58,
+    "damage_multiplier": 1,
+    "rpm": 900,
+    "mag_size": 30,
+    "reload_time": 4,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 86,
+    "name": "Type49",
+    "damage": 999,
+    "damage_multiplier": 1,
+    "rpm": 9999,
+    "mag_size": 999,
+    "reload_time": 1,
+    "gunytpe": "RIFLE"
+  },
+  {
+    "id": 87,
+    "name": "M32",
+    "damage": 500,
+    "damage_multiplier": 1,
+    "rpm": 9999,
+    "mag_size": 6,
+    "reload_time": 12,
+    "gunytpe": "SPECIAL"
+  },
+  {
+    "id": 88,
+    "name": "M32NL",
+    "damage": 1,
+    "damage_multiplier": 1,
+    "rpm": 9999,
+    "mag_size": 6,
+    "reload_time": 12,
+    "gunytpe": "SPECIAL"
+  }
+]
