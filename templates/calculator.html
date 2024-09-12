@@ -10,13 +10,15 @@
 
     </header>
     <main>
-         <form action="/action_page.php">
-              <label for="rpm">Damage:</label>
-              <input type="text" id="dmg" name="fname"><br><br>
-              <label for="rpm">RPM:</label>
-              <input type="text" id="rpm" name="lname"><br><br>
-              <input type="submit" value="Submit">
-</form>
+        <label for="search">Search Weapon:</label>
+        <input type="text" id="search" placeholder="Search by name" onkeyup="filterWeapons()">
+
+        <label for="weapon-select">Choose a weapon:</label>
+        <select id="weapon-select" name="weapons">
+            <!-- Weapon options will be populated here dynamically -->
+        </select>
+
+        <script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>
     </main>
 </body>
 </html>
