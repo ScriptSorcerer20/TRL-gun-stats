@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/img/TRL_Logo_Custom.jpg">
     <title>Gun Stats</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <header>
-        <nav>
-            <a class="index-nav" href="{{ url_for('calculator') }}">Calculator</a>
-        </nav>
-    </header>
-    <main class="background_image">
+<nav></nav>
+<header>
+    <nav>
+        <a class="index-nav" href="{{ url_for('calculator') }}">Calculator</a>
+    </nav>
+</header>
+<body class="background-image">
+<main>
     <h1>Gun Stats</h1>
-    <div>
+    <div class="search-container">
         <input type="text" id="search" placeholder="Search by name" onkeyup="filterTable()">
     </div>
-    <table id="gun-stats">
+    <table id="gun-stats" class="background-roster">
         <thead>
             <tr>
                 <th>ID</th>
@@ -40,6 +42,6 @@
     </table>
     <script src="{{ url_for('static', filename='populateTable.js') }}"></script>
     <script src="{{ url_for('static', filename='filterTable.js') }}"></script>
-    </main>
+</main>
 </body>
 </html>
