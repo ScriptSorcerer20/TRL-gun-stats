@@ -112,7 +112,7 @@
   {
     "id": 12,
     "name": "R870",
-    "damage": 92,
+    "damage": 552,
     "damage_multiplier": 6,
     "rpm": 70,
     "mag_size": 12,
@@ -122,7 +122,7 @@
   {
     "id": 14,
     "name": "Scattergun",
-    "damage": 110,
+    "damage": 232,
     "damage_multiplier": 4,
     "rpm": 300,
     "mag_size": 7,
@@ -132,7 +132,7 @@
   {
     "id": 16,
     "name": "Shorty",
-    "damage": 29,
+    "damage": 116,
     "damage_multiplier": 4,
     "rpm": 185,
     "mag_size": 8,
@@ -142,7 +142,7 @@
   {
     "id": 18,
     "name": "AA12",
-    "damage": 22,
+    "damage": 88,
     "damage_multiplier": 4,
     "rpm": 300,
     "mag_size": 20,
@@ -412,7 +412,7 @@
   {
     "id": 46,
     "name": "RC12",
-    "damage": 50,
+    "damage": 200,
     "damage_multiplier": 4,
     "rpm": 225,
     "mag_size": 10,
@@ -772,7 +772,7 @@
   {
     "id": 83,
     "name": "SPAS-12",
-    "damage": 24,
+    "damage": 192,
     "damage_multiplier": 8,
     "rpm": 150,
     "mag_size": 8,
@@ -814,7 +814,7 @@
     "name": "M32",
     "damage": 500,
     "damage_multiplier": 1,
-    "rpm": 9999,
+    "rpm": 120,
     "mag_size": 6,
     "reload_time": 12,
     "guntype": "SPECIAL"
@@ -824,7 +824,7 @@
     "name": "M32NL",
     "damage": 1,
     "damage_multiplier": 1,
-    "rpm": 9999,
+    "rpm": 120,
     "mag_size": 6,
     "reload_time": 12,
     "guntype": "SPECIAL"

@@ -6,11 +6,43 @@
     <link rel="icon" type="image/x-icon" href="/static/img/TRL_Logo_Custom.jpg">
     <title>Gun Stats</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function toggleDropdown() {
+            var dropdownContent = document.querySelector(".dropdown-content");
+            // Toggle the display property between 'block' and 'none'
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+    </script>
 </head>
-<nav></nav>
 <header>
     <nav>
-        <a class="index-nav" href="{{ url_for('calculator') }}">Calculator</a>
+        <p class="divider">_</p>
+        <div class="topnav" id="myTopnav">
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()"><img src="/static/img/menu-list-icon-app-navigation-option-page-interface-dropdown-three-lines-button-dots-sign-symbol-black-artwork-graphic-illustration-clipart-eps-vector.jpg" height="50" width="50">
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" style="display: none;">
+                    <a href="#">DPS/DPM CALCULATOR</a><br>
+                    <a href="#">ABOUT US</a><br>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
     </nav>
 </header>
 <body class="background-image">
@@ -21,23 +53,23 @@
     </div>
     <table id="gun-stats" class="background-roster">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Damage</th>
-                <th>Damage multiplier</th>
-                <th>Rounds per minute</th>
-                <th>Magazine Size</th>
-                <th>Reload time</th>
-                <th>Gun type</th>
-                <th>RPS</th>
-                <th>DPS</th>
-                <th>DPM</th>
-                <th>Avg DPS</th>
-            </tr>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Damage</th>
+            <th>Damage multiplier</th>
+            <th>Rounds per minute</th>
+            <th>Magazine Size</th>
+            <th>Reload time</th>
+            <th>Gun type</th>
+            <th>RPS</th>
+            <th>DPS</th>
+            <th>DPM</th>
+            <th>Avg DPS</th>
+        </tr>
         </thead>
         <tbody>
-            <!-- Gun stats will be populated here -->
+        <!-- Gun stats will be populated here -->
         </tbody>
     </table>
     <script src="{{ url_for('static', filename='populateTable.js') }}"></script>
