@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/static/img/TRL_Logo_Custom.jpg">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>DPM/DPS Calculator</title>
+    <title>About Us</title>
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
@@ -40,7 +39,7 @@
                 </button>
                 <div class="dropdown-content" style="display: none;">
                     <a href="{{ url_for('index') }}">GUN STATS</a><br>
-                    <a href="{{ url_for('about_us') }}">ABOUT US</a><br>
+                    <a href="{{ url_for('calculator') }}">DPS/DPM CALCULATOR</a><br>
                     <a href="https://www.roblox.com/games/5766084948/SCP-The-Red-Lake-EVENT">PLAY THE RED LAKE</a>
                 </div>
             </div>
@@ -49,19 +48,6 @@
     </nav>
 </header>
 <body>
-<header>
 
-</header>
-<main>
-    <label for="search">Search Weapon:</label>
-    <input type="text" id="search" placeholder="Search by name" onkeyup="filterWeapons()">
-
-    <label for="weapon-select">Choose a weapon:</label>
-    <select id="weapon-select" name="weapons">
-        <!-- Weapon options will be populated here dynamically -->
-    </select>
-
-    <script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>
-</main>
 </body>
 </html>

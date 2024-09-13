@@ -39,6 +39,10 @@ def get_guns():
 def calculator():
     return render_template('calculator.html')
 
+@app.route('/about_us')
+def about_us():
+    return render_template('about_us.html')
+
 
 def dps_calculation(damage, extra_dmg_percent, rpm, extra_fire_rate):
     dps = damage * (extra_dmg_percent / 100 + 1) * (rpm * (extra_fire_rate / 100 + 1) / 60)
