@@ -112,7 +112,7 @@
   {
     "id": 12,
     "name": "R870",
-    "damage": 552,
+    "damage": 92,
     "damage_multiplier": 6,
     "rpm": 70,
     "mag_size": 12,
@@ -122,7 +122,7 @@
   {
     "id": 14,
     "name": "Scattergun",
-    "damage": 232,
+    "damage": 58,
     "damage_multiplier": 4,
     "rpm": 300,
     "mag_size": 7,
@@ -132,7 +132,7 @@
   {
     "id": 16,
     "name": "Shorty",
-    "damage": 116,
+    "damage": 29,
     "damage_multiplier": 4,
     "rpm": 185,
     "mag_size": 8,
@@ -142,7 +142,7 @@
   {
     "id": 18,
     "name": "AA12",
-    "damage": 88,
+    "damage": 22,
     "damage_multiplier": 4,
     "rpm": 300,
     "mag_size": 20,
@@ -412,7 +412,7 @@
   {
     "id": 46,
     "name": "RC12",
-    "damage": 200,
+    "damage": 50,
     "damage_multiplier": 4,
     "rpm": 225,
     "mag_size": 10,
@@ -772,7 +772,7 @@
   {
     "id": 83,
     "name": "SPAS-12",
-    "damage": 192,
+    "damage": 24,
     "damage_multiplier": 8,
     "rpm": 150,
     "mag_size": 8,

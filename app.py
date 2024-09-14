@@ -17,15 +17,18 @@ def index():
 def get_guns():
     updated_guns = []
     for gun in guns:
+        original_damage = gun['damage']
         # Calculate RPS, DPS, DPM, avgDPS
         rps = gun['rpm'] / 60
-        dps = gun['damage'] * rps
+        dps = original_damage * rps
         reload_time_min = gun['reload_time'] / 60
-        dpm = (gun['mag_size'] * gun['damage']) / (reload_time_min + (gun['mag_size'] / gun['rpm']))
+        dpm = (gun['mag_size'] * original_damage) / (reload_time_min + (gun['mag_size'] / gun['rpm']))
         avg_dps = dpm / 60
+        total_damage = original_damage * gun['damage_multiplier']
 
         # Add calculated stats to the gun data
         gun.update({
+            'total_damage': total_damage,
             'rps': rps,
             'dps': dps,
             'dpm': dpm,
@@ -35,9 +38,11 @@ def get_guns():
 
     return jsonify(updated_guns)
 
+
 @app.route('/calculator')
 def calculator():
     return render_template('calculator.html')
+
 
 @app.route('/about_us')
 def about_us():
@@ -60,6 +65,7 @@ def dpm_calculation(reload_time, extra_reload_speed, rpm, damage, extra_dmg_perc
 def average_dpm_calculation():
     dpm = float(dpm_calculation())
     return round(dpm / 60, 2)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

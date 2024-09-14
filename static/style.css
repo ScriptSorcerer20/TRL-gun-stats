@@ -7,6 +7,7 @@ body {
     z-index: -1; /* Send the background behind the content */
     font-family: Arial, sans-serif;
     margin: 20px;
+    width: 100%
 }
 
 header nav {
@@ -114,7 +115,7 @@ nav {
 /* Add a black background color to the top navigation */
 .topnav {
     position: absolute;
-    right: 20px;
+    right: 50px;
     top: 10px;
     background-color: #333;
     overflow: visible; /* Ensure dropdown content isn't clipped */
@@ -208,4 +209,9 @@ nav {
     .topnav .icon {
         display: block;
     }
+}
+
+.about_us_text{
+    font-size: 20px;
+    width: 50%;
 }
