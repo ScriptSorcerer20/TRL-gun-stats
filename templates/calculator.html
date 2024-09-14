@@ -53,13 +53,16 @@
 
 </header>
 <main>
-    <label for="search">Search Weapon:</label>
-    <input type="text" id="search" placeholder="Search by name" onkeyup="filterWeapons()">
-
     <label for="weapon-select">Choose a weapon:</label>
     <select id="weapon-select" name="weapons">
         <!-- Weapon options will be populated here dynamically -->
     </select>
+
+    <!-- Weapon Stats will be displayed here -->
+    <div id="weapon-stats"></div>
+
+    <!-- Calculated DPS/DPM results will be shown here -->
+    <div id="calculated-stats"></div>
 
     <script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>
 </main>
