@@ -203,6 +203,12 @@ nav {
     display: none;
 }
 
+.about_us_text {
+    font-size: 20px;
+    width: 50%;
+    overflow: auto;
+}
+
 /* Show the icon only on smaller screens */
 @media screen and (max-width: 600px) {
     #search {
@@ -210,13 +216,7 @@ nav {
     }
 
     .about_us_text {
-        font-size: 16px;
+        font-size: 14px;
         width: 100%;
     }
-}
-
-.about_us_text {
-    font-size: 20px;
-    width: 50%;
-    overflow: auto;
 }
