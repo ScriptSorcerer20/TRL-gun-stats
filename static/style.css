@@ -7,7 +7,6 @@ body {
     z-index: -1; /* Send the background behind the content */
     font-family: Arial, sans-serif;
     margin: 20px;
-    width: 100%
 }
 
 header nav {
@@ -214,4 +213,5 @@ nav {
 .about_us_text{
     font-size: 20px;
     width: 50%;
+    overflow: auto;
 }
