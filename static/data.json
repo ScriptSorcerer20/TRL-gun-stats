@@ -808,25 +808,5 @@
     "mag_size": 999,
     "reload_time": 1,
     "guntype": "RIFLE"
-  },
-  {
-    "id": 87,
-    "name": "M32",
-    "damage": 500,
-    "damage_multiplier": 1,
-    "rpm": 120,
-    "mag_size": 6,
-    "reload_time": 12,
-    "guntype": "SPECIAL"
-  },
-  {
-    "id": 88,
-    "name": "M32NL",
-    "damage": 1,
-    "damage_multiplier": 1,
-    "rpm": 120,
-    "mag_size": 6,
-    "reload_time": 12,
-    "guntype": "SPECIAL"
   }
 ]
