@@ -64,7 +64,7 @@
   "abilityPerks": [
     {
       "id": "multiple-buffs-firefight",
-      "label": "[Heath] Firefight (+35% Damage, +40% Reload Speed)",
+      "label": "[All Operatives] Firefight (+35% Damage, +40% Reload Speed)",
       "buffs": [
         {
           "type": "damage",
@@ -80,13 +80,13 @@
     },
     {
       "id": "damage-ability-multiplicative-heath-spawn",
-      "label": "[Heath] Heath Spawn (+30% Damage)",
+      "label": "[All Operatives] Heath Spawn (+30% Damage)",
       "value": 1.3,
       "type": "multiplicative"
     },
     {
       "id": "multiple-buffs-warcry",
-      "label": "[SD Captain] War Cry(+25% Damage, +?% Reload Speed)",
+      "label": "[All Operatives] War Cry(+25% Damage, +?% Reload Speed)",
       "buffs": [
         {
           "type": "damage",
@@ -102,27 +102,33 @@
     },
     {
       "id": "damage-ability-multiplicative-blackout",
-      "label": "[Hacker] Blackout (+30% Damage)",
+      "label": "[All Operatives] Blackout (+30% Damage)",
       "value": 1.3,
       "type": "multiplicative"
     },
     {
       "id": "damage-ability-multiplicative-red-scan",
-      "label": "[TRU] Red Scan (+30% Damage)",
+      "label": "[All Operatives] Red Scan (+30% Damage)",
       "value": 1.3,
       "type": "multiplicative"
     },
     {
       "id": "damage-ability-multiplicative-red-scan",
-      "label": "[TRU] Green Scan (+50% Damage)",
+      "label": "[All Operatives] Green Scan (+50% Damage)",
       "value": 1.5,
       "type": "multiplicative"
     },
     {
       "id": "damage-ability-multiplicative-point-out",
-      "label": "[UIU Detective] Point Out (+50% Damage)",
+      "label": "[All Operatives] Point Out (+50% Damage)",
       "value": 1.5,
       "type": "multiplicative"
+    },
+    {
+      "id": "damage-item-additive-5-uiu-elite",
+      "label": "[All Operatives] 5 UIU Elite nearby (+25 damage)",
+      "value": 25,
+      "type": "additive"
     }
   ]
 }
