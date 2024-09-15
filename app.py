@@ -49,23 +49,9 @@ def about_us():
     return render_template('about_us.html')
 
 
-def dps_calculation(damage, extra_dmg_percent, rpm, extra_fire_rate):
-    dps = damage * (extra_dmg_percent / 100 + 1) * (rpm * (extra_fire_rate / 100 + 1) / 60)
-    return round(dps, 2)
-
-
-def dpm_calculation(reload_time, extra_reload_speed, rpm, damage, extra_dmg_percent, mag_size, extra_fire_rate):
-    adjusted_reload_time = reload_time * (extra_reload_speed / 100 + 1)
-    adjusted_fire_rate = rpm * (extra_fire_rate / 100 + 1)
-    total_damage_per_mag = damage * (extra_dmg_percent / 100 + 1) * mag_size
-    dpm = total_damage_per_mag / ((adjusted_reload_time / 60) + (mag_size / adjusted_fire_rate))
-    return round(dpm, 2)
-
-
-def average_dpm_calculation():
-    dpm = float(dpm_calculation())
-    return round(dpm / 60, 2)
-
+@app.route('/suggestion')
+def suggestion():
+    return render_template('suggestion.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
