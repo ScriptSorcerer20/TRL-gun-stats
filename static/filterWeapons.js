@@ -106,7 +106,7 @@ function populateModifiers(modifiers) {
     modifiersContainer.appendChild(createModifierSection('Item Buffs', modifiers.itemBuffs));
 
     // Add Operative Perks
-    modifiersContainer.appendChild(createModifierSection('Operative Perks', modifiers.operativePerks));
+    modifiersContainer.appendChild(createModifierSection('Perks', modifiers.operativePerks));
 
     // Add Ability Perks
     modifiersContainer.appendChild(createModifierSection('Abilities', modifiers.abilityPerks));
