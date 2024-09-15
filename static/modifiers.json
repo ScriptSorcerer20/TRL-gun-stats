@@ -59,6 +59,40 @@
       "label": "FBI Badge (+10% Damage)",
       "value": 1.1,
       "type": "multiplicative"
+    },
+    {
+      "id": "damage-perk-multiplicative-anatomy-book",
+      "label": "Anatomy Book (+5% Damage)",
+      "value": 1.05,
+      "type": "multiplicative"
+    },
+    {
+      "id": "damage-perk-multiplicative-silly-soldier",
+      "label": "Silly Soldier (+10% Damage)",
+      "value": 1.10,
+      "type": "multiplicative"
+    },
+    {
+      "id": "damage-perk-multiplicative-precise-shots",
+      "label": "Precise Shots (+15% Damage)",
+      "value": 1.15,
+      "type": "multiplicative"
+    },
+    {
+      "id": "damage-perk-multiplicative-goc-insignia",
+      "label": "GOC Insignia (+15% Reload Speed, +10% Firerate)",
+      "buffs": [
+        {
+          "type": "rpm",
+          "value": 1.10,
+          "buffType": "multiplicative"
+        },
+        {
+          "type": "reloadTime",
+          "value": 0.85,
+          "buffType": "multiplicative"
+        }
+      ]
     }
   ],
   "abilityPerks": [
