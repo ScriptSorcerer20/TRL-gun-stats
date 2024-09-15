@@ -101,65 +101,76 @@ function populateModifiers(modifiers) {
     modifiersContainer.appendChild(createModifierSection('Operative Perks', modifiers.operativePerks));
 
     // Add Ability Perks
-    modifiersContainer.appendChild(createModifierSection('Ability Perks', modifiers.abilityPerks));
+    modifiersContainer.appendChild(createModifierSection('Abilities', modifiers.abilityPerks));
 
     // Add event listener to recalculate DPS/DPM when modifiers are toggled
     modifiersContainer.addEventListener('change', applyModifiers);
 }
 
 // Function to apply the modifiers and recalculate DPS and DPM
+// Function to apply the modifiers and recalculate damage, RPM, and reloadTime
+// Function to apply the modifiers and recalculate damage, RPM, and reloadTime
 function applyModifiers() {
     if (!selectedWeapon) return;
 
-    const damage = selectedWeapon.damage;
-    let rpm = selectedWeapon.rpm;
-    const magSize = selectedWeapon.mag_size;
-    const reloadTime = selectedWeapon.reload_time;
+    // Get the base stats from the selected weapon
+    let baseDamage = selectedWeapon.damage;
+    let baseRpm = selectedWeapon.rpm;
+    let baseReloadTime = selectedWeapon.reload_time;
 
-    let dpsModifier = { additive: 0, multiplicative: 1 };
-    let dpmModifier = { additive: 0, multiplicative: 1 };
-    let rpmModifier = { additive: 0, multiplicative: 1 };
+    // Initialize the modifier objects
+    let damageModifier = {additive: 0, multiplicative: 1, flat: 0};
+    let rpmModifier = {additive: 0, multiplicative: 1};
+    let reloadTimeModifier = {additive: 0, multiplicative: 1};
 
     // Collect checked modifier values
     document.querySelectorAll('#modifiers input:checked').forEach(mod => {
         const modType = mod.dataset.type;
         const modValue = parseFloat(mod.value);
+        // Apply damage modifiers
+        if (mod.id.includes('damage')) {
+            if (modType === 'multiplicative') damageModifier.multiplicative *= modValue;  // Multiplicative
+            else if (modType === 'additive') damageModifier.additive += modValue;       // Additive
+        }
 
-        if (mod.id.includes('dps')) {
-            if (modType === 'additive') dpsModifier.additive += modValue;
-            else dpsModifier.multiplicative *= modValue;
-        }
-        if (mod.id.includes('dpm')) {
-            if (modType === 'additive') dpmModifier.additive += modValue;
-            else dpmModifier.multiplicative *= modValue;
-        }
+        // Apply RPM modifiers
         if (mod.id.includes('rpm')) {
-            if (modType === 'additive') rpmModifier.additive += modValue;
-            else rpmModifier.multiplicative *= modValue;
+            if (modType === 'multiplicative') rpmModifier.multiplicative *= modValue;
+            else if (modType === 'additive') rpmModifier.additive += modValue;
+        }
+
+        // Apply Reload Time modifiers
+        if (mod.id.includes('reloadTime')) {
+            if (modType === 'multiplicative') reloadTimeModifier.multiplicative *= modValue;
+            else if (modType === 'additive') reloadTimeModifier.additive += modValue;
         }
     });
 
-    // Apply RPM modifiers
-    rpm = rpm + (rpm * rpmModifier.additive);
-    rpm = rpm * rpmModifier.multiplicative;
+    // Apply the damage modifiers
+    let damage = baseDamage * damageModifier.multiplicative;  // First apply multiplicative modifiers// Then apply percentage-based additive modifiers
+    damage += damageModifier.additive;                            // Finally, add the flat additive modifier (e.g., HE Rounds)
 
-    // Recalculate DPS and DPM with modifiers
-    calculateDPSAndDPM(damage, rpm, magSize, reloadTime, dpsModifier, dpmModifier);
+    // Apply the RPM modifiers
+    let rpm = baseRpm * rpmModifier.multiplicative;
+    rpm = rpm + (rpm * rpmModifier.additive);
+
+    // Apply the reload time modifiers
+    let reloadTime = baseReloadTime * reloadTimeModifier.multiplicative;
+    reloadTime = reloadTime + (reloadTime * reloadTimeModifier.additive);
+
+    // Recalculate DPS and DPM with the modified stats
+    calculateDPSAndDPM(damage, rpm, selectedWeapon.mag_size, reloadTime);
+
+    // Update the displayed weapon stats with the modified values
+    updateModifiedWeaponStats(damage, rpm, reloadTime);
 }
 
-// Function to calculate DPS, DPM, and RPS with optional modifiers
 // Function to calculate DPS and DPM with optional modifiers
-function calculateDPSAndDPM(damage, rpm, magSize, reloadTime, dpsModifier = { additive: 0, multiplicative: 1 }, dpmModifier = { additive: 0, multiplicative: 1 }) {
+function calculateDPSAndDPM(damage, rpm, magSize, reloadTime) {
     const rps = rpm / 60; // Rounds per second
     let dps = damage * rps;
     const reloadTimeMin = reloadTime / 60;
     let dpm = (magSize * damage) / (reloadTimeMin + (magSize / rpm));
-
-    // Apply modifiers
-    dps = dps + (dps * dpsModifier.additive);
-    dps = dps * dpsModifier.multiplicative;
-    dpm = dpm + (dpm * dpmModifier.additive);
-    dpm = dpm * dpmModifier.multiplicative;
 
     // Display the calculated stats
     const resultElement = document.getElementById('calculated-stats');
@@ -169,6 +180,16 @@ function calculateDPSAndDPM(damage, rpm, magSize, reloadTime, dpsModifier = { ad
     `;
 }
 
+// Function to display the modified weapon's stats in the UI
+function updateModifiedWeaponStats(damage, rpm, reloadTime) {
+    const statsElement = document.getElementById('weapon-stats');
+    statsElement.innerHTML = `
+        <p>Modified Damage: ${damage.toFixed(2)}</p>
+        <p>Modified RPM: ${rpm.toFixed(2)}</p>
+        <p>Mag Size: ${selectedWeapon.mag_size}</p>
+        <p>Modified Reload Time: ${reloadTime.toFixed(2)} seconds</p>
+    `;
+}
 
 // Call the fetch function to load the data and populate the dropdown on page load
 fetchWeaponsData();

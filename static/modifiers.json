@@ -1,26 +1,132 @@
 {
   "itemBuffs": [
-    { "id": "dps-item-additive", "label": "DPS Additive (10%)", "value": 0.1, "type": "additive" },
-    { "id": "dps-item-multiplicative", "label": "DPS Multiplicative (20%)", "value": 1.2, "type": "multiplicative" },
-    { "id": "dpm-item-additive", "label": "DPM Additive (10%)", "value": 0.1, "type": "additive" },
-    { "id": "dpm-item-multiplicative", "label": "DPM Multiplicative (20%)", "value": 1.2, "type": "multiplicative" },
-    { "id": "rpm-item-additive", "label": "RPM Additive (5%)", "value": 0.05, "type": "additive" },
-    { "id": "rpm-item-multiplicative", "label": "RPM Multiplicative (10%)", "value": 1.1, "type": "multiplicative" }
+    {
+      "id": "damage-item-additive",
+      "label": "Elite HE Rounds (+14 damage)",
+      "value": 14,
+      "type": "additive"
+    },
+    {
+      "id": "damage-item-additive",
+      "label": "HE Rounds (+8 damage)",
+      "value": 8,
+      "type": "additive"
+    },
+    {
+      "id": "damage-item-multiplicative",
+      "label": "Strength Mixture (+20% damage)",
+      "value": 1.2,
+      "type": "multiplicative"
+    },
+    {
+      "id": "damage-item-multiplicative",
+      "label": "Fortunos Necklace (+15% damage)",
+      "value": 1.15,
+      "type": "multiplicative"
+    },
+    {
+      "id": "multiple-buffs",
+      "label": "Bloxy Cola (+25% Firerate, +100% Reload Speed)",
+      "buffs": [
+        {
+          "type": "rpm",
+          "value": 1.25,
+          "buffType": "multiplicative"
+        },
+        {
+          "type": "reloadTime",
+          "value": 0,
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "damage-item-multiplicative",
+      "label": "Enhancer (+10% damage)",
+      "value": 1.1,
+      "type": "multiplicative"
+    },
+    {
+      "id": "damage-item-multiplicative",
+      "label": "Teleport Device (+25% damage)",
+      "value": 1.25,
+      "type": "multiplicative"
+    }
   ],
   "operativePerks": [
-    { "id": "dps-perk-additive", "label": "DPS Additive (15%)", "value": 0.15, "type": "additive" },
-    { "id": "dps-perk-multiplicative", "label": "DPS Multiplicative (30%)", "value": 1.3, "type": "multiplicative" },
-    { "id": "dpm-perk-additive", "label": "DPM Additive (15%)", "value": 0.15, "type": "additive" },
-    { "id": "dpm-perk-multiplicative", "label": "DPM Multiplicative (30%)", "value": 1.3, "type": "multiplicative" },
-    { "id": "rpm-perk-additive", "label": "RPM Additive (10%)", "value": 0.1, "type": "additive" },
-    { "id": "rpm-perk-multiplicative", "label": "RPM Multiplicative (20%)", "value": 1.2, "type": "multiplicative" }
+    {
+      "id": "damage-perk-additive",
+      "label": "Operative Damage Additive +15%",
+      "value": 0.15,
+      "type": "additive"
+    },
+    {
+      "id": "damage-perk-multiplicative",
+      "label": "Operative Damage Multiplicative +30%",
+      "value": 1.3,
+      "type": "multiplicative"
+    },
+    {
+      "id": "rpm-perk-additive",
+      "label": "Operative RPM Additive +10%",
+      "value": 0.1,
+      "type": "additive"
+    },
+    {
+      "id": "rpm-perk-multiplicative",
+      "label": "Operative RPM Multiplicative +20%",
+      "value": 1.2,
+      "type": "multiplicative"
+    },
+    {
+      "id": "reloadTime-perk-additive",
+      "label": "Operative Reload Time Additive -10%",
+      "value": -0.1,
+      "type": "additive"
+    },
+    {
+      "id": "reloadTime-perk-multiplicative",
+      "label": "Operative Reload Time Multiplicative -20%",
+      "value": 0.8,
+      "type": "multiplicative"
+    }
   ],
   "abilityPerks": [
-    { "id": "dps-ability-additive", "label": "DPS Additive (20%)", "value": 0.2, "type": "additive" },
-    { "id": "dps-ability-multiplicative", "label": "DPS Multiplicative (40%)", "value": 1.4, "type": "multiplicative" },
-    { "id": "dpm-ability-additive", "label": "DPM Additive (20%)", "value": 0.2, "type": "additive" },
-    { "id": "dpm-ability-multiplicative", "label": "DPM Multiplicative (40%)", "value": 1.4, "type": "multiplicative" },
-    { "id": "rpm-ability-additive", "label": "RPM Additive (10%)", "value": 0.1, "type": "additive" },
-    { "id": "rpm-ability-multiplicative", "label": "RPM Multiplicative (30%)", "value": 1.3, "type": "multiplicative" }
+    {
+      "id": "damage-ability-additive",
+      "label": "Ability Damage Additive +20%",
+      "value": 0.2,
+      "type": "additive"
+    },
+    {
+      "id": "damage-ability-multiplicative",
+      "label": "Ability Damage Multiplicative +40%",
+      "value": 1.4,
+      "type": "multiplicative"
+    },
+    {
+      "id": "rpm-ability-additive",
+      "label": "Ability RPM Additive +10%",
+      "value": 0.1,
+      "type": "additive"
+    },
+    {
+      "id": "rpm-ability-multiplicative",
+      "label": "Ability RPM Multiplicative +30%",
+      "value": 1.3,
+      "type": "multiplicative"
+    },
+    {
+      "id": "reloadTime-ability-additive",
+      "label": "Ability Reload Time Additive -5%",
+      "value": -0.05,
+      "type": "additive"
+    },
+    {
+      "id": "reloadTime-ability-multiplicative",
+      "label": "Ability Reload Time Multiplicative -15%",
+      "value": 0.85,
+      "type": "multiplicative"
+    }
   ]
 }
