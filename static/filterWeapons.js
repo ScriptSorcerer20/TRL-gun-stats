@@ -39,14 +39,14 @@ function updateWeaponStats(weapon) {
     const statsElement = document.getElementById('weapon-stats');
     statsElement.innerHTML = `
         <p>Name: ${weapon.name}</p>
-        <p>Damage: ${weapon.damage}</p>
+        <p>Damage: ${weapon.damage * weapon.damage_multiplier}</p>
         <p>RPM: ${weapon.rpm}</p>
         <p>Mag Size: ${weapon.mag_size}</p>
         <p>Reload Time: ${weapon.reload_time}</p>
     `;
 
     // Store values for further calculations
-    const damage = weapon.damage;
+    const damage = weapon.damage * weapon.damage_multiplier;
     const rpm = weapon.rpm;
     const magSize = weapon.mag_size;
     const reloadTime = weapon.reload_time;
@@ -70,26 +70,34 @@ function populateModifiers(modifiers) {
     const modifiersContainer = document.getElementById('modifiers');
 
     const createModifierSection = (title, modifierList) => {
-        const section = document.createElement('div');
-        const header = document.createElement('h3');
-        header.textContent = title;
-        section.appendChild(header);
+    const section = document.createElement('div');
+    const header = document.createElement('h3');
+    header.textContent = title;
+    section.appendChild(header);
 
-        modifierList.forEach(mod => {
-            const label = document.createElement('label');
-            const input = document.createElement('input');
-            input.type = 'checkbox';
-            input.id = mod.id;
+    modifierList.forEach(mod => {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = mod.id;
+
+        // Check if the modifier has multiple buffs
+        if (mod.buffs) {
+            input.dataset.buffs = JSON.stringify(mod.buffs);  // Store buffs data as a string in data-buffs
+        } else {
             input.value = mod.value;
             input.dataset.type = mod.type;  // Store if it's additive or multiplicative
-            label.appendChild(input);
-            label.appendChild(document.createTextNode(mod.label));
-            section.appendChild(label);
-            section.appendChild(document.createElement('br'));
-        });
+        }
 
-        return section;
-    };
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(mod.label));
+        section.appendChild(label);
+        section.appendChild(document.createElement('br'));
+    });
+
+    return section;
+};
+
 
     // Clear any existing modifiers
     modifiersContainer.innerHTML = '';
@@ -114,41 +122,51 @@ function applyModifiers() {
     if (!selectedWeapon) return;
 
     // Get the base stats from the selected weapon
-    let baseDamage = selectedWeapon.damage;
+    let baseDamage = selectedWeapon.damage * selectedWeapon.damage_multiplier;
     let baseRpm = selectedWeapon.rpm;
     let baseReloadTime = selectedWeapon.reload_time;
 
     // Initialize the modifier objects
-    let damageModifier = {additive: 0, multiplicative: 1, flat: 0};
-    let rpmModifier = {additive: 0, multiplicative: 1};
-    let reloadTimeModifier = {additive: 0, multiplicative: 1};
+    let damageModifier = { additive: 0, multiplicative: 1 };
+    let rpmModifier = { additive: 0, multiplicative: 1 };
+    let reloadTimeModifier = { additive: 0, multiplicative: 1 };
 
     // Collect checked modifier values
     document.querySelectorAll('#modifiers input:checked').forEach(mod => {
         const modType = mod.dataset.type;
         const modValue = parseFloat(mod.value);
-        // Apply damage modifiers
-        if (mod.id.includes('damage')) {
-            if (modType === 'multiplicative') damageModifier.multiplicative *= modValue;  // Multiplicative
-            else if (modType === 'additive') damageModifier.additive += modValue;       // Additive
-        }
 
-        // Apply RPM modifiers
-        if (mod.id.includes('rpm')) {
-            if (modType === 'multiplicative') rpmModifier.multiplicative *= modValue;
-            else if (modType === 'additive') rpmModifier.additive += modValue;
-        }
+        // Handle multi-buff modifiers (like Bloxy Cola or Firefight)
+        if (mod.dataset.buffs) {
+            const buffs = JSON.parse(mod.dataset.buffs);  // Parse buffs data from the data-buffs attribute
+            buffs.forEach(buff => {
+                // Apply each buff
+                applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier);
+            });
+        } else {
+            // Handle single-buff modifiers
+            const singleBuff = {
+                type: modType === 'multiplicative' ? 'multiplicative' : 'additive',  // Use the proper modifier type
+                buffType: modType,
+                value: modValue
+            };
 
-        // Apply Reload Time modifiers
-        if (mod.id.includes('reloadTime')) {
-            if (modType === 'multiplicative') reloadTimeModifier.multiplicative *= modValue;
-            else if (modType === 'additive') reloadTimeModifier.additive += modValue;
+            if (mod.id.includes('damage')) {
+                singleBuff.type = 'damage';  // This mod applies to damage
+            } else if (mod.id.includes('rpm')) {
+                singleBuff.type = 'rpm';  // This mod applies to RPM
+            } else if (mod.id.includes('reload')) {
+                singleBuff.type = 'reloadTime';  // This mod applies to reload time
+            }
+
+            // Apply the single buff
+            applyBuff(singleBuff, rpmModifier, reloadTimeModifier, damageModifier);
         }
     });
 
     // Apply the damage modifiers
-    let damage = baseDamage * damageModifier.multiplicative;  // First apply multiplicative modifiers// Then apply percentage-based additive modifiers
-    damage += damageModifier.additive;                            // Finally, add the flat additive modifier (e.g., HE Rounds)
+    let damage = baseDamage * damageModifier.multiplicative;  // First apply multiplicative modifiers
+    damage += damageModifier.additive;                        // Then apply percentage-based additive modifiers
 
     // Apply the RPM modifiers
     let rpm = baseRpm * rpmModifier.multiplicative;
@@ -163,6 +181,30 @@ function applyModifiers() {
 
     // Update the displayed weapon stats with the modified values
     updateModifiedWeaponStats(damage, rpm, reloadTime);
+}
+
+
+
+// Helper function to apply individual buffs
+function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null) {
+    const { type, buffType, value } = buff;
+
+    // Apply buffs based on type
+    if (type === 'rpm') {
+        if (buffType === 'multiplicative') rpmModifier.multiplicative *= value;
+        else if (buffType === 'additive') rpmModifier.additive += value;
+    }
+
+    if (type === 'reloadTime') {
+        if (buffType === 'multiplicative') reloadTimeModifier.multiplicative *= value;
+        else if (buffType === 'additive') reloadTimeModifier.additive += value;
+    }
+
+    // Apply damage buffs
+    if (type === 'damage' && damageModifier) {
+        if (buffType === 'multiplicative') damageModifier.multiplicative *= value;
+        else if (buffType === 'additive') damageModifier.additive += value;
+    }
 }
 
 // Function to calculate DPS and DPM with optional modifiers
