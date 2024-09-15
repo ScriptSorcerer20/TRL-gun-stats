@@ -220,4 +220,8 @@ nav {
         width: 100%;
     }
 
+    .suggestion-title {
+        font-size: 16px;
+    }
+
 }

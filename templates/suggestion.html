@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/static/img/TRL_Logo_Custom.jpg">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>About Us</title>
+    <title>Suggestion</title>
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
@@ -49,6 +49,22 @@
     </nav>
 </header>
 <body>
+    <main class="background-image">
+        <h1>Suggestion</h1>
+        <h3 class="suggestion-title"><b>Welcome to Suggestions!</b><br> We encourage you to share your ideas, improvments, or even fun comments with us, so we can develop this website further.</h3>
+         <form action="">
+            <label for="name">Pseudoname:</label>
+            <input type="text" id="name" name="name" placeholder="not required"><br><br>
 
+            <label for="rate">Rating:</label>
+            <input type="number" id="rate" name="rating" min="1" max="10" required><br><br>
+
+            <label for="text">Text:</label>
+            <textarea id="text" name="text" rows="4" cols="50" placeholder="Enter your comments here..." minlength="5" maxlength="250" required></textarea><br><br>
+
+            <input type="submit" value="Submit">
+             <input type="reset" value="Reset">
+         </form>
+    </main>
 </body>
 </html>
