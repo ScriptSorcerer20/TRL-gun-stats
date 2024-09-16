@@ -1,0 +1,238 @@
+{
+  "operatives": [
+    {
+      "id": "Classic-Guard",
+      "name": "Guard",
+      "buffs": [
+        {
+          "label": "[SMG] (+15% Damage)",
+          "type": "damage",
+          "value": 1.15,
+          "affectedWeapons": "SMG",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-Scout",
+      "name": "Scout",
+      "buffs": [
+        {
+          "label": "None",
+          "type": "damage",
+          "value": 1,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-RCU",
+      "name": "RCU",
+      "buffs": [
+        {
+          "label": "[SHOTGUN] +25% Damage",
+          "type": "damage",
+          "value": 1.25,
+          "affectedWeapons": "SHOTGUN",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-Viper",
+      "name": "Viper",
+      "buffs": [
+        {
+          "label": "None",
+          "type": "damage",
+          "value": 1,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-SD-Sergeant",
+      "name": "SD Sergeant",
+      "buffs": [
+        {
+          "label": "Max Corruption (+30% Damage)",
+          "type": "damage",
+          "value": 1.3,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-ISD",
+      "name": "ISD",
+      "buffs": [
+        {
+          "label": "[Chaos Insurgency] +50% Damage",
+          "type": "damage",
+          "value": 1.5,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-TRU",
+      "name": "TRU",
+      "buffs": [
+        {
+          "label": "None",
+          "type": "damage",
+          "value": 1,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-SD-Captain",
+      "name": "SD Captain",
+      "buffs": [
+        {
+          "label": "None",
+          "type": "damage",
+          "value": 1,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-Vanguard",
+      "name": "Vanguard",
+      "buffs": [
+        {
+          "label": "[Not LMG] Bad Experience (+25% Damage, +25% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "affectedWeapons": "NOT LMG",
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.75,
+              "affectedWeapons": "NOT LMG",
+              "buffType": "multiplicative"
+            }
+          ]
+        },
+        {
+          "label": "[LMG] LMG User (+35% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.35,
+              "affectedWeapons": "LMG",
+              "buffType": "multiplicative"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Classic-Demolitionist",
+      "name": "Demolitionist",
+      "buffs": [
+        {
+          "label": "None",
+          "type": "damage",
+          "value": 1,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-Juggernaut",
+      "name": "Juggernaut",
+      "buffs": [
+        {
+          "label": "Hold the Line (+90% Damage)",
+          "type": "damage",
+          "value": 1.9,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-Mercenary",
+      "name": "Mercenary",
+      "buffs": [
+        {
+          "label": "All Upgrades (+25% Damage, +15% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "affectedWeapons": "",
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.85,
+              "affectedWeapons": "",
+              "buffType": "multiplicative"
+            }
+          ]
+        },
+        {
+          "label": "MCD Sandevistan (+?% Damage",
+          "type": "damage",
+          "value": 1.5,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-CRT",
+      "name": "CRT",
+      "buffs": [
+        {
+          "label": "None",
+          "type": "damage",
+          "value": 1,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    },
+    {
+      "id": "Classic-Anarchist",
+      "name": "Anarchist",
+      "buffs": [
+        {
+          "label": "Last Stand (+150% Damage)",
+          "type": "damage",
+          "value": 2.5,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        },
+        {
+          "label": "World On Fire (+150% Damage)",
+          "type": "damage",
+          "value": 2.5,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        },
+        {
+          "label": "Adrenaline (+30% Damage)",
+          "type": "damage",
+          "value": 2.5,
+          "affectedWeapons": "",
+          "buffType": "multiplicative"
+        }
+      ]
+    }
+  ]
+}
