@@ -36,7 +36,7 @@ function populateOperatives(operatives) {
 
 // Function to fetch weapons data from JSON
 function fetchWeaponsData() {
-    fetch('static/data.json')  // Adjust the path to the actual location of your JSON file
+    fetch('static/json/data.json')  // Adjust the path to the actual location of your JSON file
         .then(response => response.json())
         .then(data => {
             weapons = data;  // Store the fetched data in the global 'weapons' variable
@@ -90,7 +90,7 @@ function updateWeaponStats(weapon) {
 
 // Function to fetch and populate modifiers from the JSON file
 function fetchModifiers() {
-    fetch('static/modifiers.json')  // Adjust the path to your JSON file
+    fetch('static/json/modifiers.json')  // Adjust the path to your JSON file
         .then(response => response.json())
         .then(data => {
             populateModifiers(data);

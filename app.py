@@ -4,7 +4,7 @@ import json
 app = Flask(__name__)
 
 # Load the data from the JSON file
-with open('static/data.json') as f:
+with open('static/json/data.json') as f:
     guns = json.load(f)
 
 
