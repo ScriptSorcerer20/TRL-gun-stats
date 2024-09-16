@@ -1,5 +1,38 @@
 let selectedWeapon = null;  // Store the selected weapon's data
 let weapons = [];  // This will be populated by the fetched JSON data
+let selectedOperative = null;  // Store the selected operative's data
+
+// Function to fetch operatives data from JSON
+function fetchOperativesData() {
+    fetch('static/operative.json')  // Adjust the path to the actual location of your JSON file
+        .then(response => response.json())
+        .then(data => {
+            populateOperatives(data.operatives);  // Populate the operative dropdown once data is loaded
+        })
+        .catch(error => console.error('Error fetching operatives data:', error));
+}
+
+// Function to populate the select element with operatives
+function populateOperatives(operatives) {
+    const select = document.getElementById('operative-select');
+    select.innerHTML = ""; // Clear any existing options
+
+    operatives.forEach(operative => {
+        const option = document.createElement('option');
+        option.value = operative.id;
+        option.text = operative.name;
+        select.appendChild(option);
+    });
+
+    // Attach event listener to detect when an operative is selected
+    select.addEventListener('change', (event) => {
+        const selectedOperativeId = event.target.value;
+        selectedOperative = operatives.find(op => op.id === selectedOperativeId);
+        if (selectedOperative) {
+            updateOperativeBuffs(selectedOperative)
+        }
+    });
+}
 
 // Function to fetch weapons data from JSON
 function fetchWeaponsData() {
@@ -70,33 +103,33 @@ function populateModifiers(modifiers) {
     const modifiersContainer = document.getElementById('modifiers');
 
     const createModifierSection = (title, modifierList) => {
-    const section = document.createElement('div');
-    const header = document.createElement('h3');
-    header.textContent = title;
-    section.appendChild(header);
+        const section = document.createElement('div');
+        const header = document.createElement('h3');
+        header.textContent = title;
+        section.appendChild(header);
 
-    modifierList.forEach(mod => {
-        const label = document.createElement('label');
-        const input = document.createElement('input');
-        input.type = 'checkbox';
-        input.id = mod.id;
+        modifierList.forEach(mod => {
+            const label = document.createElement('label');
+            const input = document.createElement('input');
+            input.type = 'checkbox';
+            input.id = mod.id;
 
-        // Check if the modifier has multiple buffs
-        if (mod.buffs) {
-            input.dataset.buffs = JSON.stringify(mod.buffs);  // Store buffs data as a string in data-buffs
-        } else {
-            input.value = mod.value;
-            input.dataset.type = mod.type;  // Store if it's additive or multiplicative
-        }
+            // Check if the modifier has multiple buffs
+            if (mod.buffs) {
+                input.dataset.buffs = JSON.stringify(mod.buffs);  // Store buffs data as a string in data-buffs
+            } else {
+                input.value = mod.value;
+                input.dataset.type = mod.type;  // Store if it's additive or multiplicative
+            }
 
-        label.appendChild(input);
-        label.appendChild(document.createTextNode(mod.label));
-        section.appendChild(label);
-        section.appendChild(document.createElement('br'));
-    });
+            label.appendChild(input);
+            label.appendChild(document.createTextNode(mod.label));
+            section.appendChild(label);
+            section.appendChild(document.createElement('br'));
+        });
 
-    return section;
-};
+        return section;
+    };
 
 
     // Clear any existing modifiers
@@ -127,9 +160,9 @@ function applyModifiers() {
     let baseReloadTime = selectedWeapon.reload_time;
 
     // Initialize the modifier objects
-    let damageModifier = { additive: 0, multiplicative: 1 };
-    let rpmModifier = { additive: 0, multiplicative: 1 };
-    let reloadTimeModifier = { additive: 0, multiplicative: 1 };
+    let damageModifier = {additive: 0, multiplicative: 1};
+    let rpmModifier = {additive: 0, multiplicative: 1};
+    let reloadTimeModifier = {additive: 0, multiplicative: 1};
 
     // Collect checked modifier values
     document.querySelectorAll('#modifiers input:checked').forEach(mod => {
@@ -184,10 +217,9 @@ function applyModifiers() {
 }
 
 
-
 // Helper function to apply individual buffs
 function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null) {
-    const { type, buffType, value } = buff;
+    const {type, buffType, value} = buff;
 
     // Apply buffs based on type
     if (type === 'rpm') {
@@ -236,3 +268,4 @@ function updateModifiedWeaponStats(damage, rpm, reloadTime) {
 // Call the fetch function to load the data and populate the dropdown on page load
 fetchWeaponsData();
 fetchModifiers();
+fetchOperativesData()
