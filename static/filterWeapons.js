@@ -4,7 +4,7 @@ let selectedOperative = null;  // Store the selected operative's data
 
 // Function to fetch operatives data from JSON
 function fetchOperativesData() {
-    fetch('static/operative.json')  // Adjust the path to the actual location of your JSON file
+    fetch('static/json/operative.json')  // Adjust the path to the actual location of your JSON file
         .then(response => response.json())
         .then(data => {
             populateOperatives(data.operatives);  // Populate the operative dropdown once data is loaded
