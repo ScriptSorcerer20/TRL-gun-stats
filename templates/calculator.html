@@ -59,14 +59,20 @@
         <!-- Weapon options will be populated here dynamically -->
     </select>
 
-    <!-- Weapon Stats will be displayed here -->
-    <div id="weapon-stats"></div>
+    <!-- Operative Select Dropdown -->
+    <label for="operative-select">Pick an Operative</label>
+    <select id="operative-select">
+        <option value="">Select an operative</option>
+    </select>
 
-    <!-- Calculated DPS/DPM results will be shown here -->
+
+    <!-- Weapon Stats Display -->
+    <div id="weapon-stats"></div>
     <div id="calculated-stats"></div>
 
-    <!-- Modifier Checkboxes -->
+    <!-- Modifiers Display -->
     <div id="modifiers"></div>
+
 
     <script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>
 </main>
