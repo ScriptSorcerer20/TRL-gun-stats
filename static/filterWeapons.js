@@ -168,7 +168,6 @@ function populateModifiers(modifiers) {
         return section;
     };
 
-
     // Clear any existing modifiers
     modifiersContainer.innerHTML = '';
 
@@ -197,45 +196,51 @@ function applyModifiers() {
     let baseReloadTime = selectedWeapon.reload_time;
 
     // Modifiers initialization
-    let damageModifier = { additive: 0, multiplicative: 1 };
-    let rpmModifier = { additive: 0, multiplicative: 1 };
-    let reloadTimeModifier = { additive: 0, multiplicative: 1 };
+    let damageModifier = {additive: 0, multiplicative: 1};
+    let rpmModifier = {additive: 0, multiplicative: 1};
+    let reloadTimeModifier = {additive: 0, multiplicative: 1};
 
     // Function to process individual modifiers
-    const processModifier = (mod, rpmModifier, reloadTimeModifier, damageModifier) => {
-        // Handle multi-buff modifiers
+    const processModifier = (mod) => {
+        const modType = mod.dataset.type;
+        const modValue = parseFloat(mod.value);
         if (mod.dataset.buffs) {
-            const buffs = JSON.parse(mod.dataset.buffs);
+            const buffs = JSON.parse(mod.dataset.buffs);  // Parse buffs data from the data-buffs attribute
             buffs.forEach(buff => {
+                // Apply each buff
                 applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier);
             });
         } else {
-            // Single buff modifier
             const singleBuff = {
-                type: mod.dataset.type === 'multiplicative' ? 'multiplicative' : 'additive',
-                value: parseFloat(mod.value)
+                type: modType === 'multiplicative' ? 'multiplicative' : 'additive',  // Use the proper modifier type
+                buffType: modType,
+                value: modValue
             };
 
-            // Apply the single buff depending on its stat
-            if (mod.id.includes('damage')) applyBuff({ stat: 'damage', ...singleBuff }, rpmModifier, reloadTimeModifier, damageModifier);
-            if (mod.id.includes('rpm')) applyBuff({ stat: 'rpm', ...singleBuff }, rpmModifier, reloadTimeModifier, damageModifier);
-            if (mod.id.includes('reload')) applyBuff({ stat: 'reloadTime', ...singleBuff }, rpmModifier, reloadTimeModifier, damageModifier);
+            if (mod.id.includes('damage')) {
+                singleBuff.type = 'damage';  // This mod applies to damage
+            } else if (mod.id.includes('rpm')) {
+                singleBuff.type = 'rpm';  // This mod applies to RPM
+            } else if (mod.id.includes('reload')) {
+                singleBuff.type = 'reloadTime';  // This mod applies to reload time
+            }
+            applyBuff(singleBuff, rpmModifier, reloadTimeModifier, damageModifier);
         }
     };
 
-    // Process global modifiers
+// Process global modifiers
     document.querySelectorAll('#modifiers input:checked').forEach(mod => {
-        processModifier(mod, rpmModifier, reloadTimeModifier, damageModifier);
+        processModifier(mod);
     });
 
-    // Process operative-specific modifiers
+// Process operative-specific modifiers
     if (selectedOperative) {
         document.querySelectorAll('#operative-modifiers input:checked').forEach(mod => {
-            processModifier(mod, rpmModifier, reloadTimeModifier, damageModifier);
+            processModifier(mod);
         });
     }
 
-    // Recalculate with applied modifiers
+// Recalculate with applied modifiers
     let damage = baseDamage * damageModifier.multiplicative;
     damage += damageModifier.additive;
 
@@ -250,26 +255,25 @@ function applyModifiers() {
 }
 
 
-
 // Helper function to apply individual buffs
 function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null) {
-    const {stat, type, value} = buff;
+    const {type, buffType, value} = buff;
 
     // Apply buffs based on the stat being modified
-    if (stat === 'rpm') {
-        if (type === 'multiplicative') rpmModifier.multiplicative *= value;
-        else if (type === 'additive') rpmModifier.additive += value;
+    if (type === 'rpm') {
+        if (buffType === 'multiplicative') rpmModifier.multiplicative *= value;
+        else if (buffType === 'additive') rpmModifier.additive += value;
     }
 
-    if (stat === 'reloadTime') {
-        if (type === 'multiplicative') reloadTimeModifier.multiplicative *= value;
-        else if (type === 'additive') reloadTimeModifier.additive += value;
+    if (type === 'reloadTime') {
+        if (buffType === 'multiplicative') reloadTimeModifier.multiplicative *= value;
+        else if (buffType === 'additive') reloadTimeModifier.additive += value;
     }
 
     // Apply damage buffs
-    if (stat === 'damage' && damageModifier) {
-        if (type === 'multiplicative') damageModifier.multiplicative *= value;
-        else if (type === 'additive') damageModifier.additive += value;
+    if (type === 'damage' && damageModifier) {
+        if (buffType === 'multiplicative') damageModifier.multiplicative *= value;
+        else if (buffType === 'additive') damageModifier.additive += value;
     }
 }
 
