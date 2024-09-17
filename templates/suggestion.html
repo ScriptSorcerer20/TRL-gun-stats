@@ -63,34 +63,11 @@
             <textarea id="text" name="text" rows="4" cols="50" placeholder="Enter your comments here..." minlength="5" maxlength="500" required></textarea><br><br>
         </article>
         <button class="button1" type="button" onclick="sendMessage()">Send</button>
+
+        <!-- Success message (initially hidden) -->
+        <p id="successMessage" style="display: none; color: green;"></p>
     </main>
-    <script>
-    function sendMessage() {
-        const request = new XMLHttpRequest();
-        request.open("POST", "https://discord.com/api/webhooks/1284936894890901649/Zi-2ZV12L1v1OSBoM-DluE1V1LECXilrNNRZYJcxelnwO7rGgXNH47dxvfFEOK7Fe9_J");
-
-        request.setRequestHeader('Content-type', 'application/json');
-
-        // Get the values from the input fields
-        const pseudoname = document.getElementById("name").value || "Anonymous";
-        const rating = document.getElementById("rate").value;
-        const comment = document.getElementById("text").value;
-
-        // Create the content to send to the Discord webhook
-        const content = `**Pseudoname:** ${pseudoname}\n**Rating:** ${rating}\n**Comment:**\n${comment}`;
-
-        // Debugging information
-        console.log('Sending message with content:', content);
-
-        // Send the message payload to the Discord webhook
-        const params = {
-            username: pseudoname,  // Pseudoname will appear as the username
-            content: content       // The combined content (pseudoname, rating, and comment)
-        };
-
-        request.send(JSON.stringify(params));
-    }
-</script>
+    <script src="{{ url_for('static', filename='suggestion.js') }}"></script>
 
 </body>
 </html>
