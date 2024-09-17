@@ -237,6 +237,106 @@
           "value": 1.3,
           "type": "multiplicative",
           "appliesTo": ""
+        },
+        {
+          "id": "private-mastery-damage-perk",
+          "label": "Mastery (+32% Damage)",
+          "value": 1.32,
+          "type": "multiplicative",
+          "appliesTo": "WW2"
+        }
+      ]
+    },
+    {
+      "id": "Special-Delta",
+      "name": "Delta",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "weakpoints-damage-perk",
+          "label": "Weakpoints (+50% Damage)",
+          "value": 1.5,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "mastery-resurrection-damage-perk",
+          "label": "Resurrection (+100% Damage)",
+          "value": 2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Special-Engineer",
+      "name": "Engineer",
+      "category": "Special",
+      "modifiers": []
+    },
+    {
+      "id": "Special-Hunter",
+      "name": "Hunter",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "camper-damage-perk",
+          "label": "Camper (+25% Damage)",
+          "value": 1.25,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "detect-damage-perk",
+          "label": "Detect (+25% Damage)",
+          "value": 1.25,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "reaper-ammunition-damage-perk",
+          "label": "Reaper ammunition (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Special-Agent-X",
+      "name": "Agent X",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "agent-training-rifle-damage-perk",
+          "label": "Agent training [RIFLE] (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "agent-training-smg-damage-perk",
+          "label": "Agent training [SMG] (+25% Damage, 30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
+        },
+        {
+          "id": "sandevistan-damage-perk",
+          "label": "Sandevistan (+75% Damage)",
+          "value": 1.75,
+          "type": "multiplicative",
+          "appliesTo": ""
         }
       ]
     }
