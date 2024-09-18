@@ -55,7 +55,16 @@
     {
       "id": "Classic-ISD",
       "name": "ISD",
-      "category": "Classic"
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "chaos-insurgency-damage-perk",
+          "label": "Chaos Insurgency (+50% Damage)",
+          "value": 1.50,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
     },
     {
       "id": "Classic-TRU",
@@ -94,7 +103,7 @@
           "label": "LMG User (+35% Damage)",
           "value": 1.35,
           "type": "multiplicative",
-          "appliesNotTo": "LMG"
+          "appliesTo": "LMG"
         }
       ]
     },
@@ -125,13 +134,23 @@
         {
           "id": "all-upgrades-damage-perk",
           "label": "All Upgrades (+25% Damage, +15% Reload Speed)",
-          "value": 1.25,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.85,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         },
         {
           "id": "mcd-sandevistan-damage-perk",
-          "label": "All Upgrades (+75% Damage)",
+          "label": "MCD Sandevistan (+75% Damage)",
           "value": 1.75,
           "type": "multiplicative",
           "appliesTo": ""
@@ -213,8 +232,18 @@
         {
           "id": "rrt-mastery-damage-rpm-perk",
           "label": "Mastery (+25% Firerate, +25% Damage)",
-          "value": 1.25,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         }
       ]
@@ -234,8 +263,18 @@
         {
           "id": "adrenaline-damage-reload-perk",
           "label": "Adrenaline (+30% Damage, +40% Reload Speed)",
-          "value": 1.3,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.30,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.6,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         },
         {

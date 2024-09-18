@@ -51,9 +51,10 @@ function updateOperativeBuffs(operative) {
             input.id = mod.id;
             input.value = mod.value;
             input.dataset.type = mod.type;
+            input.dataset.buffs = mod.buffs ? JSON.stringify(mod.buffs) : '';  // Store buffs if available
 
-            // Automatically check the box if you want it enabled by default
-            input.checked = true;
+            // Set checkbox to be unchecked by default
+            input.checked = false;
 
             label.appendChild(input);
             label.appendChild(document.createTextNode(mod.label));
@@ -200,47 +201,97 @@ function applyModifiers() {
     let rpmModifier = {additive: 0, multiplicative: 1};
     let reloadTimeModifier = {additive: 0, multiplicative: 1};
 
-    // Function to process individual modifiers
+    // Function to process global modifiers
     const processModifier = (mod) => {
-        const modType = mod.dataset.type;
-        const modValue = parseFloat(mod.value);
+        if (mod.appliesNotTo && mod.appliesNotTo === selectedWeapon.guntype) {
+            return; // Skip this modifier
+        }
+        if (mod.appliesTo && mod.appliesTo !== selectedWeapon.guntype) {
+            return; // Skip this modifier
+        }
+
+        // Handle modifiers with multiple buffs
         if (mod.dataset.buffs) {
-            const buffs = JSON.parse(mod.dataset.buffs);  // Parse buffs data from the data-buffs attribute
+            const buffs = JSON.parse(mod.dataset.buffs);
             buffs.forEach(buff => {
-                // Apply each buff
                 applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier);
             });
         } else {
+            const modType = mod.dataset.type;
+            const modValue = parseFloat(mod.value);
+
             const singleBuff = {
-                type: modType === 'multiplicative' ? 'multiplicative' : 'additive',  // Use the proper modifier type
+                type: modType === 'multiplicative' ? 'multiplicative' : 'additive',
                 buffType: modType,
                 value: modValue
             };
 
             if (mod.id.includes('damage')) {
-                singleBuff.type = 'damage';  // This mod applies to damage
+                singleBuff.type = 'damage';
             } else if (mod.id.includes('rpm')) {
-                singleBuff.type = 'rpm';  // This mod applies to RPM
+                singleBuff.type = 'rpm';
             } else if (mod.id.includes('reload')) {
-                singleBuff.type = 'reloadTime';  // This mod applies to reload time
+                singleBuff.type = 'reloadTime';
             }
             applyBuff(singleBuff, rpmModifier, reloadTimeModifier, damageModifier);
         }
     };
 
-// Process global modifiers
+    // Function to process operative-based modifiers
+    const processOperativeModifier = (mod) => {
+        if (mod.appliesNotTo && mod.appliesNotTo === selectedWeapon.guntype) {
+            return; // Skip this modifier for this weapon type
+        }
+        if (mod.appliesTo && mod.appliesTo !== selectedWeapon.guntype) {
+            return; // Skip if the modifier does not apply to this weapon type
+        }
+
+        // Handle operative modifiers with multiple buffs
+        if (mod.buffs) {
+            mod.buffs.forEach(buff => {
+                applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier);
+            });
+        } else {
+            const modValue = parseFloat(mod.value);
+            const modType = mod.type || 'additive';
+
+            const singleBuff = {
+                type: mod.id.includes('damage') ? 'damage' : mod.id.includes('rpm') ? 'rpm' : 'reloadTime',
+                buffType: modType === 'multiplicative' ? 'multiplicative' : 'additive',
+                value: modValue
+            };
+
+            applyBuff(singleBuff, rpmModifier, reloadTimeModifier, damageModifier);
+        }
+    };
+
+    // Clear out listeners and avoid re-adding
+    const modifiersContainer = document.getElementById('modifiers');
+    modifiersContainer.removeEventListener('change', applyModifiers);
+
+    // Process global modifiers
     document.querySelectorAll('#modifiers input:checked').forEach(mod => {
         processModifier(mod);
     });
 
-// Process operative-specific modifiers
-    if (selectedOperative) {
-        document.querySelectorAll('#operative-modifiers input:checked').forEach(mod => {
-            processModifier(mod);
-        });
-    }
 
-// Recalculate with applied modifiers
+    // Re-apply listener after change
+    modifiersContainer.addEventListener('change', applyModifiers);
+
+    // Process operative-specific modifiers
+    // Process operative-specific modifiers that are checked
+    const operativeSection = document.getElementById('operative-modifiers');
+    operativeSection.querySelectorAll('input:checked').forEach(mod => {
+        if (selectedOperative && selectedOperative.modifiers) {
+            const modObj = selectedOperative.modifiers.find(m => m.id === mod.id);
+            if (modObj) {
+                processOperativeModifier(modObj);
+            }
+        }
+    });
+
+
+    // Recalculate with applied modifiers
     let damage = baseDamage * damageModifier.multiplicative;
     damage += damageModifier.additive;
 
@@ -254,8 +305,7 @@ function applyModifiers() {
     updateModifiedWeaponStats(damage, rpm, reloadTime);
 }
 
-
-// Helper function to apply individual buffs
+// Function to apply individual buffs (simplified to avoid mistakes)
 function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null) {
     const {type, buffType, value} = buff;
 
