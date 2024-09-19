@@ -120,6 +120,16 @@
     "guntype": "SHOTGUN"
   },
   {
+    "id": 87,
+    "name": "R870-B",
+    "damage": 92,
+    "damage_multiplier": 6,
+    "rpm": 70,
+    "mag_size": 12,
+    "reload_time": 12,
+    "guntype": "R870-B"
+  },
+  {
     "id": 14,
     "name": "Scattergun",
     "damage": 58,

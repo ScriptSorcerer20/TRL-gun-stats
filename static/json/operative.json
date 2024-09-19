@@ -761,7 +761,7 @@
         },
         {
           "id": "uiu-detective-secondaries-boost",
-          "label": "Moral Boost (+50% Damage)",
+          "label": "Secondaries Boost (+50% Damage)",
           "value": 1.5,
           "type": "multiplicative",
           "appliesTo": "SECONDARY"
@@ -818,7 +818,7 @@
         },
         {
           "id": "anger-issues-damage-perk",
-          "label": "Agression bar (+20% Firerate, +20% Reload Speed)",
+          "label": "Aggression bar (+20% Firerate, +20% Reload Speed)",
           "buffs": [
             {
               "type": "rpm",
@@ -852,11 +852,11 @@
         },
         {
           "id": "bulldozer-time-damage-perk",
-          "label": "Bulldozer Time Ability (+50% Reload Speed, 50% RPM)",
+          "label": "Bulldozer Time Ability (2x Firerate, 2x Reload Speed)",
           "buffs": [
             {
               "type": "rpm",
-              "value": 1.5,
+              "value": 2,
               "buffType": "multiplicative"
             },
             {
