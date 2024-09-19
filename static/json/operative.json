@@ -767,6 +767,114 @@
           "appliesTo": "SECONDARY"
         }
       ]
+    },
+    {
+      "id": "UIU-Bulldozer",
+      "name": "UIU Bulldozer",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "shotgun-specialist-damage-perk",
+          "label": "Shotgun Specialist (+30% Damage)",
+          "value": 1.30,
+          "type": "multiplicative",
+          "appliesTo": "SHOTGUNS"
+        },
+        {
+          "id": "goc-experience-damage-perk",
+          "label": "GOC Experience (+20% Damage)",
+          "value": 1.2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "double-reload-reload-perk",
+          "label": "Double Reload [SHOTGUN] (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SHOTGUN"
+        },
+        {
+          "id": "buckshot--damage-rpm-perk",
+          "label": "Buckshot Bullet-type [R870-B] (+20% Firerate, +15% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.15,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.20,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "R870-B"
+        },
+        {
+          "id": "anger-issues-damage-perk",
+          "label": "Agression bar (+20% Firerate, +20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "deadly-rush-damage-perk",
+          "label": "Deadly Rush Ability (+20% Damage, 25% RPM)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "bulldozer-time-damage-perk",
+          "label": "Bulldozer Time Ability (+50% Reload Speed, 50% RPM)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "mastery-damage-perk",
+          "label": "Mastery (+20% Reload Speed)",
+          "value": 0.8,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
     }
   ]
 }
