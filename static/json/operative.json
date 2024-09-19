@@ -414,8 +414,8 @@
           "appliesTo": ""
         },
         {
-          "id": "front-runner-damage-perk",
-          "label": "Front Runner (+?% Damage)",
+          "id": "SMG-Pro-reload-perk",
+          "label": "SMG Pro (+100% Reload Speed)",
           "buffs": [
             {
               "type": "reloadTime",
@@ -725,6 +725,25 @@
           "value": 1.2,
           "type": "multiplicative",
           "appliesTo": ""
+        },
+        {
+          "id": "uiu-elite-master-teamwork",
+          "label": "Moral Boost (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "uiu-elite-reload-perk",
+          "label": "Mastery (+30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": "RIFLE"
         }
       ]
     }
