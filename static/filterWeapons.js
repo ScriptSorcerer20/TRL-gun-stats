@@ -14,9 +14,16 @@ function fetchOperativesData() {
 }
 
 // Function to populate the select element with operatives
+// Function to populate the operative dropdown
 function populateOperatives(operatives) {
     const select = document.getElementById('operative-select');
     select.innerHTML = ""; // Clear any existing options
+
+    // Add the placeholder option
+    const placeholderOption = document.createElement('option');
+    placeholderOption.value = "";  // Empty value for the placeholder
+    placeholderOption.text = "Select an operative";
+    select.appendChild(placeholderOption);  // Add the placeholder option
 
     operatives.forEach(operative => {
         const option = document.createElement('option');
@@ -28,9 +35,16 @@ function populateOperatives(operatives) {
     // Attach event listener to detect when an operative is selected
     select.addEventListener('change', (event) => {
         const selectedOperativeId = event.target.value;
+
+        // If placeholder is selected, don't proceed
+        if (!selectedOperativeId) {
+            document.getElementById('operative-modifiers').innerHTML = '';
+            return;  // Do nothing when the placeholder is selected
+        }
+
         selectedOperative = operatives.find(op => op.id === selectedOperativeId);
         if (selectedOperative) {
-            updateOperativeBuffs(selectedOperative)
+            updateOperativeBuffs(selectedOperative);  // Update operative modifiers on valid selection
         }
     });
 }
@@ -83,10 +97,18 @@ function fetchWeaponsData() {
 }
 
 // Function to populate the select element with weapons
+// Function to populate the weapon dropdown
 function populateWeapons() {
     const select = document.getElementById('weapon-select');
     select.innerHTML = ""; // Clear any existing options
 
+    // Add the placeholder option
+    const placeholderOption = document.createElement('option');
+    placeholderOption.value = "";  // Empty value for the placeholder
+    placeholderOption.text = "Select a Weapon";
+    select.appendChild(placeholderOption);  // Add the placeholder option
+
+    // Populate with actual weapons
     weapons.forEach(weapon => {
         const option = document.createElement('option');
         option.value = weapon.id;
@@ -97,9 +119,16 @@ function populateWeapons() {
     // Attach event listener to detect when a weapon is selected
     select.addEventListener('change', (event) => {
         const selectedWeaponId = parseInt(event.target.value);
+
+        // If placeholder is selected, don't proceed
+        if (!selectedWeaponId) {
+            document.getElementById('weapon-stats').innerHTML = '';
+            return;  // Do nothing when the placeholder is selected
+        }
+
         selectedWeapon = weapons.find(weapon => weapon.id === selectedWeaponId);
         if (selectedWeapon) {
-            updateWeaponStats(selectedWeapon);  // Update stats on selection
+            updateWeaponStats(selectedWeapon);  // Update stats on valid selection
         }
     });
 }

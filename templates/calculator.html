@@ -27,11 +27,11 @@
             }
         }
 
-            // Collapsible functionality for perks, buffs, etc.
+        // Collapsible functionality for perks, buffs, etc.
         document.addEventListener('DOMContentLoaded', function () {
             var coll = document.getElementsByClassName("collapsible-header");
             for (var i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function() {
+                coll[i].addEventListener("click", function () {
                     this.classList.toggle("active");
                     var content = this.nextElementSibling;
                     if (content.style.display === "block") {
@@ -72,13 +72,12 @@
 <main>
     <label for="weapon-select">Choose a weapon:</label>
     <select id="weapon-select" name="weapons">
-        <!-- Weapon options will be populated here dynamically -->
+        <option value="">Select a Weapon</option> <!-- This is the placeholder option -->
     </select>
 
-    <!-- Operative Select Dropdown -->
     <label for="operative-select">Pick an Operative</label>
     <select id="operative-select">
-        <option value="">Select an operative</option>
+        <option value="">Select an operative</option> <!-- This is the placeholder option -->
     </select>
 
 
