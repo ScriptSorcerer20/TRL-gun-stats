@@ -320,10 +320,10 @@
       "modifiers": [
         {
           "id": "camper-damage-perk",
-          "label": "Camper (+25% Damage)",
+          "label": "Camper [SEMI-AUTO] (+25% Damage)",
           "value": 1.25,
           "type": "multiplicative",
-          "appliesTo": ""
+          "appliesTo": "SEMI-AUTO"
         },
         {
           "id": "detect-damage-perk",
@@ -422,7 +422,7 @@
               "value": 0,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": "SMG"
         },
         {
@@ -434,7 +434,7 @@
         }
       ]
     },
-        {
+    {
       "id": "Special-High-Roller",
       "name": "High Roller",
       "category": "Special",
@@ -479,7 +479,7 @@
               "value": 0.8,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": ""
         },
         {
@@ -503,7 +503,7 @@
               "value": 1.2,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": ""
         },
         {
@@ -515,7 +515,7 @@
               "value": 1.20,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": ""
         },
         {
@@ -527,7 +527,7 @@
               "value": 1.25,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": "RIFLE"
         },
         {
@@ -539,7 +539,7 @@
               "value": 1.25,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": "LMG"
         },
         {
@@ -551,7 +551,7 @@
               "value": 1.25,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": "SHOTGUN"
         },
         {
@@ -563,7 +563,7 @@
               "value": 1.25,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": "SMG"
         },
         {
@@ -575,7 +575,7 @@
               "value": 1.25,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": "SEMI-AUTO"
         }
       ]
@@ -742,8 +742,29 @@
               "value": 0.7,
               "buffType": "multiplicative"
             }
-            ],
+          ],
           "appliesTo": "RIFLE"
+        }
+      ]
+    },
+    {
+      "id": "UIU-Detective",
+      "name": "UIU Detective",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-detective-sense",
+          "label": "Sense (+100% Damage)",
+          "value": 2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "uiu-detective-secondaries-boost",
+          "label": "Moral Boost (+50% Damage)",
+          "value": 1.5,
+          "type": "multiplicative",
+          "appliesTo": "SECONDARY"
         }
       ]
     }
