@@ -378,6 +378,334 @@
           "appliesTo": ""
         }
       ]
+    },
+    {
+      "id": "Special-Hacker",
+      "name": "Hacker",
+      "category": "Special"
+    },
+    {
+      "id": "Special-Accountant",
+      "name": "Accountant",
+      "category": "Special"
+    },
+    {
+      "id": "Special-Hogrider",
+      "name": "Hog Rider",
+      "category": "Special"
+    },
+    {
+      "id": "Special-IA",
+      "name": "Intelligence Agency",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "field-intelligence-damage-perk",
+          "label": "Field Intelligence (+20% Damage)",
+          "value": 1.2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "front-runner-damage-perk",
+          "label": "Front Runner (+?% Damage)",
+          "value": 1,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "front-runner-damage-perk",
+          "label": "Front Runner (+?% Damage)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": "SMG"
+        },
+        {
+          "id": "IA-smg-damage-perk",
+          "label": "SMG User (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "SMG"
+        }
+      ]
+    },
+        {
+      "id": "Special-High-Roller",
+      "name": "High Roller",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "lucky-shot-damage-perk",
+          "label": "Lucky Shot (+100% Damage)",
+          "value": 2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "risk-taker-damage-perk",
+          "label": "4 Experiments (+10% Damage, +10% Firerate)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.1,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.1,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "coinflip-damage-perk",
+          "label": "Coinflip (+20% Damage)",
+          "value": 1.20,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "coinflip-reload-perk",
+          "label": "Coinflip (+20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": ""
+        },
+        {
+          "id": "coinflip-damage-perk-2",
+          "label": "Coinflip (+100% Damage)",
+          "value": 2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "maxed-stat-roll-damage-perk",
+          "label": "Maxed Stat Roll (+20% Damage, +20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": ""
+        },
+        {
+          "id": "points-damage-perk",
+          "label": "6000 Points (+20% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.20,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": ""
+        },
+        {
+          "id": "light-armor-damage-perk",
+          "label": "Light Armor [RIFLE] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "heavy-armor-damage-perk",
+          "label": "Heavy Armor [LMG] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": "LMG"
+        },
+        {
+          "id": "fireproof-armor-damage-perk",
+          "label": "Fireproof Armor [SHOTGUN] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": "SHOTGUN"
+        },
+        {
+          "id": "hazmat-armor-damage-perk",
+          "label": "Hazmat Armor [SMG] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": "SMG"
+        },
+        {
+          "id": "no-armor-damage-perk",
+          "label": "Armorless [SEMI-AUTO] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+            ],
+          "appliesTo": "SEMI-AUTO"
+        }
+      ]
+    },
+    {
+      "id": "Special-Veteran",
+      "name": "Veteran",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "advanced-ammo-damage-perk",
+          "label": "Advanced Ammo (+8 Damage)",
+          "value": 8,
+          "type": "additive",
+          "appliesTo": ""
+        },
+        {
+          "id": "high-velocity-bullets-damage-perk",
+          "label": "High Velocity Bullets (+25% Damage)",
+          "value": 1.25,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "MTF-Epsilon-9",
+      "name": "Epsilon-9",
+      "category": "MTF"
+    },
+    {
+      "id": "MTF-Nu-7",
+      "name": "Nu-7",
+      "category": "MTF",
+      "modifiers": [
+        {
+          "id": "deadly-bullets-damage-perk",
+          "label": "Deadly Bullets (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "weapon-expert-reload-perk",
+          "label": "Weapon Expert (-1s Reload Time)",
+          "value": -1,
+          "type": "additive",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "MTF-Sigma-9",
+      "name": "Sigma-9",
+      "category": "MTF"
+    },
+    {
+      "id": "MTF-Beta-7",
+      "name": "Beta-7",
+      "category": "MTF"
+    },
+    {
+      "id": "MTF-Commander",
+      "name": "MTF Commander",
+      "category": "MTF",
+      "modifiers": [
+        {
+          "id": "advanced-ammo-damage-perk",
+          "label": "Advanced Ammo (+8 Damage)",
+          "value": 8,
+          "type": "additive",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Assault",
+      "name": "UIU Assault",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-assault-ar-user",
+          "label": "AR User [RIFLE] (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        }
+      ]
+    },
+    {
+      "id": "UIU-HRU",
+      "name": "UIU HRU",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-hru-full-metal-jacket",
+          "label": "Full Metal Jacket (+10% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "uiu-hru-skull-cracker",
+          "label": "Skull Cracker (+20% Damage)",
+          "value": 1.2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Marksman",
+      "name": "UIU Marksman",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "camper-damage-perk",
+          "label": "Camper (+25% Damage)",
+          "value": 1.25,
+          "type": "multiplicative",
+          "appliesTo": "SEMI-AUTO"
+        },
+        {
+          "id": "uiu-marksman-skull-cracker",
+          "label": "Skull Cracker (+20% Damage)",
+          "value": 1.2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
     }
   ]
 }
