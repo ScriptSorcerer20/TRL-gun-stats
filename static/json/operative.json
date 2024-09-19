@@ -657,10 +657,15 @@
       "category": "UIU",
       "modifiers": [
         {
-          "id": "uiu-assault-ar-user",
+          "id": "uiu-assault-ar-user-damage-perk",
           "label": "AR User [RIFLE] (+30% Damage)",
-          "value": 1.3,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": "RIFLE"
         }
       ]
@@ -671,17 +676,27 @@
       "category": "UIU",
       "modifiers": [
         {
-          "id": "uiu-hru-full-metal-jacket",
+          "id": "uiu-hru-full-metal-jacket-damage-perk",
           "label": "Full Metal Jacket (+10% Damage)",
-          "value": 1.3,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.1,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         },
         {
-          "id": "uiu-hru-skull-cracker",
+          "id": "uiu-hru-skull-cracker-damage-perk",
           "label": "Skull Cracker (+20% Damage)",
-          "value": 1.2,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         }
       ]
@@ -692,17 +707,27 @@
       "category": "UIU",
       "modifiers": [
         {
-          "id": "camper-damage-perk",
+          "id": "camper-damage-perk-damage-perk",
           "label": "Camper [SEMI-AUTO] (+25% Damage)",
-          "value": 1.25,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": "SEMI-AUTO"
         },
         {
-          "id": "uiu-marksman-skull-cracker",
+          "id": "uiu-marksman-skull-cracker-damage-perk",
           "label": "Skull Cracker (+20% Damage)",
-          "value": 1.2,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         }
       ]
@@ -713,24 +738,39 @@
       "category": "UIU",
       "modifiers": [
         {
-          "id": "uiu-elite-ar-user",
+          "id": "uiu-elite-ar-user-damage-perk",
           "label": "AR User [RIFLE] (+30% Damage)",
-          "value": 1.3,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": "RIFLE"
         },
         {
-          "id": "uiu-elite-moral-boost",
+          "id": "uiu-elite-moral-boost-damage-perk",
           "label": "Moral Boost (+20% Damage)",
-          "value": 1.2,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         },
         {
-          "id": "uiu-elite-master-teamwork",
+          "id": "uiu-elite-master-teamwork-damage-perk",
           "label": "Moral Boost (+30% Damage)",
-          "value": 1.3,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         },
         {
@@ -753,18 +793,40 @@
       "category": "UIU",
       "modifiers": [
         {
-          "id": "uiu-detective-sense",
+          "id": "uiu-detective-sense-damage-perk",
           "label": "Sense (+100% Damage)",
-          "value": 2,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 2,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         },
         {
-          "id": "uiu-detective-secondaries-boost",
+          "id": "uiu-detective-secondaries-boost-damage-perk",
           "label": "Secondaries Boost (+50% Damage)",
-          "value": 1.5,
-          "type": "multiplicative",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": "SECONDARY"
+        },
+        {
+          "id": "search-expert-reload-perk",
+          "label": "Search Expert (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
         }
       ]
     },
@@ -776,15 +838,25 @@
         {
           "id": "shotgun-specialist-damage-perk",
           "label": "Shotgun Specialist (+30% Damage)",
-          "value": 1.30,
-          "type": "multiplicative",
-          "appliesTo": "SHOTGUNS"
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SHOTGUN"
         },
         {
-          "id": "goc-experience-damage-perk",
-          "label": "GOC Experience (+20% Damage)",
-          "value": 1.2,
-          "type": "multiplicative",
+          "id": "cqc-experience-damage-perk",
+          "label": "CQC Experience (+20% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         },
         {
@@ -800,7 +872,7 @@
           "appliesTo": "SHOTGUN"
         },
         {
-          "id": "buckshot--damage-rpm-perk",
+          "id": "buckshot-damage-rpm-perk",
           "label": "Buckshot Bullet-type [R870-B] (+20% Firerate, +15% Damage)",
           "buffs": [
             {
@@ -870,9 +942,159 @@
         {
           "id": "mastery-damage-perk",
           "label": "Mastery (+20% Reload Speed)",
-          "value": 0.8,
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Cloaker",
+      "name": "UIU Cloaker",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-cloaker-ambusher-perk-damage-perk",
+          "label": "Ambusher (+50% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "quick-movements-reload-perk",
+          "label": "Quick Movements (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Captain",
+      "name": "UIU Captain",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "agent-training-rifle-damage-perk",
+          "label": "Agent training [RIFLE] (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "agent-training-smg-damage-perk",
+          "label": "Agent training [SMG] (+25% Damage, 30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
+        }
+      ]
+    },
+    {
+      "id": "UIU-MOOT",
+      "name": "UIU MOOT",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-moot-ar-user-damage-perk",
+          "label": "AR User [RIFLE] (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "uiu-moot-anchoring-ammunition-damage-perk",
+          "label": "Anchoring Ammunition (+40% Damage)",
+          "value": 1.4,
           "type": "multiplicative",
           "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Technician",
+      "name": "UIU Technician",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "agent-training-rifle-damage-perk",
+          "label": "Agent training [RIFLE] (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "agent-training-smg-damage-perk",
+          "label": "Agent training [SMG] (+25% Damage, 30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
+        }
+      ]
+    },
+    {
+      "id": "UIU-Oathbreaker",
+      "name": "UIU Oathbreaker",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "agent-training-rifle-damage-perk",
+          "label": "Agent training [RIFLE] (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "agent-training-smg-damage-perk",
+          "label": "Agent training [SMG] (+25% Damage, 30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
         }
       ]
     }

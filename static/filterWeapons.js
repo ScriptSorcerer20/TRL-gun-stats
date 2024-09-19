@@ -210,11 +210,6 @@ function applyModifiers() {
             return; // Skip this modifier
         }
 
-        // If modifier is operative-specific, ensure the selected operative matches the modifier category
-        if (mod.operatives && selectedOperative && mod.operatives !== selectedOperative.category) {
-            return; // Skip this modifier if it doesn't apply to the current operative's category
-        }
-
         // Handle modifiers with multiple buffs
         if (mod.dataset.buffs) {
             const buffs = JSON.parse(mod.dataset.buffs);
@@ -249,10 +244,6 @@ function applyModifiers() {
         }
         if (mod.appliesTo && mod.appliesTo !== selectedWeapon.guntype) {
             return; // Skip if the modifier does not apply to this weapon type
-        }
-
-        if (mod.operatives && selectedOperative && mod.operatives !== selectedOperative.category) {
-            return; // Skip this modifier if it doesn't apply to the current operative's category
         }
 
         // Handle operative modifiers with multiple buffs
