@@ -693,7 +693,7 @@
       "modifiers": [
         {
           "id": "camper-damage-perk",
-          "label": "Camper (+25% Damage)",
+          "label": "Camper [SEMI-AUTO] (+25% Damage)",
           "value": 1.25,
           "type": "multiplicative",
           "appliesTo": "SEMI-AUTO"
@@ -701,6 +701,27 @@
         {
           "id": "uiu-marksman-skull-cracker",
           "label": "Skull Cracker (+20% Damage)",
+          "value": 1.2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Elite",
+      "name": "UIU Elite",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-elite-ar-user",
+          "label": "AR User [RIFLE] (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "uiu-elite-moral-boost",
+          "label": "Moral Boost (+20% Damage)",
           "value": 1.2,
           "type": "multiplicative",
           "appliesTo": ""
