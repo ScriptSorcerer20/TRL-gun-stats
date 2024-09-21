@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const updatedGuns = data.map(gun => {
                 const original_damage = gun['damage'];
-                const rps = gun['rpm'] / 60;
-                const dps = original_damage * rps;
-                const reload_time_min = gun['reload_time'] / 60;
-                const dpm = (gun['mag_size'] * original_damage) / (reload_time_min + (gun['mag_size'] / gun['rpm']));
-                const avg_dps = dpm / 60;
                 const total_damage = original_damage * gun['damage_multiplier'];
+                const rps = gun['rpm'] / 60;
+                const dps = total_damage * rps;
+                const reload_time_min = gun['reload_time'] / 60;
+                const dpm = (gun['mag_size'] * total_damage) / (reload_time_min + (gun['mag_size'] / gun['rpm']));
+                const avg_dps = dpm / 60;
 
                 // Add the calculated stats to the gun object
                 return {
@@ -37,10 +37,9 @@ function populateTable(data) {
         row.insertCell(3).innerText = gun.rpm;
         row.insertCell(4).innerText = gun.mag_size;
         row.insertCell(5).innerText = gun.reload_time;
-        row.insertCell(6).innerText = gun.guntype;
-        row.insertCell(7).innerText = gun.rps.toFixed(2);
-        row.insertCell(8).innerText = gun.dps.toFixed(2);
-        row.insertCell(9).innerText = gun.dpm.toFixed(2);
-        row.insertCell(10).innerText = gun.avg_dps.toFixed(2);
+        row.insertCell(6).innerText = gun.rps.toFixed(2);
+        row.insertCell(7).innerText = gun.dps.toFixed(2);
+        row.insertCell(8).innerText = gun.dpm.toFixed(2);
+        row.insertCell(9).innerText = gun.avg_dps.toFixed(2);
     });
 }

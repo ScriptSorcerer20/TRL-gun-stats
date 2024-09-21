@@ -401,7 +401,6 @@ function updateModifiedWeaponStats(damage, rpm, reloadTime) {
     `;
 }
 
-// Function to filter weapons in the dropdown based on search input
 function filterWeapons() {
     const input = document.getElementById('weapon-search').value.toLowerCase();
     const weaponSelect = document.getElementById('weapon-select');
@@ -426,6 +425,8 @@ function filterWeapons() {
     // Automatically select the first visible matching option
     if (firstVisibleOption) {
         weaponSelect.value = firstVisibleOption.value;
+        // Manually trigger the 'change' event after auto-selecting the first option
+        weaponSelect.dispatchEvent(new Event('change'));
     }
 }
 
@@ -454,6 +455,8 @@ function filterOperatives() {
     // Automatically select the first visible matching option
     if (firstVisibleOption) {
         operativeSelect.value = firstVisibleOption.value;
+        // Manually trigger the 'change' event after auto-selecting the first option
+        operativeSelect.dispatchEvent(new Event('change'));
     }
 }
 
