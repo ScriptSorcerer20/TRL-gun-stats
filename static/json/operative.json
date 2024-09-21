@@ -1245,6 +1245,84 @@
           "appliesTo": ""
         }
       ]
+    },
+    {
+      "id": "magmion",
+      "name": "Magmion",
+      "category": "SCP"
+    },
+    {
+      "id": "frostkill",
+      "name": "Frostkill",
+      "category": "SCP"
+    },
+    {
+      "id": "able",
+      "name": "Able",
+      "category": "SCP"
+    },
+    {
+      "id": "devil-hunter",
+      "name": "Devil Hunter",
+      "category": "SCP"
+    },
+    {
+      "id": "polatia-heath",
+      "name": "Heath",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "angel-of-death-damage-perk",
+          "label": "Angel of Death (+20% Damage, +20% Reload Speed, +20% Firerate)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "polatia-thavin",
+      "name": "Thavin",
+      "category": "Polatia"
+    },
+    {
+      "id": "polatia-dd",
+      "name": "Diamond Dog",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "experimental-kamui-damage-perk",
+          "label": "Experimental Kami (+40% Damage, +35% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.65,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
     }
   ]
 }
