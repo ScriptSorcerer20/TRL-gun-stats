@@ -232,16 +232,18 @@ function applyModifiers() {
 
     // Function to process global modifiers
     const processModifier = (mod) => {
-        if (mod.appliesNotTo && mod.appliesNotTo === selectedWeapon.guntype) {
-            return; // Skip this modifier
-        }
-        if (mod.appliesTo && mod.appliesTo !== selectedWeapon.guntype) {
-            return; // Skip this modifier
-        }
-        if (mod.operatives && selectedOperative && mod.operatives !== selectedOperative.category) {
-            return; // Skip this modifier if it doesn't apply to the current operative's category
+        // Ensure guntype is now an array of tags
+        const weaponTags = selectedWeapon.guntype;  // This is now an array like ["PISTOL", "WW2", "SECONDARY"]
+
+        // Skip the modifier if it should not apply to any of the current weapon's tags
+        if (mod.appliesNotTo && weaponTags.includes(mod.appliesNotTo)) {
+            return;  // Skip this modifier
         }
 
+        // Check if the modifier applies to any of the current weapon's tags
+        if (mod.appliesTo && !weaponTags.includes(mod.appliesTo)) {
+            return;  // Skip this modifier
+        }
         // Handle modifiers with multiple buffs
         if (mod.dataset.buffs) {
             const buffs = JSON.parse(mod.dataset.buffs);
@@ -271,16 +273,17 @@ function applyModifiers() {
 
     // Function to process operative-specific modifiers
     const processOperativeModifier = (mod) => {
-        if (mod.appliesNotTo && mod.appliesNotTo === selectedWeapon.guntype) {
-            return; // Skip this modifier for this weapon type
-        }
-        if (mod.appliesTo && mod.appliesTo !== selectedWeapon.guntype) {
-            return; // Skip if the modifier does not apply to this weapon type
+        // Ensure guntype is now an array of tags
+        const weaponTags = selectedWeapon.guntype;  // This is now an array like ["PISTOL", "WW2", "SECONDARY"]
+
+        // Skip the modifier if it should not apply to any of the current weapon's tags
+        if (mod.appliesNotTo && weaponTags.includes(mod.appliesNotTo)) {
+            return;  // Skip this modifier
         }
 
-        // Ensure that the modifier only applies if it matches the selected operative's category
-        if (mod.operatives && selectedOperative && mod.operatives !== selectedOperative.category) {
-            return; // Skip this modifier if it doesn't apply to the current operative's category
+        // Check if the modifier applies to any of the current weapon's tags
+        if (mod.appliesTo && !weaponTags.includes(mod.appliesTo)) {
+            return;  // Skip this modifier
         }
 
         // Handle operative modifiers with multiple buffs

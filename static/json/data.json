@@ -7,7 +7,7 @@
     "rpm": 550,
     "mag_size": 18,
     "reload_time": 2,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "SECONDARY"]
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "rpm": 580,
     "mag_size": 8,
     "reload_time": 1.15,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "SECONDARY", "WW2"]
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "rpm": 850,
     "mag_size": 15,
     "reload_time": 2,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "SECONDARY"]
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "rpm": 720,
     "mag_size": 16,
     "reload_time": 3,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "SECONDARY"]
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "rpm": 500,
     "mag_size": 8,
     "reload_time": 1.95,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "WW2", "SECONDARY"]
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "rpm": 600,
     "mag_size": 30,
     "reload_time": 2.1,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "SOVIET"]
   },
   {
     "id": 7,
@@ -77,7 +77,7 @@
     "rpm": 400,
     "mag_size": 24,
     "reload_time": 2.6,
-    "guntype": "RIFLE"
+    "guntype": "SEMI-AUTO"
   },
   {
     "id": 9,
@@ -107,7 +107,7 @@
     "rpm": 60,
     "mag_size": 8,
     "reload_time": 2.8,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "WW2"]
   },
   {
     "id": 12,
@@ -177,7 +177,7 @@
     "rpm": 750,
     "mag_size": 50,
     "reload_time": 2.5,
-    "guntype": "SMG"
+    "guntype": ["RIFLE", "WW2"]
   },
   {
     "id": 22,
@@ -267,7 +267,7 @@
     "rpm": 550,
     "mag_size": 32,
     "reload_time": 3,
-    "guntype": "SMG"
+    "guntype": ["SMG", "WW2"]
   },
   {
     "id": 31,
@@ -277,7 +277,7 @@
     "rpm": 750,
     "mag_size": 100,
     "reload_time": 5.5,
-    "guntype": "LMG"
+    "guntype": ["LMG", "SOVIET"]
   },
   {
     "id": 32,
@@ -337,7 +337,7 @@
     "rpm": 30,
     "mag_size": 5,
     "reload_time": 3.5,
-    "guntype": "RIFLE"
+    "guntype": "SEMI-AUTO"
   },
   {
     "id": 38,
@@ -517,7 +517,7 @@
     "rpm": 700,
     "mag_size": 34,
     "reload_time": 3.5,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL"]
   },
   {
     "id": 57,
@@ -527,7 +527,7 @@
     "rpm": 440,
     "mag_size": 18,
     "reload_time": 3.5,
-    "guntype": "RIFLE"
+    "guntype": "SEMI-AUTO"
   },
   {
     "id": 58,
@@ -537,7 +537,7 @@
     "rpm": 540,
     "mag_size": 18,
     "reload_time": 3.5,
-    "guntype": "RIFLE"
+    "guntype": "SEMI-AUTO"
   },
   {
     "id": 59,
@@ -557,7 +557,7 @@
     "rpm": 900,
     "mag_size": 26,
     "reload_time": 2.5,
-    "guntype": "SMG?"
+    "guntype": ["PISTOL"]
   },
   {
     "id": 61,
@@ -567,7 +567,7 @@
     "rpm": 1200,
     "mag_size": 26,
     "reload_time": 2,
-    "guntype": "SMG?"
+    "guntype": ["PISTOL"]
   },
   {
     "id": 62,
@@ -687,7 +687,7 @@
     "rpm": 400,
     "mag_size": 18,
     "reload_time": 2.1,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL"]
   },
   {
     "id": 74,
@@ -697,7 +697,7 @@
     "rpm": 400,
     "mag_size": 36,
     "reload_time": 3.5,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL"]
   },
   {
     "id": 75,
@@ -707,7 +707,7 @@
     "rpm": 300,
     "mag_size": 10,
     "reload_time": 3,
-    "guntype": "RIFLE"
+    "guntype": "SEMI-AUTO"
   },
   {
     "id": 76,
@@ -717,7 +717,7 @@
     "rpm": 700,
     "mag_size": 10,
     "reload_time": 2,
-    "guntype": "RIFLE?"
+    "guntype": "RIFLE"
   },
   {
     "id": 77,
@@ -727,7 +727,7 @@
     "rpm": 1000,
     "mag_size": 71,
     "reload_time": 2.5,
-    "guntype": "UNKOWN"
+    "guntype": ["SMG", "SOVIET"]
   },
   {
     "id": 78,
@@ -737,7 +737,7 @@
     "rpm": 690,
     "mag_size": 30,
     "reload_time": 2.5,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "SOVIET"]
   },
   {
     "id": 79,

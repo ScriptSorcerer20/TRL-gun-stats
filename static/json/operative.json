@@ -1180,12 +1180,12 @@
       ]
     },
     {
-      "id": "GRU-P-Specialist",
-      "name": "GRU-P Specialist",
+      "id": "winter-soldier",
+      "name": "Winter Soldier",
       "category": "GRU-P",
       "modifiers": [
         {
-          "id": "well-taught-reload-perk",
+          "id": "snow-beast-reload-perk",
           "label": "Snow Beast (+25% Reload Speed)",
           "buffs": [
             {
@@ -1220,6 +1220,25 @@
             {
               "type": "reloadTime",
               "value": 1,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "shade",
+      "name": "Shade",
+      "category": "SCP",
+      "modifiers": [
+        {
+          "id": "hell-bullets-damage-perk",
+          "label": "Hell Bullets (+10% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.1,
               "buffType": "multiplicative"
             }
           ],
