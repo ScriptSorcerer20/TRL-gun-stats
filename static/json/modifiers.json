@@ -254,8 +254,8 @@
     },
     {
       "id": "damage-item-additive-uiu-1",
-      "label": "[All Operatives] UIU Upgraded Towers (+20% damage)",
-      "value": 1.2,
+      "label": "[All Operatives] UIU Upgraded Towers (+10% damage)",
+      "value": 1.1,
       "type": "multiplicative",
       "operatives": "",
       "appliesTo": ""
