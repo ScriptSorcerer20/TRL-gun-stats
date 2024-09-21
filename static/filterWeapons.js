@@ -330,16 +330,23 @@ function applyModifiers() {
     damage += damageModifier.additive;
 
     let rpm = baseRpm * rpmModifier.multiplicative;
-    rpm += rpm * rpmModifier.additive;
+    rpm += rpmModifier.additive;
 
     let reloadTime = baseReloadTime * reloadTimeModifier.multiplicative;
-    reloadTime += reloadTime * reloadTimeModifier.additive;
+    reloadTime += reloadTimeModifier.additive;
+
+// Safeguard: Reload time can not go below 0.1 seconds
+    if (reloadTime < 0.1) {
+        reloadTime = 0.1;
+    }
 
     calculateDPSAndDPM(damage, rpm, selectedWeapon.mag_size, reloadTime);
     updateModifiedWeaponStats(damage, rpm, reloadTime);
+
 }
 
 // Function to apply individual buffs (simplified to avoid mistakes)
+// Function to apply individual buffs (modified to prevent reload time going below 0)
 function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null) {
     const {type, buffType, value} = buff;
 
@@ -350,8 +357,12 @@ function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null)
     }
 
     if (type === 'reloadTime') {
-        if (buffType === 'multiplicative') reloadTimeModifier.multiplicative *= value;
-        else if (buffType === 'additive') reloadTimeModifier.additive += value;
+        if (buffType === 'multiplicative') {
+            reloadTimeModifier.multiplicative *= value;
+        } else if (buffType === 'additive') {
+            // Subtract value for additive reload time modifiers (like Weapon Expert)
+            reloadTimeModifier.additive += value;
+        }
     }
 
     // Apply damage buffs

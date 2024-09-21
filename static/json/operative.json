@@ -1155,7 +1155,7 @@
       "modifiers": [
         {
           "id": "well-taught-reload-perk",
-          "label": "Not one step back (+50% Reload Speed)",
+          "label": "Well Taught (+50% Reload Speed)",
           "buffs": [
             {
               "type": "reloadTime",
@@ -1172,6 +1172,54 @@
             {
               "type": "damage",
               "value": 1.32,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "GRU-P-Specialist",
+      "name": "GRU-P Specialist",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "well-taught-reload-perk",
+          "label": "Snow Beast (+25% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.75,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesNotTo": ""
+        },
+        {
+          "id": "heavy-bullets-damage-perk",
+          "label": "Heavy Bullets (+32% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.32,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "ws-mastery-damage-perk",
+          "label": "Mastery (+?% Damage, +?% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 1,
               "buffType": "multiplicative"
             }
           ],
