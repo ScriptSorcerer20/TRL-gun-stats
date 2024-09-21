@@ -1323,6 +1323,416 @@
           "appliesTo": ""
         }
       ]
+    },
+    {
+      "id": "polatia-arms-dealer",
+      "name": "Polatia Arms Dealer",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "polatia-high-velocity-bullets-damage-perk",
+          "label": "High Velocity Bullets (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "familiarity-reload-perk",
+          "label": "Familiarity (+30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "polatia-contractor",
+      "name": "Polatia Contractor",
+      "category": "Polatia"
+    },
+    {
+      "id": "polatia-consigliere",
+      "name": "Polatia Consigliere",
+      "category": "Polatia"
+    },
+    {
+      "id": "pratva-hitman",
+      "name": "Pratva Hitman",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "hit-list-damage-perk",
+          "label": "Hit List (+50% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "Backliner-damage-perk",
+          "label": "Backliner (+35% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.35,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "spree-damage-perk",
+          "label": "Headshot Spree (+200% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 3,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "pratva-machinegunner",
+      "name": "Pratva Machinegunner",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "spray-and-pary-damage-perk",
+          "label": "Spray and Pray (+100% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "static-defender-reload-perk",
+          "label": "Static Defender (+30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "Polatia-LMG-User-perk",
+          "label": "LMG User (+35% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.35,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "LMG"
+        },
+        {
+          "id": "focus-reload-perk",
+          "label": "Focus (+20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "hollow-point-ammunition-damage-perk",
+          "label": "Hollow Point Ammunition (+10 Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 10,
+              "buffType": "additive"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "pratva-executor",
+      "name": "Pratva Executor",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "undertaker-damage-perk",
+          "label": "Undertaker (+30% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SHOTGUN"
+        },
+        {
+          "id": "execute-damage-perk",
+          "label": "Execute (+40% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "polatia-zero-day",
+      "name": "Zero Day",
+      "category": "Polatia"
+    },
+    {
+      "id": "goc-goc",
+      "name": "GOC",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "goc-special-ammo",
+          "label": "Special Ammo (+40% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "goc-weapon-expert-reload-perk",
+          "label": "Weapon Expert (-1s Reload Time)",
+          "value": -1,
+          "type": "additive",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "goc-BD",
+      "name": "Broken Dagger",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "BD-special-ammo",
+          "label": "Special Ammo (+40% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "BD-BED",
+          "label": "Break 'em down (+40% Damage, +40% Firerate, +100% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "BD-Vengeance",
+          "label": "Vengeance (+35% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.65,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "goc-SH",
+      "name": "Steelhead",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "sh-silver",
+          "label": "Silver Ammo (+30% Damage, +20% Firerate)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "sh-hammer",
+          "label": "Hammer Ammo (+50% Damage, -30% Firerate)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "sh-hellfire",
+          "label": "Hellfire Ammo (-10% Firerate)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 0.9,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "sh-weapon-expert-reload-perk",
+          "label": "Weapon Expert (-1s Reload Time)",
+          "value": -1,
+          "type": "additive",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "goc-ambassador",
+      "name": "GOC Ambassador",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "goca-civilian",
+          "label": "Civilian (-15% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 0.85,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "goc-thaumaturge",
+      "name": "Thaumaturge",
+      "category": "GOC"
+    },
+    {
+      "id": "goc-gs",
+      "name": "Gunslinger",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "deep-focus-reload-perk",
+          "label": "Deep Focus (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "bullet-hell-damage-perk",
+          "label": "Bullet Hell (+100% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "run-and-gun-damage-perk",
+          "label": "Run & Gun (+30% Firerate, +20%  Reload Speed)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "suppressive-fire-firerate-perk",
+          "label": "Hammer Ammo (+100% Firerate)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
     }
   ]
 }

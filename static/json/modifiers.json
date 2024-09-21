@@ -85,7 +85,7 @@
     {
       "id": "damage-perk-multiplicative-precise-shots",
       "label": "Precise Shots (+15% Damage)",
-      "value": 1.40,
+      "value": 1.15,
       "type": "multiplicative",
       "operatives": ""
     },
@@ -108,6 +108,17 @@
     }
   ],
   "abilityPerks": [
+    {
+      "id": "headshot-damage-buff",
+      "label": "[All Operatives] Headshot (+25% Damage)",
+      "buffs": [
+        {
+          "type": "damage",
+          "value": 1.25,
+          "buffType": "multiplicative"
+        }
+      ]
+    },
     {
       "id": "multiple-buffs-firefight",
       "label": "[All Operatives] Firefight (+35% Damage, +40% Reload Speed)",
