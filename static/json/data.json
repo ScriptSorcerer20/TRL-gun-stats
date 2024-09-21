@@ -187,7 +187,7 @@
     "rpm": 850,
     "mag_size": 32,
     "reload_time": 2,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 23,
@@ -217,7 +217,7 @@
     "rpm": 750,
     "mag_size": 65,
     "reload_time": 2,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 26,
@@ -227,7 +227,7 @@
     "rpm": 780,
     "mag_size": 30,
     "reload_time": 2.65,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 27,
@@ -247,7 +247,7 @@
     "rpm": 800,
     "mag_size": 25,
     "reload_time": 2.5,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 29,
@@ -257,7 +257,7 @@
     "rpm": 800,
     "mag_size": 25,
     "reload_time": 2.5,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 30,

@@ -401,6 +401,66 @@ function updateModifiedWeaponStats(damage, rpm, reloadTime) {
     `;
 }
 
+// Function to filter weapons in the dropdown based on search input
+function filterWeapons() {
+    const input = document.getElementById('weapon-search').value.toLowerCase();
+    const weaponSelect = document.getElementById('weapon-select');
+    const options = weaponSelect.getElementsByTagName('option');
+
+    let firstVisibleOption = null; // Variable to track the first matching option
+
+    for (let i = 0; i < options.length; i++) {
+        const optionText = options[i].textContent || options[i].innerText;
+
+        // Check if the option matches the search query
+        if (optionText.toLowerCase().indexOf(input) > -1) {
+            options[i].style.display = '';  // Show matching option
+            if (!firstVisibleOption) {
+                firstVisibleOption = options[i]; // Save the first visible option
+            }
+        } else {
+            options[i].style.display = 'none';  // Hide non-matching option
+        }
+    }
+
+    // Automatically select the first visible matching option
+    if (firstVisibleOption) {
+        weaponSelect.value = firstVisibleOption.value;
+    }
+}
+
+// Function to filter operatives in the dropdown based on search input
+function filterOperatives() {
+    const input = document.getElementById('operative-search').value.toLowerCase();
+    const operativeSelect = document.getElementById('operative-select');
+    const options = operativeSelect.getElementsByTagName('option');
+
+    let firstVisibleOption = null; // Track the first matching option
+
+    for (let i = 0; i < options.length; i++) {
+        const optionText = options[i].textContent || options[i].innerText;
+
+        // Check if the option matches the search query
+        if (optionText.toLowerCase().indexOf(input) > -1) {
+            options[i].style.display = '';  // Show matching option
+            if (!firstVisibleOption) {
+                firstVisibleOption = options[i]; // Save the first visible option
+            }
+        } else {
+            options[i].style.display = 'none';  // Hide non-matching option
+        }
+    }
+
+    // Automatically select the first visible matching option
+    if (firstVisibleOption) {
+        operativeSelect.value = firstVisibleOption.value;
+    }
+}
+
+// Attach event listeners to the search inputs
+document.getElementById('weapon-search').addEventListener('keyup', filterWeapons);
+document.getElementById('operative-search').addEventListener('keyup', filterOperatives);
+
 // Call the fetch function to load the data and populate the dropdown on page load
 fetchWeaponsData();
 fetchModifiers();
