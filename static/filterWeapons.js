@@ -238,6 +238,9 @@ function applyModifiers() {
         if (mod.appliesTo && mod.appliesTo !== selectedWeapon.guntype) {
             return; // Skip this modifier
         }
+        if (mod.operatives && selectedOperative && mod.operatives !== selectedOperative.category) {
+            return; // Skip this modifier if it doesn't apply to the current operative's category
+        }
 
         // Handle modifiers with multiple buffs
         if (mod.dataset.buffs) {
@@ -266,13 +269,18 @@ function applyModifiers() {
         }
     };
 
-    // Function to process operative-based modifiers
+    // Function to process operative-specific modifiers
     const processOperativeModifier = (mod) => {
         if (mod.appliesNotTo && mod.appliesNotTo === selectedWeapon.guntype) {
             return; // Skip this modifier for this weapon type
         }
         if (mod.appliesTo && mod.appliesTo !== selectedWeapon.guntype) {
             return; // Skip if the modifier does not apply to this weapon type
+        }
+
+        // Ensure that the modifier only applies if it matches the selected operative's category
+        if (mod.operatives && selectedOperative && mod.operatives !== selectedOperative.category) {
+            return; // Skip this modifier if it doesn't apply to the current operative's category
         }
 
         // Handle operative modifiers with multiple buffs
@@ -303,11 +311,9 @@ function applyModifiers() {
         processModifier(mod);
     });
 
-
     // Re-apply listener after change
     modifiersContainer.addEventListener('change', applyModifiers);
 
-    // Process operative-specific modifiers
     // Process operative-specific modifiers that are checked
     const operativeSection = document.getElementById('operative-modifiers');
     operativeSection.querySelectorAll('input:checked').forEach(mod => {
@@ -318,7 +324,6 @@ function applyModifiers() {
             }
         }
     });
-
 
     // Recalculate with applied modifiers
     let damage = baseDamage * damageModifier.multiplicative;

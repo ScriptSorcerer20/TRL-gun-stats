@@ -182,8 +182,8 @@
           "appliesTo": ""
         },
         {
-          "id": "adrenaline-damage-perk",
-          "label": "All Upgrades (+30% Damage)",
+          "id": "anarchist-adrenaline-damage-perk",
+          "label": "Adrenaline (+30% Damage)",
           "value": 1.3,
           "type": "multiplicative",
           "appliesTo": ""
@@ -1095,6 +1095,87 @@
             }
           ],
           "appliesTo": "SMG"
+        }
+      ]
+    },
+    {
+      "id": "GRU-P-Assault",
+      "name": "GRU-P Assault",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "not-step-back-damage-perk",
+          "label": "Not one step back (+50% Damage)",
+          "value": 1.5,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "gru-p-assault-mastery-reload-perk",
+          "label": "Mastery [SOVIET WEAPONS] (+10% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.9,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SOVIET"
+        },
+        {
+          "id": "gru-p-assault-mastery-damage-perk",
+          "label": "Mastery (+20% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "gru-p-assault-patriotic-damage-perk",
+          "label": "Patriotic (+60% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.6,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "GRU-P-Specialist",
+      "name": "GRU-P Specialist",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "well-taught-reload-perk",
+          "label": "Not one step back (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesNotTo": "SHOTGUN"
+        },
+        {
+          "id": "heavy-bullets-damage-perk",
+          "label": "Heavy Bullets (+32% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.32,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
         }
       ]
     }
