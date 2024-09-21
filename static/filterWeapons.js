@@ -5,7 +5,7 @@ let globalModifiers = [];
 
 // Function to fetch operatives data from JSON
 function fetchOperativesData() {
-    fetch('static/json/operative.json')  // Adjust the path to the actual location of your JSON file
+    fetch('/static/json/operative.json')  // Adjust the path to the actual location of your JSON file
         .then(response => response.json())
         .then(data => {
             populateOperatives(data.operatives);  // Populate the operative dropdown once data is loaded
@@ -231,6 +231,8 @@ function applyModifiers() {
     let reloadTimeModifier = {additive: 0, multiplicative: 1};
 
     // Function to process global modifiers
+    // Function to process global modifiers
+    // Function to process global modifiers
     const processModifier = (mod) => {
         // Ensure guntype is now an array of tags
         const weaponTags = selectedWeapon.guntype;  // This is now an array like ["PISTOL", "WW2", "SECONDARY"]
@@ -242,8 +244,9 @@ function applyModifiers() {
 
         // Check if the modifier applies to any of the current weapon's tags
         if (mod.appliesTo && !weaponTags.includes(mod.appliesTo)) {
-            return;  // Skip this modifier
+            return;  // Skip this modifier if it does not apply to the selected weapon type
         }
+
         // Handle modifiers with multiple buffs
         if (mod.dataset.buffs) {
             const buffs = JSON.parse(mod.dataset.buffs);
@@ -271,6 +274,9 @@ function applyModifiers() {
         }
     };
 
+
+    // Function to process operative-specific modifiers
+    // Function to process operative-specific modifiers
     // Function to process operative-specific modifiers
     const processOperativeModifier = (mod) => {
         // Ensure guntype is now an array of tags
@@ -283,7 +289,7 @@ function applyModifiers() {
 
         // Check if the modifier applies to any of the current weapon's tags
         if (mod.appliesTo && !weaponTags.includes(mod.appliesTo)) {
-            return;  // Skip this modifier
+            return;  // Skip this modifier if it does not apply to the selected weapon type
         }
 
         // Handle operative modifiers with multiple buffs
@@ -304,6 +310,7 @@ function applyModifiers() {
             applyBuff(singleBuff, rpmModifier, reloadTimeModifier, damageModifier);
         }
     };
+
 
     // Clear out listeners and avoid re-adding
     const modifiersContainer = document.getElementById('modifiers');
