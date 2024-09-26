@@ -134,14 +134,32 @@ function populateWeapons() {
 }
 
 // Function to display the selected weapon's stats in the UI
+// Function to display the selected weapon's stats in a table-like format
+// Function to display the selected weapon's stats in a table-like format
+// Function to display the selected weapon's stats in the UI
 function updateWeaponStats(weapon) {
     const statsElement = document.getElementById('weapon-stats');
     statsElement.innerHTML = `
-        <p>Name: ${weapon.name}</p>
-        <p>Damage: ${weapon.damage * weapon.damage_multiplier}</p>
-        <p>RPM: ${weapon.rpm}</p>
-        <p>Mag Size: ${weapon.mag_size}</p>
-        <p>Reload Time: ${weapon.reload_time}</p>
+        <table class="weapon-stats-table horizontal-table">
+            <tr>
+                <th>Name</th>
+                <th>Damage</th>
+                <th>RPM</th>
+                <th>Mag Size</th>
+                <th>Reload Time</th>
+                <th>DPS</th>
+                <th>DPM</th>
+            </tr>
+            <tr>
+                <td>${weapon.name}</td>
+                <td>${(weapon.damage * weapon.damage_multiplier).toFixed(2)}</td>
+                <td>${weapon.rpm}</td>
+                <td>${weapon.mag_size}</td>
+                <td>${weapon.reload_time.toFixed(2)} seconds</td>
+                <td id="dps-value"></td>
+                <td id="dpm-value"></td>
+            </tr>
+        </table>
     `;
 
     // Store values for further calculations
@@ -152,6 +170,48 @@ function updateWeaponStats(weapon) {
 
     // Calculate DPS and DPM initially without modifiers
     calculateDPSAndDPM(damage, rpm, magSize, reloadTime);
+}
+
+// Function to calculate DPS and DPM and update the values in the table
+function calculateDPSAndDPM(damage, rpm, magSize, reloadTime) {
+    const rps = rpm / 60; // Rounds per second
+    let dps = damage * rps;
+    const reloadTimeMin = reloadTime / 60;
+    let dpm = (magSize * damage) / (reloadTimeMin + (magSize / rpm));
+
+    // Update DPS and DPM values in the table
+    document.getElementById('dps-value').innerText = dps.toFixed(2);
+    document.getElementById('dpm-value').innerText = dpm.toFixed(2);
+}
+
+// Function to display the modified weapon's stats in the table format
+function updateModifiedWeaponStats(damage, rpm, reloadTime) {
+    const statsElement = document.getElementById('weapon-stats');
+    statsElement.innerHTML = `
+        <table class="weapon-stats-table horizontal-table">
+            <tr>
+                <th>Name</th>
+                <th>Modified Damage</th>
+                <th>Modified RPM</th>
+                <th>Mag Size</th>
+                <th>Modified Reload Time</th>
+                <th>DPS</th>
+                <th>DPM</th>
+            </tr>
+            <tr>
+                <td>${selectedWeapon.name}</td>
+                <td>${damage.toFixed(2)}</td>
+                <td>${rpm.toFixed(2)}</td>
+                <td>${selectedWeapon.mag_size}</td>
+                <td>${reloadTime.toFixed(2)} seconds</td>
+                <td id="dps-value"></td>
+                <td id="dpm-value"></td>
+            </tr>
+        </table>
+    `;
+
+    // Recalculate and update DPS and DPM values with modifiers applied
+    calculateDPSAndDPM(damage, rpm, selectedWeapon.mag_size, reloadTime);
 }
 
 // Function to fetch and populate modifiers from the JSON file
@@ -322,6 +382,12 @@ function applyModifiers() {
 
 
     // Clear out listeners and avoid re-adding
+    // Process ability modifiers
+    const abilitiesSection = document.getElementById('abilities');
+    abilitiesSection.querySelectorAll('input:checked').forEach(mod => {
+        processModifier(mod);  // Process the ability modifier the same way as global modifiers
+    });
+
     const modifiersContainer = document.getElementById('modifiers');
     modifiersContainer.removeEventListener('change', applyModifiers);
 
@@ -389,32 +455,6 @@ function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null)
         if (buffType === 'multiplicative') damageModifier.multiplicative *= value;
         else if (buffType === 'additive') damageModifier.additive += value;
     }
-}
-
-// Function to calculate DPS and DPM with optional modifiers
-function calculateDPSAndDPM(damage, rpm, magSize, reloadTime) {
-    const rps = rpm / 60; // Rounds per second
-    let dps = damage * rps;
-    const reloadTimeMin = reloadTime / 60;
-    let dpm = (magSize * damage) / (reloadTimeMin + (magSize / rpm));
-
-    // Display the calculated stats
-    const resultElement = document.getElementById('calculated-stats');
-    resultElement.innerHTML = `
-        <p>DPS: ${dps.toFixed(2)}</p>
-        <p>DPM: ${dpm.toFixed(2)}</p>
-    `;
-}
-
-// Function to display the modified weapon's stats in the UI
-function updateModifiedWeaponStats(damage, rpm, reloadTime) {
-    const statsElement = document.getElementById('weapon-stats');
-    statsElement.innerHTML = `
-        <p>Modified Damage: ${damage.toFixed(2)}</p>
-        <p>Modified RPM: ${rpm.toFixed(2)}</p>
-        <p>Mag Size: ${selectedWeapon.mag_size}</p>
-        <p>Modified Reload Time: ${reloadTime.toFixed(2)} seconds</p>
-    `;
 }
 
 function filterWeapons() {

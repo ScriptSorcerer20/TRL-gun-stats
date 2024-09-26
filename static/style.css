@@ -361,5 +361,28 @@ textarea {
     #abilities input[type="checkbox"] {
         margin-right: 5px; /* Adjust the spacing between the checkbox and the label */
     }
+}
 
+/* Styling for horizontal table */
+.weapon-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.weapon-stats-table th, .weapon-stats-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center; /* Center the text */
+}
+
+.weapon-stats-table th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+/* Horizontal styling specifically for the table */
+.horizontal-table tr:first-child th {
+    text-align: center;
+    font-weight: bold;
 }
