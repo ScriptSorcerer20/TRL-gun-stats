@@ -167,10 +167,14 @@ function fetchModifiers() {
 
 // Function to dynamically populate modifiers into the HTML
 function populateModifiers(modifiers) {
-    const modifiersContainer = document.getElementById('modifiers');
+    const modifiersContainer = document.getElementById('modifiers-container');
+    modifiersContainer.innerHTML = ''; // Clear existing modifiers
 
-    const createModifierSection = (title, modifierList) => {
+    const createModifierSection = (title, modifierList, sectionId) => {
         const section = document.createElement('div');
+        section.id = sectionId; // Set an ID for the section
+        section.className = sectionId === 'abilities' ? 'abilities' : ''; // Only for abilities
+
         const header = document.createElement('h3');
         header.textContent = title;
         section.appendChild(header);
@@ -183,32 +187,37 @@ function populateModifiers(modifiers) {
 
             // Check if the modifier has multiple buffs
             if (mod.buffs) {
-                input.dataset.buffs = JSON.stringify(mod.buffs);  // Store buffs data as a string in data-buffs
+                input.dataset.buffs = JSON.stringify(mod.buffs);
             } else {
                 input.value = mod.value;
-                input.dataset.type = mod.type;  // Store if it's additive or multiplicative
+                input.dataset.type = mod.type;
             }
 
             label.appendChild(input);
             label.appendChild(document.createTextNode(mod.label));
-            section.appendChild(label);
-            section.appendChild(document.createElement('br'));
+
+            // Create a container for each modifier item
+            const modifierItem = document.createElement('div');
+            modifierItem.className = 'modifier-item'; // Add the class for styling
+            modifierItem.appendChild(label);
+            section.appendChild(modifierItem); // Append the modifier item to the section
         });
 
         return section;
     };
 
-    // Clear any existing modifiers
-    modifiersContainer.innerHTML = '';
+    // Create a container for all modifiers
+    const container = document.createElement('div');
+    container.id = 'modifiers';
 
-    // Add Item Buffs
-    modifiersContainer.appendChild(createModifierSection('Item Buffs', modifiers.itemBuffs));
+    // Populate sections
+    container.appendChild(createModifierSection('Item Buffs', modifiers.itemBuffs, 'items'));
+    container.appendChild(createModifierSection('Perks', modifiers.operativePerks, 'perks'));
+    modifiersContainer.appendChild(container); // Append item and perks container
 
-    // Add Operative Perks
-    modifiersContainer.appendChild(createModifierSection('Perks', modifiers.operativePerks));
-
-    // Add Ability Perks
-    modifiersContainer.appendChild(createModifierSection('Abilities', modifiers.abilityPerks));
+    // Create and append abilities section
+    const abilitiesSection = createModifierSection('Abilities', modifiers.abilityPerks, 'abilities');
+    modifiersContainer.appendChild(abilitiesSection); // Append abilities section
 
     // Add event listener to recalculate DPS/DPM when modifiers are toggled
     modifiersContainer.addEventListener('change', applyModifiers);

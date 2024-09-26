@@ -6,6 +6,23 @@ input[type="text"] {
     font-size: 16px;
 }
 
+#modifiers-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between the items */
+    flex-wrap: wrap; /* Allow wrapping to avoid overflow */
+}
+
+/* Style for the modifiers section */
+#modifiers {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    width: 50%; /* Adjust this percentage to control the width */
+}
+
+#abilities {
+    width: 42.5%; /* Adjust this value as needed */
+}
+
 body {
     background-image: url("/static/img/trlbg1.jpg");
     background-repeat: no-repeat;
@@ -323,4 +340,26 @@ textarea {
     .suggestion-title {
         font-size: 1.2em;
     }
+
+    #modifiers {
+        width: 100%; /* Adjust this percentage to control the width */
+    }
+
+    #abilities {
+        width: 100%;
+    }
+
+    /* Adjust spacing between different ability modifiers */
+    #abilities label {
+        display: block; /* Ensures each label takes up its own line */
+        margin-bottom: 10px; /* Adds space between each ability checkbox */
+        line-height: 1.2; /* Keeps the spacing between wrapped lines consistent */
+        white-space: normal; /* Allows text to wrap normally */
+    }
+
+    /* Optional: Adjust margin between checkbox and text */
+    #abilities input[type="checkbox"] {
+        margin-right: 5px; /* Adjust the spacing between the checkbox and the label */
+    }
+
 }

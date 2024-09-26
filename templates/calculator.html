@@ -90,10 +90,14 @@
     <div id="weapon-stats"></div>
     <div id="calculated-stats"></div>
 
-    <!-- Modifiers Display -->
-    <div id="modifiers"></div>
     <h3>Operative Specific Modifiers</h3>
     <div id="operative-modifiers"></div>
+
+    <!-- Modifiers Display -->
+    <div id="modifiers-container">
+        <div id="modifiers"></div> <!-- Items and Perks go here -->
+        <div id="abilities"></div> <!-- Abilities go here -->
+    </div>
 
     <script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>
 </main>
