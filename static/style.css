@@ -354,7 +354,7 @@ textarea {
         display: block; /* Ensures each label takes up its own line */
         margin-bottom: 10px; /* Adds space between each ability checkbox */
         line-height: 1.2; /* Keeps the spacing between wrapped lines consistent */
-        white-space: normal; /* Allows text to wrap normally */
+        white-space: nowrap; /* Allows text to wrap normally */
     }
 
     /* Optional: Adjust margin between checkbox and text */
