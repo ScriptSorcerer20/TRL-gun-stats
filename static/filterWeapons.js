@@ -1,11 +1,11 @@
 let selectedWeapon = null;  // Store the selected weapon's data
-let weapons = [];  // This will be populated by the fetched JSON data
 let selectedOperative = null;  // Store the selected operative's data
-let globalModifiers = [];
+let weapons = [];  // This will be populated by the fetched JSON data
+let globalModifiers = []; // This will be populated by the fetched JSON data
 
 // Function to fetch operatives data from JSON
 function fetchOperativesData() {
-    fetch('/static/json/operative.json')  // Adjust the path to the actual location of your JSON file
+    fetch('/static/json/operative.json')
         .then(response => response.json())
         .then(data => {
             populateOperatives(data.operatives);  // Populate the operative dropdown once data is loaded
@@ -14,7 +14,6 @@ function fetchOperativesData() {
 }
 
 // Function to populate the select element with operatives
-// Function to populate the operative dropdown
 function populateOperatives(operatives) {
     const select = document.getElementById('operative-select');
     select.innerHTML = ""; // Clear any existing options
@@ -96,7 +95,6 @@ function fetchWeaponsData() {
         .catch(error => console.error('Error fetching weapons data:', error));
 }
 
-// Function to populate the select element with weapons
 // Function to populate the weapon dropdown
 function populateWeapons() {
     const select = document.getElementById('weapon-select');
@@ -133,10 +131,7 @@ function populateWeapons() {
     });
 }
 
-// Function to display the selected weapon's stats in the UI
 // Function to display the selected weapon's stats in a table-like format
-// Function to display the selected weapon's stats in a table-like format
-// Function to display the selected weapon's stats in the UI
 function updateWeaponStats(weapon) {
     const statsElement = document.getElementById('weapon-stats');
     statsElement.innerHTML = `
@@ -283,8 +278,6 @@ function populateModifiers(modifiers) {
     modifiersContainer.addEventListener('change', applyModifiers);
 }
 
-// Function to apply the modifiers and recalculate DPS and DPM
-// Function to apply the modifiers and recalculate damage, RPM, and reloadTime
 // Function to apply the modifiers and recalculate damage, RPM, and reloadTime
 function applyModifiers() {
     if (!selectedWeapon) return;
@@ -299,8 +292,6 @@ function applyModifiers() {
     let rpmModifier = {additive: 0, multiplicative: 1};
     let reloadTimeModifier = {additive: 0, multiplicative: 1};
 
-    // Function to process global modifiers
-    // Function to process global modifiers
     // Function to process global modifiers
     const processModifier = (mod) => {
         // Ensure guntype is now an array of tags
@@ -343,9 +334,6 @@ function applyModifiers() {
         }
     };
 
-
-    // Function to process operative-specific modifiers
-    // Function to process operative-specific modifiers
     // Function to process operative-specific modifiers
     const processOperativeModifier = (mod) => {
         // Ensure guntype is now an array of tags
@@ -431,7 +419,6 @@ function applyModifiers() {
 }
 
 // Function to apply individual buffs (simplified to avoid mistakes)
-// Function to apply individual buffs (modified to prevent reload time going below 0)
 function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null) {
     const {type, buffType, value} = buff;
 
