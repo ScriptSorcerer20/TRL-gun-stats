@@ -2,6 +2,7 @@ let selectedWeapon = null;  // Store the selected weapon's data
 let selectedOperative = null;  // Store the selected operative's data
 let weapons = [];  // This will be populated by the fetched JSON data
 let globalModifiers = []; // This will be populated by the fetched JSON data
+let selectedGunTypes = [];  // Track selected gun types for filtering
 
 // Function to fetch operatives data from JSON
 function fetchOperativesData() {
@@ -91,6 +92,7 @@ function fetchWeaponsData() {
         .then(data => {
             weapons = data;  // Store the fetched data in the global 'weapons' variable
             populateWeapons();  // Populate the weapon dropdown once data is loaded
+            createGunTypeCheckboxes();  // Create the gun type checkboxes after loading the weapons
         })
         .catch(error => console.error('Error fetching weapons data:', error));
 }
@@ -144,6 +146,7 @@ function updateWeaponStats(weapon) {
                 <th>Reload Time</th>
                 <th>DPS</th>
                 <th>DPM</th>
+                <th>Average DPS</th> <!-- New Column for Average DPS -->
             </tr>
             <tr>
                 <td>${weapon.name}</td>
@@ -153,6 +156,7 @@ function updateWeaponStats(weapon) {
                 <td>${weapon.reload_time.toFixed(2)} seconds</td>
                 <td id="dps-value"></td>
                 <td id="dpm-value"></td>
+                <td id="average-dps-value"></td> <!-- Cell for Average DPS -->
             </tr>
         </table>
     `;
@@ -163,20 +167,8 @@ function updateWeaponStats(weapon) {
     const magSize = weapon.mag_size;
     const reloadTime = weapon.reload_time;
 
-    // Calculate DPS and DPM initially without modifiers
+    // Calculate DPS, DPM, and Average DPS
     calculateDPSAndDPM(damage, rpm, magSize, reloadTime);
-}
-
-// Function to calculate DPS and DPM and update the values in the table
-function calculateDPSAndDPM(damage, rpm, magSize, reloadTime) {
-    const rps = rpm / 60; // Rounds per second
-    let dps = damage * rps;
-    const reloadTimeMin = reloadTime / 60;
-    let dpm = (magSize * damage) / (reloadTimeMin + (magSize / rpm));
-
-    // Update DPS and DPM values in the table
-    document.getElementById('dps-value').innerText = dps.toFixed(2);
-    document.getElementById('dpm-value').innerText = dpm.toFixed(2);
 }
 
 // Function to display the modified weapon's stats in the table format
@@ -192,6 +184,7 @@ function updateModifiedWeaponStats(damage, rpm, reloadTime) {
                 <th>Modified Reload Time</th>
                 <th>DPS</th>
                 <th>DPM</th>
+                <th>Average DPS</th> <!-- New Column for Average DPS -->
             </tr>
             <tr>
                 <td>${selectedWeapon.name}</td>
@@ -201,13 +194,29 @@ function updateModifiedWeaponStats(damage, rpm, reloadTime) {
                 <td>${reloadTime.toFixed(2)} seconds</td>
                 <td id="dps-value"></td>
                 <td id="dpm-value"></td>
+                <td id="average-dps-value"></td> <!-- Cell for Average DPS -->
             </tr>
         </table>
     `;
 
-    // Recalculate and update DPS and DPM values with modifiers applied
+    // Recalculate and update DPS, DPM, and Average DPS
     calculateDPSAndDPM(damage, rpm, selectedWeapon.mag_size, reloadTime);
 }
+
+// Function to calculate DPS, DPM, and Average DPS, and update the values in the table
+function calculateDPSAndDPM(damage, rpm, magSize, reloadTime) {
+    const rps = rpm / 60; // Rounds per second
+    let dps = damage * rps;
+    const reloadTimeMin = reloadTime / 60;
+    let dpm = (magSize * damage) / (reloadTimeMin + (magSize / rpm));
+    let averageDPS = dpm / 60; // New Average DPS Calculation
+
+    // Update DPS, DPM, and Average DPS values in the table
+    document.getElementById('dps-value').innerText = dps.toFixed(2);
+    document.getElementById('dpm-value').innerText = dpm.toFixed(2);
+    document.getElementById('average-dps-value').innerText = averageDPS.toFixed(2); // Update the Average DPS in the table
+}
+
 
 // Function to fetch and populate modifiers from the JSON file
 function fetchModifiers() {
@@ -283,7 +292,7 @@ function applyModifiers() {
     if (!selectedWeapon) return;
 
     // Base stats
-    let baseDamage = selectedWeapon.damage * selectedWeapon.damage_multiplier;
+    let baseDamage = selectedWeapon.damage;
     let baseRpm = selectedWeapon.rpm;
     let baseReloadTime = selectedWeapon.reload_time;
 
@@ -398,24 +407,30 @@ function applyModifiers() {
         }
     });
 
-    // Recalculate with applied modifiers
-    let damage = baseDamage * damageModifier.multiplicative;
+     // Step 1: Calculate final damage
+    let damage = baseDamage; // Reset to base damage
+
+    // Step 2: Apply multiplicative damage modifiers
+    damage *= damageModifier.multiplicative;
+
+    // Step 3: Apply additive damage modifiers
     damage += damageModifier.additive;
 
-    let rpm = baseRpm * rpmModifier.multiplicative;
-    rpm += rpmModifier.additive;
+    // Apply the weapon's damage multiplier (if applicable) last
+    damage *= selectedWeapon.damage_multiplier;
 
-    let reloadTime = baseReloadTime * reloadTimeModifier.multiplicative;
-    reloadTime += reloadTimeModifier.additive;
+    // Calculate other modified stats
+    let rpm = baseRpm * rpmModifier.multiplicative + rpmModifier.additive;
+    let reloadTime = baseReloadTime * reloadTimeModifier.multiplicative + reloadTimeModifier.additive;
 
-// Safeguard: Reload time can not go below 0.1 seconds
+    // Safeguard: Reload time cannot go below 0.1 seconds
     if (reloadTime < 0.1) {
         reloadTime = 0.1;
     }
 
+    // Calculate and update DPS, DPM, and average DPS
     calculateDPSAndDPM(damage, rpm, selectedWeapon.mag_size, reloadTime);
     updateModifiedWeaponStats(damage, rpm, reloadTime);
-
 }
 
 // Function to apply individual buffs (simplified to avoid mistakes)
@@ -444,18 +459,31 @@ function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null)
     }
 }
 
+// Modify the existing filterWeapons function to consider gun type checkboxes
 function filterWeapons() {
     const input = document.getElementById('weapon-search').value.toLowerCase();
     const weaponSelect = document.getElementById('weapon-select');
     const options = weaponSelect.getElementsByTagName('option');
 
+    // Get selected guntype filters
+    const selectedGuntypes = Array.from(document.querySelectorAll('#guntype-filters input:checked'))
+        .map(checkbox => checkbox.value);
+
     let firstVisibleOption = null; // Variable to track the first matching option
 
     for (let i = 0; i < options.length; i++) {
         const optionText = options[i].textContent || options[i].innerText;
+        const weaponId = parseInt(options[i].value);  // Get the weapon ID
+        const weapon = weapons.find(w => w.id === weaponId);  // Find the corresponding weapon
 
-        // Check if the option matches the search query
-        if (optionText.toLowerCase().indexOf(input) > -1) {
+        if (!weapon) continue;  // Skip if the weapon is not found (for safety)
+
+        // Check if the option matches the search query and the selected guntype filters
+        const matchesSearch = optionText.toLowerCase().indexOf(input) > -1;
+        const matchesGuntypes = selectedGuntypes.length === 0 || selectedGuntypes.every(type => weapon.guntype.includes(type));
+
+        // Show or hide options based on both search and guntype filters
+        if (matchesSearch && matchesGuntypes) {
             options[i].style.display = '';  // Show matching option
             if (!firstVisibleOption) {
                 firstVisibleOption = options[i]; // Save the first visible option
@@ -503,9 +531,48 @@ function filterOperatives() {
     }
 }
 
+// Function to dynamically create gun type checkboxes based on available gun types in the weapon data
+function createGunTypeCheckboxes() {
+    const gunTypeFiltersContainer = document.getElementById('gun-type-filters');
+    gunTypeFiltersContainer.innerHTML = '';  // Clear existing checkboxes
+
+    const gunTypesSet = new Set();  // Use a Set to store unique gun types from the weapon data
+
+    // Extract unique gun types from the weapon data
+    weapons.forEach(weapon => {
+        weapon.guntype.forEach(type => gunTypesSet.add(type));  // Add each gun type to the Set
+    });
+
+    // Create checkboxes for each unique gun type
+    gunTypesSet.forEach(gunType => {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.value = gunType;
+        input.className = 'gun-type-checkbox';
+
+        // Add event listener to filter weapons when checkbox is checked/unchecked
+        input.addEventListener('change', () => {
+            const selectedCheckboxes = Array.from(document.querySelectorAll('.gun-type-checkbox:checked'));
+            selectedGunTypes = selectedCheckboxes.map(checkbox => checkbox.value);
+            filterWeapons();  // Re-filter weapons based on the selected gun types
+        });
+
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(gunType));
+        gunTypeFiltersContainer.appendChild(label);
+        gunTypeFiltersContainer.appendChild(document.createElement('br'));
+    });
+}
+
 // Attach event listeners to the search inputs
 document.getElementById('weapon-search').addEventListener('keyup', filterWeapons);
 document.getElementById('operative-search').addEventListener('keyup', filterOperatives);
+// Add event listeners to the guntype checkboxes
+document.querySelectorAll('#guntype-filters input').forEach(checkbox => {
+    checkbox.addEventListener('change', filterWeapons);
+});
+
 
 // Call the fetch function to load the data and populate the dropdown on page load
 fetchWeaponsData();

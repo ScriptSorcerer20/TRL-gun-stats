@@ -77,6 +77,20 @@
     <select id="weapon-select" name="weapons">
         <option value="">Select a Weapon</option> <!-- This is the placeholder option -->
     </select>
+    <br>
+    <div id="guntype-filters">
+        <label><input type="checkbox" id="primary" value="PRIMARY"> Primary</label>
+        <label><input type="checkbox" id="secondary" value="SECONDARY"> Secondary</label>
+        <label><input type="checkbox" id="ww2" value="WW2"> WW2</label>
+        <label><input type="checkbox" id="soviet" value="SOVIET"> Soviet</label>
+        <label><input type="checkbox" id="rifle" value="RIFLE"> Rifle</label>
+        <label><input type="checkbox" id="smg" value="SMG"> SMG</label>
+        <label><input type="checkbox" id="shotgun" value="SHOTGUN"> Shotgun</label>
+        <label><input type="checkbox" id="lmg" value="LMG"> LMG</label>
+        <label><input type="checkbox" id="pistol" value="PISTOL"> Pistol</label>
+        <label><input type="checkbox" id="special" value="SPECIAL"> Special</label>
+        <!-- Add more gun types as needed -->
+    </div>
 
     <label for="operative-search"></label>
     <input type="text" id="operative-search" placeholder="Search operatives..." onkeyup="filterOperatives()">
