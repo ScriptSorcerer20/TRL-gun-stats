@@ -6,7 +6,7 @@ let selectedGunTypes = [];  // Track selected gun types for filtering
 
 // Function to fetch operatives data from JSON
 function fetchOperativesData() {
-    fetch('/static/json/operative.json')
+    fetch('static/json/operative.json')
         .then(response => response.json())
         .then(data => {
             populateOperatives(data.operatives);  // Populate the operative dropdown once data is loaded
