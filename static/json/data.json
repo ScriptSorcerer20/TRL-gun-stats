@@ -687,7 +687,7 @@
     "rpm": 400,
     "mag_size": 18,
     "reload_time": 2.1,
-    "guntype": ["PISTOL"]
+    "guntype": ["PISTOL", "DEAGLE"]
   },
   {
     "id": 74,
@@ -697,7 +697,7 @@
     "rpm": 400,
     "mag_size": 36,
     "reload_time": 3.5,
-    "guntype": ["PISTOL"]
+    "guntype": ["PISTOL", "DEAGLE"]
   },
   {
     "id": 75,
