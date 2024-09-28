@@ -16,7 +16,7 @@ input[type="text"] {
 #modifiers {
     display: flex; /* Use flexbox for alignment */
     flex-direction: column; /* Stack items vertically */
-    width: 50%; /* Adjust this percentage to control the width */
+    width: 50%;
 }
 
 #abilities {
@@ -28,7 +28,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    position: relative; /* This allows the z-index on children elements to work */
+    position: relative;
     z-index: -1; /* Send the background behind the content */
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -351,15 +351,15 @@ textarea {
 
     /* Adjust spacing between different ability modifiers */
     #abilities label {
-        display: block; /* Ensures each label takes up its own line */
-        margin-bottom: 10px; /* Adds space between each ability checkbox */
-        line-height: 1.2; /* Keeps the spacing between wrapped lines consistent */
-        white-space: nowrap; /* Allows text to wrap normally */
+        display: block;
+        margin-bottom: 10px;
+        line-height: 1.2;
+        white-space: nowrap;
     }
 
     /* Optional: Adjust margin between checkbox and text */
     #abilities input[type="checkbox"] {
-        margin-right: 5px; /* Adjust the spacing between the checkbox and the label */
+        margin-right: 5px;
     }
 }
 
@@ -373,7 +373,7 @@ textarea {
 .weapon-stats-table th, .weapon-stats-table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: center; /* Center the text */
+    text-align: center; /* Centers the text */
 }
 
 .weapon-stats-table th {
