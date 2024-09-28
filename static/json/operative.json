@@ -26,7 +26,7 @@
       "modifiers": [
         {
           "id": "shotgun-expert-damage-perk",
-          "label": "Shotgun Expert (+25% Damage)",
+          "label": "Shotgun Expert [SHOTGUN] (+25% Damage)",
           "value": 1.25,
           "type": "multiplicative",
           "appliesTo": "SHOTGUN"
@@ -100,7 +100,7 @@
         },
         {
           "id": "lmg-user-damage-perk",
-          "label": "LMG User (+35% Damage)",
+          "label": "LMG User [LMG] (+35% Damage)",
           "value": 1.35,
           "type": "multiplicative",
           "appliesTo": "LMG"
@@ -217,7 +217,7 @@
       "modifiers": [
         {
           "id": "smg-user-damage-perk",
-          "label": "SMG User (+15% Damage)",
+          "label": "SMG User [SMG] (+15% Damage)",
           "value": 1.15,
           "type": "multiplicative",
           "appliesTo": "SMG"
@@ -415,7 +415,7 @@
         },
         {
           "id": "SMG-Pro-reload-perk",
-          "label": "SMG Pro (+100% Reload Speed)",
+          "label": "SMG Pro [SMG] (+100% Reload Speed)",
           "buffs": [
             {
               "type": "reloadTime",
@@ -427,7 +427,7 @@
         },
         {
           "id": "IA-smg-damage-perk",
-          "label": "SMG User (+15% Damage)",
+          "label": "SMG User [SMG] (+15% Damage)",
           "value": 1.15,
           "type": "multiplicative",
           "appliesTo": "SMG"
@@ -1746,7 +1746,7 @@
         },
         {
           "id": "suppressive-fire-firerate-perk",
-          "label": "Hammer Ammo (+100% Firerate)",
+          "label": "Suppressive Fire (+100% Firerate)",
           "buffs": [
             {
               "type": "rpm",
