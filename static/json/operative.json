@@ -694,7 +694,7 @@
             {
               "type": "damage",
               "value": 1.2,
-              "buffType": "multiplicative"
+              "buffType": "multiplicative-headshot"
             }
           ],
           "appliesTo": ""
@@ -749,7 +749,7 @@
             {
               "type": "damage",
               "value": 1.2,
-              "buffType": "multiplicative"
+              "buffType": "multiplicative-headshot"
             }
           ],
           "appliesTo": ""

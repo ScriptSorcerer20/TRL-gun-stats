@@ -3,6 +3,9 @@ let selectedOperative = null;  // Store the selected operative's data
 let weapons = [];  // This will be populated by the fetched JSON data
 let globalModifiers = []; // This will be populated by the fetched JSON data
 let selectedGunTypes = [];  // Track selected gun types for filtering
+let headshotMultiplier = 0;
+let headshotBaseApplied = false;
+
 
 // Function to fetch operatives data from JSON
 function fetchOperativesData() {
@@ -300,6 +303,9 @@ function applyModifiers() {
     let damageModifier = {additive: 0, multiplicative: 1};
     let rpmModifier = {additive: 0, multiplicative: 1};
     let reloadTimeModifier = {additive: 0, multiplicative: 1};
+    headshotMultiplier = 0;  // Reset headshot multiplier
+    headshotBaseApplied = false;
+
 
     // Function to process global modifiers
     const processModifier = (mod) => {
@@ -314,6 +320,28 @@ function applyModifiers() {
         // Check if the modifier applies to any of the current weapon's tags
         if (mod.appliesTo && !weaponTags.includes(mod.appliesTo)) {
             return;  // Skip this modifier if it does not apply to the selected weapon type
+        }
+
+
+        if (mod.dataset.type === 'multiplicative-headshot') {
+            if (!headshotBaseApplied) {
+                // Automatically check and apply headshot base
+                const baseHeadshotModifier = document.querySelector("#modifiers input[data-type='multiplicative-headshot-base']");
+                if (baseHeadshotModifier && !baseHeadshotModifier.checked) {
+                    baseHeadshotModifier.checked = true;
+                    headshotMultiplier += parseFloat(baseHeadshotModifier.value) - 1;
+                    headshotBaseApplied = true;
+                }
+            }
+            headshotMultiplier += parseFloat(mod.value) - 1;
+        } else if (mod.dataset.type === 'multiplicative-headshot-base') {
+            if (!headshotBaseApplied) {
+                headshotMultiplier += parseFloat(mod.value) - 1;
+                headshotBaseApplied = true;
+            }
+        } else {
+            // Process other modifiers
+            applyBuff(mod, rpmModifier, reloadTimeModifier, damageModifier);
         }
 
         // Handle modifiers with multiple buffs
@@ -407,11 +435,15 @@ function applyModifiers() {
         }
     });
 
-     // Step 1: Calculate final damage
+    // Step 1: Calculate final damage
     let damage = baseDamage; // Reset to base damage
 
     // Step 2: Apply multiplicative damage modifiers
     damage *= damageModifier.multiplicative;
+
+    if (headshotMultiplier > 0) {
+        damage *= (1 + headshotMultiplier);
+    }
 
     // Step 3: Apply additive damage modifiers
     damage += damageModifier.additive;
@@ -433,27 +465,29 @@ function applyModifiers() {
     updateModifiedWeaponStats(damage, rpm, reloadTime);
 }
 
-// Function to apply individual buffs (simplified to avoid mistakes)
-function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier = null) {
+// Function to apply individual buffs, with headshot handling
+function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier) {
     const {type, buffType, value} = buff;
+
+    // Handle headshot multipliers
+    if (buffType === 'multiplicative-headshot-base' && !headshotBaseApplied) {
+        headshotMultiplier = value - 1;
+        headshotBaseApplied = true;
+        return;
+    }
+    if (buffType === 'multiplicative-headshot') {
+        headshotMultiplier += value - 1;
+        return;
+    }
 
     // Apply buffs based on the stat being modified
     if (type === 'rpm') {
         if (buffType === 'multiplicative') rpmModifier.multiplicative *= value;
         else if (buffType === 'additive') rpmModifier.additive += value;
-    }
-
-    if (type === 'reloadTime') {
-        if (buffType === 'multiplicative') {
-            reloadTimeModifier.multiplicative *= value;
-        } else if (buffType === 'additive') {
-            // Subtract value for additive reload time modifiers (like Weapon Expert)
-            reloadTimeModifier.additive += value;
-        }
-    }
-
-    // Apply damage buffs
-    if (type === 'damage' && damageModifier) {
+    } else if (type === 'reloadTime') {
+        if (buffType === 'multiplicative') reloadTimeModifier.multiplicative *= value;
+        else if (buffType === 'additive') reloadTimeModifier.additive += value;
+    } else if (type === 'damage' && damageModifier) {
         if (buffType === 'multiplicative') damageModifier.multiplicative *= value;
         else if (buffType === 'additive') damageModifier.additive += value;
     }

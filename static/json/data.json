@@ -136,7 +136,7 @@
     "damage_multiplier": 4,
     "rpm": 300,
     "mag_size": 7,
-    "reload_time": 4,
+    "reload_time": 4.5,
     "guntype": ["SHOTGUN", "PRIMARY"]
   },
   {
@@ -402,10 +402,20 @@
   {
     "id": 44,
     "name": "Improved G18",
-    "damage": 38,
+    "damage": 46,
     "damage_multiplier": 1,
     "rpm": 650,
     "mag_size": 18,
+    "reload_time": 2,
+    "guntype": ["PISTOL"]
+  },
+  {
+    "id": 89,
+    "name": "Improved G18 (150+ Kills)",
+    "damage": 51,
+    "damage_multiplier": 1,
+    "rpm": 650,
+    "mag_size": 23,
     "reload_time": 2,
     "guntype": ["PISTOL"]
   },
@@ -592,10 +602,20 @@
   {
     "id": 64,
     "name": "Improved Vector",
-    "damage": 36,
+    "damage": 34,
     "damage_multiplier": 1,
     "rpm": 1050,
-    "mag_size": 30,
+    "mag_size": 33,
+    "reload_time": 2,
+    "guntype": ["SMG", "PRIMARY"]
+  },
+  {
+    "id": 88,
+    "name": "Improved Vector (150+ Kills)",
+    "damage": 39,
+    "damage_multiplier": 1,
+    "rpm": 1050,
+    "mag_size": 33,
     "reload_time": 2,
     "guntype": ["SMG", "PRIMARY"]
   },
