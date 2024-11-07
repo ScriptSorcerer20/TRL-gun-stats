@@ -383,33 +383,25 @@ function applyModifiers() {
             }
         }
     });
-
     // Step 1: Calculate final damage
     let damage = baseDamage; // Reset to base damage
-
     // Step 2: Apply multiplicative damage modifiers
     damage *= damageModifier.multiplicative;
-
     // Step 3: Apply headshot multiplicative damage modifiers
     if (headshotMultiplier > 0) {
         damage *= (1 + headshotMultiplier);
     }
-
     // Step 4: Apply additive damage modifiers
     damage += damageModifier.additive;
-
     // Step 5: Apply the weapon's damage multiplier
     damage *= selectedWeapon.damage_multiplier;
-
     // Calculate other modified stats
     let rpm = baseRpm * rpmModifier.multiplicative + rpmModifier.additive;
     let reloadTime = baseReloadTime * reloadTimeModifier.multiplicative + reloadTimeModifier.additive;
-
     // Safeguard: Reload time cannot go below 0.1 seconds
     if (reloadTime < 0.1) {
         reloadTime = 0.1;
     }
-
     // Calculate and update DPS, DPM, and average DPS
     calculateDPSAndDPM(damage, rpm, selectedWeapon.mag_size, reloadTime);
     updateModifiedWeaponStats(damage, rpm, reloadTime);
