@@ -188,7 +188,7 @@ function updateModifiedWeaponStats(damage, rpm, reloadTime) {
                 <th>Modified Reload Time</th>
                 <th>DPS</th>
                 <th>DPM</th>
-                <th>Average DPS</th> <!-- New Column for Average DPS -->
+                <th>Average DPS</th>
             </tr>
             <tr>
                 <td>${selectedWeapon.name}</td>
@@ -198,7 +198,7 @@ function updateModifiedWeaponStats(damage, rpm, reloadTime) {
                 <td>${reloadTime.toFixed(2)} seconds</td>
                 <td id="dps-value"></td>
                 <td id="dpm-value"></td>
-                <td id="average-dps-value"></td> <!-- Cell for Average DPS -->
+                <td id="average-dps-value"></td>
             </tr>
         </table>
     `;
@@ -541,12 +541,9 @@ function filterOperatives() {
     const input = document.getElementById('operative-search').value.toLowerCase();
     const operativeSelect = document.getElementById('operative-select');
     const options = operativeSelect.getElementsByTagName('option');
-
     let firstVisibleOption = null; // Track the first matching option
-
     for (let i = 0; i < options.length; i++) {
         const optionText = options[i].textContent || options[i].innerText;
-
         // Check if the option matches the search query
         if (optionText.toLowerCase().indexOf(input) > -1) {
             options[i].style.display = '';  // Show matching option
@@ -557,7 +554,6 @@ function filterOperatives() {
             options[i].style.display = 'none';  // Hide non-matching option
         }
     }
-
     // Automatically select the first visible matching option
     if (firstVisibleOption) {
         operativeSelect.value = firstVisibleOption.value;
@@ -570,14 +566,11 @@ function filterOperatives() {
 function createGunTypeCheckboxes() {
     const gunTypeFiltersContainer = document.getElementById('gun-type-filters');
     gunTypeFiltersContainer.innerHTML = '';  // Clear existing checkboxes
-
     const gunTypesSet = new Set();  // Use a Set to store unique gun types from the weapon data
-
     // Extract unique gun types from the weapon data
     weapons.forEach(weapon => {
         weapon.guntype.forEach(type => gunTypesSet.add(type));  // Add each gun type to the Set
     });
-
     // Create checkboxes for each unique gun type
     gunTypesSet.forEach(gunType => {
         const label = document.createElement('label');
@@ -585,21 +578,18 @@ function createGunTypeCheckboxes() {
         input.type = 'checkbox';
         input.value = gunType;
         input.className = 'gun-type-checkbox';
-
         // Add event listener to filter weapons when checkbox is checked/unchecked
         input.addEventListener('change', () => {
             const selectedCheckboxes = Array.from(document.querySelectorAll('.gun-type-checkbox:checked'));
             selectedGunTypes = selectedCheckboxes.map(checkbox => checkbox.value);
             filterWeapons();  // Re-filter weapons based on the selected gun types
         });
-
         label.appendChild(input);
         label.appendChild(document.createTextNode(gunType));
         gunTypeFiltersContainer.appendChild(label);
         gunTypeFiltersContainer.appendChild(document.createElement('br'));
     });
 }
-
 // Attach event listeners to the search inputs
 document.getElementById('weapon-search').addEventListener('keyup', filterWeapons);
 document.getElementById('operative-search').addEventListener('keyup', filterOperatives);
@@ -607,7 +597,6 @@ document.getElementById('operative-search').addEventListener('keyup', filterOper
 document.querySelectorAll('#guntype-filters input').forEach(checkbox => {
     checkbox.addEventListener('change', filterWeapons);
 });
-
 
 // Call the fetch function to load the data and populate the dropdown on page load
 fetchWeaponsData();
