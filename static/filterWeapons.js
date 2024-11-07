@@ -9,7 +9,7 @@ let headshotBaseApplied = false;
 
 // Function to fetch operatives data from JSON
 function fetchOperativesData() {
-    fetch('static/json/operative.json')
+    fetch('/static/json/operative.json')
         .then(response => response.json())
         .then(data => {
             populateOperatives(data.operatives);  // Populate the operative dropdown once data is loaded
@@ -132,6 +132,7 @@ function populateWeapons() {
         selectedWeapon = weapons.find(weapon => weapon.id === selectedWeaponId);
         if (selectedWeapon) {
             updateWeaponStats(selectedWeapon);  // Update stats on valid selection
+            applyModifiers();
         }
     });
 }

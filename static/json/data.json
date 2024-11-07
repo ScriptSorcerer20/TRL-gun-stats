@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "G18",
-    "damage": 32,
+    "damage": 34,
     "damage_multiplier": 1,
     "rpm": 550,
     "mag_size": 18,
