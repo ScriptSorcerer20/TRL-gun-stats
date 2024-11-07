@@ -31,15 +31,14 @@ function populateTable(data) {
     table.innerHTML = ''; // Clear existing table data
     data.forEach(gun => {
         const row = table.insertRow();
-        row.insertCell(0).innerText = gun.id;
-        row.insertCell(1).innerText = gun.name;
-        row.insertCell(2).innerText = gun.total_damage.toFixed(2);
-        row.insertCell(3).innerText = gun.rpm;
-        row.insertCell(4).innerText = gun.mag_size;
-        row.insertCell(5).innerText = gun.reload_time;
-        row.insertCell(6).innerText = gun.rps.toFixed(2);
-        row.insertCell(7).innerText = gun.dps.toFixed(2);
-        row.insertCell(8).innerText = gun.dpm.toFixed(2);
-        row.insertCell(9).innerText = gun.avg_dps.toFixed(2);
+        row.insertCell(0).innerText = gun.name;
+        row.insertCell(1).innerText = gun.total_damage.toFixed(2);
+        row.insertCell(2).innerText = gun.rpm;
+        row.insertCell(3).innerText = gun.mag_size;
+        row.insertCell(4).innerText = gun.reload_time;
+        row.insertCell(5).innerText = gun.rps.toFixed(2);
+        row.insertCell(6).innerText = gun.dps.toFixed(2);
+        row.insertCell(7).innerText = gun.dpm.toFixed(2);
+        row.insertCell(8).innerText = gun.avg_dps.toFixed(2);
     });
 }
