@@ -132,7 +132,7 @@ function populateWeapons() {
         selectedWeapon = weapons.find(weapon => weapon.id === selectedWeaponId);
         if (selectedWeapon) {
             updateWeaponStats(selectedWeapon);  // Update stats on valid selection
-            applyModifiers();
+            applyModifiers(); // Apply Modifiers on valid selection
         }
     });
 }
