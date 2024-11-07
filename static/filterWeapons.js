@@ -21,30 +21,25 @@ function fetchOperativesData() {
 function populateOperatives(operatives) {
     const select = document.getElementById('operative-select');
     select.innerHTML = ""; // Clear any existing options
-
     // Add the placeholder option
     const placeholderOption = document.createElement('option');
     placeholderOption.value = "";  // Empty value for the placeholder
     placeholderOption.text = "Select an operative";
     select.appendChild(placeholderOption);  // Add the placeholder option
-
     operatives.forEach(operative => {
         const option = document.createElement('option');
         option.value = operative.id;
         option.text = operative.name;
         select.appendChild(option);
     });
-
     // Attach event listener to detect when an operative is selected
     select.addEventListener('change', (event) => {
         const selectedOperativeId = event.target.value;
-
         // If placeholder is selected, don't proceed
         if (!selectedOperativeId) {
             document.getElementById('operative-modifiers').innerHTML = '';
             return;  // Do nothing when the placeholder is selected
         }
-
         selectedOperative = operatives.find(op => op.id === selectedOperativeId);
         if (selectedOperative) {
             updateOperativeBuffs(selectedOperative);  // Update operative modifiers on valid selection
@@ -54,11 +49,9 @@ function populateOperatives(operatives) {
 
 function updateOperativeBuffs(operative) {
     const operativeModifiers = operative.modifiers || [];
-
     // Remove previously added operative-specific modifiers
     const operativeSection = document.getElementById('operative-modifiers');
     operativeSection.innerHTML = '';  // Clear existing operative modifiers
-
     // If the operative has specific modifiers, show them
     if (operativeModifiers.length > 0) {
         operativeModifiers.forEach(mod => {
@@ -69,24 +62,19 @@ function updateOperativeBuffs(operative) {
             input.value = mod.value;
             input.dataset.type = mod.type;
             input.dataset.buffs = mod.buffs ? JSON.stringify(mod.buffs) : '';  // Store buffs if available
-
             // Set checkbox to be unchecked by default
             input.checked = false;
-
             label.appendChild(input);
             label.appendChild(document.createTextNode(mod.label));
             operativeSection.appendChild(label);
             operativeSection.appendChild(document.createElement('br'));
         });
     }
-
     // Make sure that each operative-specific modifier checkbox triggers recalculation when changed
     operativeSection.addEventListener('change', applyModifiers);
-
     // Trigger recalculation once the operative buffs are displayed
     applyModifiers();
 }
-
 
 // Function to fetch weapons data from JSON
 function fetchWeaponsData() {
@@ -104,13 +92,11 @@ function fetchWeaponsData() {
 function populateWeapons() {
     const select = document.getElementById('weapon-select');
     select.innerHTML = ""; // Clear any existing options
-
     // Add the placeholder option
     const placeholderOption = document.createElement('option');
     placeholderOption.value = "";  // Empty value for the placeholder
     placeholderOption.text = "Select a Weapon";
     select.appendChild(placeholderOption);  // Add the placeholder option
-
     // Populate with actual weapons
     weapons.forEach(weapon => {
         const option = document.createElement('option');
@@ -118,17 +104,14 @@ function populateWeapons() {
         option.text = weapon.name;
         select.appendChild(option);
     });
-
     // Attach event listener to detect when a weapon is selected
     select.addEventListener('change', (event) => {
         const selectedWeaponId = parseInt(event.target.value);
-
         // If placeholder is selected, don't proceed
         if (!selectedWeaponId) {
             document.getElementById('weapon-stats').innerHTML = '';
             return;  // Do nothing when the placeholder is selected
         }
-
         selectedWeapon = weapons.find(weapon => weapon.id === selectedWeaponId);
         if (selectedWeapon) {
             updateWeaponStats(selectedWeapon);  // Update stats on valid selection
@@ -164,13 +147,11 @@ function updateWeaponStats(weapon) {
             </tr>
         </table>
     `;
-
     // Store values for further calculations
     const damage = weapon.damage * weapon.damage_multiplier;
     const rpm = weapon.rpm;
     const magSize = weapon.mag_size;
     const reloadTime = weapon.reload_time;
-
     // Calculate DPS, DPM, and Average DPS
     calculateDPSAndDPM(damage, rpm, magSize, reloadTime);
 }
@@ -202,7 +183,6 @@ function updateModifiedWeaponStats(damage, rpm, reloadTime) {
             </tr>
         </table>
     `;
-
     // Recalculate and update DPS, DPM, and Average DPS
     calculateDPSAndDPM(damage, rpm, selectedWeapon.mag_size, reloadTime);
 }
@@ -214,13 +194,11 @@ function calculateDPSAndDPM(damage, rpm, magSize, reloadTime) {
     const reloadTimeMin = reloadTime / 60;
     let dpm = (magSize * damage) / (reloadTimeMin + (magSize / rpm));
     let averageDPS = dpm / 60; // New Average DPS Calculation
-
     // Update DPS, DPM, and Average DPS values in the table
     document.getElementById('dps-value').innerText = dps.toFixed(2);
     document.getElementById('dpm-value').innerText = dpm.toFixed(2);
     document.getElementById('average-dps-value').innerText = averageDPS.toFixed(2); // Update the Average DPS in the table
 }
-
 
 // Function to fetch and populate modifiers from the JSON file
 function fetchModifiers() {
@@ -237,22 +215,18 @@ function fetchModifiers() {
 function populateModifiers(modifiers) {
     const modifiersContainer = document.getElementById('modifiers-container');
     modifiersContainer.innerHTML = ''; // Clear existing modifiers
-
     const createModifierSection = (title, modifierList, sectionId) => {
         const section = document.createElement('div');
         section.id = sectionId; // Set an ID for the section
         section.className = sectionId === 'abilities' ? 'abilities' : ''; // Only for abilities
-
         const header = document.createElement('h3');
         header.textContent = title;
         section.appendChild(header);
-
         modifierList.forEach(mod => {
             const label = document.createElement('label');
             const input = document.createElement('input');
             input.type = 'checkbox';
             input.id = mod.id;
-
             // Check if the modifier has multiple buffs
             if (mod.buffs) {
                 input.dataset.buffs = JSON.stringify(mod.buffs);
@@ -260,33 +234,26 @@ function populateModifiers(modifiers) {
                 input.value = mod.value;
                 input.dataset.type = mod.type;
             }
-
             label.appendChild(input);
             label.appendChild(document.createTextNode(mod.label));
-
             // Create a container for each modifier item
             const modifierItem = document.createElement('div');
             modifierItem.className = 'modifier-item'; // Add the class for styling
             modifierItem.appendChild(label);
             section.appendChild(modifierItem); // Append the modifier item to the section
         });
-
         return section;
     };
-
     // Create a container for all modifiers
     const container = document.createElement('div');
     container.id = 'modifiers';
-
     // Populate sections
     container.appendChild(createModifierSection('Item Buffs', modifiers.itemBuffs, 'items'));
     container.appendChild(createModifierSection('Perks', modifiers.operativePerks, 'perks'));
     modifiersContainer.appendChild(container); // Append item and perks container
-
     // Create and append abilities section
     const abilitiesSection = createModifierSection('Abilities', modifiers.abilityPerks, 'abilities');
     modifiersContainer.appendChild(abilitiesSection); // Append abilities section
-
     // Add event listener to recalculate DPS/DPM when modifiers are toggled
     modifiersContainer.addEventListener('change', applyModifiers);
 }
@@ -294,12 +261,10 @@ function populateModifiers(modifiers) {
 // Function to apply the modifiers and recalculate damage, RPM, and reloadTime
 function applyModifiers() {
     if (!selectedWeapon) return;
-
     // Base stats
     let baseDamage = selectedWeapon.damage;
     let baseRpm = selectedWeapon.rpm;
     let baseReloadTime = selectedWeapon.reload_time;
-
     // Modifiers initialization
     let damageModifier = {additive: 0, multiplicative: 1};
     let rpmModifier = {additive: 0, multiplicative: 1};
@@ -311,19 +276,15 @@ function applyModifiers() {
     // Function to process global modifiers
     const processModifier = (mod) => {
         // Ensure guntype is now an array of tags
-        const weaponTags = selectedWeapon.guntype;  // This is now an array like ["PISTOL", "WW2", "SECONDARY"]
-
+        const weaponTags = selectedWeapon.guntype;  // This is now an array like ["PISTOL", "WW2", "SECONDARY"] -> Do not write "guntype": "PISTOL", write "guntype": ["PISTOL"]
         // Skip the modifier if it should not apply to any of the current weapon's tags
         if (mod.appliesNotTo && weaponTags.includes(mod.appliesNotTo)) {
             return;  // Skip this modifier
         }
-
         // Check if the modifier applies to any of the current weapon's tags
         if (mod.appliesTo && !weaponTags.includes(mod.appliesTo)) {
             return;  // Skip this modifier if it does not apply to the selected weapon type
         }
-
-
         if (mod.dataset.type === 'multiplicative-headshot') {
             if (!headshotBaseApplied) {
                 // Automatically check and apply headshot base
@@ -344,7 +305,6 @@ function applyModifiers() {
             // Process other modifiers
             applyBuff(mod, rpmModifier, reloadTimeModifier, damageModifier);
         }
-
         // Handle modifiers with multiple buffs
         if (mod.dataset.buffs) {
             const buffs = JSON.parse(mod.dataset.buffs);
@@ -354,13 +314,11 @@ function applyModifiers() {
         } else {
             const modType = mod.dataset.type;
             const modValue = parseFloat(mod.value);
-
             const singleBuff = {
                 type: modType === 'multiplicative' ? 'multiplicative' : 'additive',
                 buffType: modType,
                 value: modValue
             };
-
             if (mod.id.includes('damage')) {
                 singleBuff.type = 'damage';
             } else if (mod.id.includes('rpm')) {
@@ -376,17 +334,14 @@ function applyModifiers() {
     const processOperativeModifier = (mod) => {
         // Ensure guntype is now an array of tags
         const weaponTags = selectedWeapon.guntype;  // This is now an array like ["PISTOL", "WW2", "SECONDARY"]
-
         // Skip the modifier if it should not apply to any of the current weapon's tags
         if (mod.appliesNotTo && weaponTags.includes(mod.appliesNotTo)) {
             return;  // Skip this modifier
         }
-
         // Check if the modifier applies to any of the current weapon's tags
         if (mod.appliesTo && !weaponTags.includes(mod.appliesTo)) {
             return;  // Skip this modifier if it does not apply to the selected weapon type
         }
-
         // Handle operative modifiers with multiple buffs
         if (mod.buffs) {
             mod.buffs.forEach(buff => {
@@ -405,26 +360,19 @@ function applyModifiers() {
             applyBuff(singleBuff, rpmModifier, reloadTimeModifier, damageModifier);
         }
     };
-
-
-    // Clear out listeners and avoid re-adding
     // Process ability modifiers
     const abilitiesSection = document.getElementById('abilities');
     abilitiesSection.querySelectorAll('input:checked').forEach(mod => {
         processModifier(mod);  // Process the ability modifier the same way as global modifiers
     });
-
     const modifiersContainer = document.getElementById('modifiers');
     modifiersContainer.removeEventListener('change', applyModifiers);
-
     // Process global modifiers
     document.querySelectorAll('#modifiers input:checked').forEach(mod => {
         processModifier(mod);
     });
-
     // Re-apply listener after change
     modifiersContainer.addEventListener('change', applyModifiers);
-
     // Process operative-specific modifiers that are checked
     const operativeSection = document.getElementById('operative-modifiers');
     operativeSection.querySelectorAll('input:checked').forEach(mod => {
@@ -442,14 +390,15 @@ function applyModifiers() {
     // Step 2: Apply multiplicative damage modifiers
     damage *= damageModifier.multiplicative;
 
+    // Step 3: Apply headshot multiplicative damage modifiers
     if (headshotMultiplier > 0) {
         damage *= (1 + headshotMultiplier);
     }
 
-    // Step 3: Apply additive damage modifiers
+    // Step 4: Apply additive damage modifiers
     damage += damageModifier.additive;
 
-    // Apply the weapon's damage multiplier (if applicable) last
+    // Step 5: Apply the weapon's damage multiplier
     damage *= selectedWeapon.damage_multiplier;
 
     // Calculate other modified stats
@@ -469,7 +418,6 @@ function applyModifiers() {
 // Function to apply individual buffs, with headshot handling
 function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier) {
     const {type, buffType, value} = buff;
-
     // Handle headshot multipliers
     if (buffType === 'multiplicative-headshot-base' && !headshotBaseApplied) {
         headshotMultiplier = value - 1;
@@ -480,7 +428,6 @@ function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier) {
         headshotMultiplier += value - 1;
         return;
     }
-
     // Apply buffs based on the stat being modified
     if (type === 'rpm') {
         if (buffType === 'multiplicative') rpmModifier.multiplicative *= value;
@@ -499,24 +446,18 @@ function filterWeapons() {
     const input = document.getElementById('weapon-search').value.toLowerCase();
     const weaponSelect = document.getElementById('weapon-select');
     const options = weaponSelect.getElementsByTagName('option');
-
     // Get selected guntype filters
     const selectedGuntypes = Array.from(document.querySelectorAll('#guntype-filters input:checked'))
         .map(checkbox => checkbox.value);
-
     let firstVisibleOption = null; // Variable to track the first matching option
-
     for (let i = 0; i < options.length; i++) {
         const optionText = options[i].textContent || options[i].innerText;
         const weaponId = parseInt(options[i].value);  // Get the weapon ID
         const weapon = weapons.find(w => w.id === weaponId);  // Find the corresponding weapon
-
         if (!weapon) continue;  // Skip if the weapon is not found (for safety)
-
         // Check if the option matches the search query and the selected guntype filters
         const matchesSearch = optionText.toLowerCase().indexOf(input) > -1;
         const matchesGuntypes = selectedGuntypes.length === 0 || selectedGuntypes.every(type => weapon.guntype.includes(type));
-
         // Show or hide options based on both search and guntype filters
         if (matchesSearch && matchesGuntypes) {
             options[i].style.display = '';  // Show matching option
@@ -527,7 +468,6 @@ function filterWeapons() {
             options[i].style.display = 'none';  // Hide non-matching option
         }
     }
-
     // Automatically select the first visible matching option
     if (firstVisibleOption) {
         weaponSelect.value = firstVisibleOption.value;
