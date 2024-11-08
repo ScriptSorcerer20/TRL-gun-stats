@@ -171,9 +171,30 @@
       "appliesTo": ""
     },
     {
+      "id": "reload-buff-focus-fire",
+      "label": "[All Operatives] Focus Fire (+20% Reload Speed)",
+      "buffs": [
+        {
+          "type": "reloadTime",
+          "value": 0.8,
+          "buffType": "multiplicative"
+        }
+      ],
+      "operatives": "",
+      "appliesTo": ""
+    },
+    {
       "id": "damage-ability-multiplicative-blackout",
       "label": "[All Operatives] Blackout (+30% Damage)",
       "value": 1.3,
+      "type": "multiplicative",
+      "operatives": "",
+      "appliesTo": ""
+    },
+    {
+      "id": "damage-ability-demoman",
+      "label": "[All Operatives] Enemy hit by Demolitionist Explosive (+15% Damage)",
+      "value": 1.15,
       "type": "multiplicative",
       "operatives": "",
       "appliesTo": ""

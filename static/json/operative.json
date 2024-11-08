@@ -17,7 +17,25 @@
     {
       "id": "Classic-Scout",
       "name": "Scout",
-      "category": "Classic"
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "run-and-gun-damage-perk",
+          "label": "Run and Gun 100% (+12% Firerate, +16% Reload Speed)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 1.12,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.84,
+              "buffType": "multiplicative"
+            }
+          ]
+        }
+        ]
     },
     {
       "id": "Classic-RCU",
@@ -26,7 +44,7 @@
       "modifiers": [
         {
           "id": "shotgun-expert-damage-perk",
-          "label": "Shotgun Expert [SHOTGUN] (+25% Damage)",
+          "label": "Shotgun Expert (+25% Damage)",
           "value": 1.25,
           "type": "multiplicative",
           "appliesTo": "SHOTGUN"
@@ -48,6 +66,30 @@
           "label": "Max Corruption (+30% Damage)",
           "value": 1.30,
           "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "sergeant-high-velocity-bullets-damage-perk",
+          "label": "High Velocity Bullets (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "sergeant-quick-hands-reload-perk",
+          "label": "Quick Hands (+20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
           "appliesTo": ""
         }
       ]
@@ -100,7 +142,7 @@
         },
         {
           "id": "lmg-user-damage-perk",
-          "label": "LMG User [LMG] (+35% Damage)",
+          "label": "LMG User (+35% Damage)",
           "value": 1.35,
           "type": "multiplicative",
           "appliesTo": "LMG"
@@ -168,17 +210,24 @@
       "category": "Classic",
       "modifiers": [
         {
-          "id": "last-stand-damage-perk",
-          "label": "Last Stand (+150% Damage)",
-          "value": 2.5,
+          "id": "armor-restructure-10-damage-perk",
+          "label": "Armor Restructure(10 HP Left) (+32% Damage)",
+          "value": 1.32,
           "type": "multiplicative",
           "appliesTo": ""
         },
         {
-          "id": "world-on-fire-damage-perk",
-          "label": "World on fire (+150% Damage)",
-          "value": 2.5,
-          "type": "multiplicative",
+          "id": "anarchist-threat-control-damage-perk",
+          "label": "Threat Control (Max Corruption) (+20 Damage)",
+          "value": 20,
+          "type": "additive",
+          "appliesTo": ""
+        },
+        {
+          "id": "berserker-damage-perk",
+          "label": "Berserker (+30 Damage)",
+          "value": 30,
+          "type": "additive",
           "appliesTo": ""
         },
         {
@@ -217,7 +266,7 @@
       "modifiers": [
         {
           "id": "smg-user-damage-perk",
-          "label": "SMG User [SMG] (+15% Damage)",
+          "label": "SMG User (+15% Damage)",
           "value": 1.15,
           "type": "multiplicative",
           "appliesTo": "SMG"
@@ -415,7 +464,7 @@
         },
         {
           "id": "SMG-Pro-reload-perk",
-          "label": "SMG Pro [SMG] (+100% Reload Speed)",
+          "label": "SMG Pro (+100% Reload Speed)",
           "buffs": [
             {
               "type": "reloadTime",
@@ -427,7 +476,7 @@
         },
         {
           "id": "IA-smg-damage-perk",
-          "label": "SMG User [SMG] (+15% Damage)",
+          "label": "SMG User (+15% Damage)",
           "value": 1.15,
           "type": "multiplicative",
           "appliesTo": "SMG"
@@ -635,7 +684,23 @@
     {
       "id": "MTF-Beta-7",
       "name": "Beta-7",
-      "category": "MTF"
+      "category": "MTF",
+      "modifiers": [
+        {
+          "id": "toxic-rounds-damage-perk",
+          "label": "Toxic Rounds (+8 Damage)",
+          "value": 8,
+          "type": "additive",
+          "appliesTo": ""
+        },
+        {
+          "id": "toxic-rounds-exploders-damage-perk",
+          "label": "Toxic Rounds (Against Exploders) (+100% Damage)",
+          "value": 2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
     },
     {
       "id": "MTF-Commander",
@@ -689,11 +754,11 @@
         },
         {
           "id": "uiu-hru-skull-cracker-damage-perk",
-          "label": "Skull Cracker (+20% Damage)",
+          "label": "Skull Cracker (+15% Damage)",
           "buffs": [
             {
               "type": "damage",
-              "value": 1.2,
+              "value": 1.15,
               "buffType": "multiplicative-headshot"
             }
           ],
@@ -744,11 +809,11 @@
         },
         {
           "id": "uiu-marksman-skull-cracker-damage-perk",
-          "label": "Skull Cracker (+20% Damage)",
+          "label": "Skull Cracker (+15% Damage)",
           "buffs": [
             {
               "type": "damage",
-              "value": 1.2,
+              "value": 1.15,
               "buffType": "multiplicative-headshot"
             }
           ],
@@ -894,23 +959,6 @@
             }
           ],
           "appliesTo": "SHOTGUN"
-        },
-        {
-          "id": "buckshot-damage-rpm-perk",
-          "label": "Buckshot Bullet-type [R870-B] (+20% Firerate, +15% Damage)",
-          "buffs": [
-            {
-              "type": "damage",
-              "value": 1.15,
-              "buffType": "multiplicative"
-            },
-            {
-              "type": "rpm",
-              "value": 1.20,
-              "buffType": "multiplicative"
-            }
-          ],
-          "appliesTo": "R870-B"
         },
         {
           "id": "anger-issues-damage-perk",
@@ -1088,6 +1136,18 @@
             }
           ],
           "appliesTo": "SMG"
+        },
+        {
+          "id": "uiu-quick-hands-reload-perk",
+          "label": "Quick Hands (+20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
         }
       ]
     },
@@ -1396,11 +1456,11 @@
       "modifiers": [
         {
           "id": "hit-list-damage-perk",
-          "label": "Hit List (+50% Damage)",
+          "label": "Hit List (+30% Damage)",
           "buffs": [
             {
               "type": "damage",
-              "value": 1.5,
+              "value": 1.3,
               "buffType": "multiplicative"
             }
           ],
@@ -1408,11 +1468,11 @@
         },
         {
           "id": "Backliner-damage-perk",
-          "label": "Backliner (+35% Damage)",
+          "label": "Backliner (+20% Damage)",
           "buffs": [
             {
               "type": "damage",
-              "value": 1.35,
+              "value": 1.20,
               "buffType": "multiplicative"
             }
           ],
@@ -1420,11 +1480,11 @@
         },
         {
           "id": "spree-damage-perk",
-          "label": "Headshot Spree (+200% Damage)",
+          "label": "Headshot Spree (+50% Damage)",
           "buffs": [
             {
               "type": "damage",
-              "value": 3,
+              "value": 1.5,
               "buffType": "multiplicative"
             }
           ],
@@ -1439,11 +1499,11 @@
       "modifiers": [
         {
           "id": "spray-and-pary-damage-perk",
-          "label": "Spray and Pray (+100% Damage)",
+          "label": "Spray and Pray (+50% Damage)",
           "buffs": [
             {
               "type": "damage",
-              "value": 2,
+              "value": 1.5,
               "buffType": "multiplicative"
             }
           ],
@@ -1746,7 +1806,7 @@
         },
         {
           "id": "suppressive-fire-firerate-perk",
-          "label": "Suppressive Fire (+100% Firerate)",
+          "label": "Hammer Ammo (+100% Firerate)",
           "buffs": [
             {
               "type": "rpm",

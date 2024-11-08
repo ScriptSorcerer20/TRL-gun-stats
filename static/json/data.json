@@ -4,15 +4,15 @@
     "name": "G18",
     "damage": 34,
     "damage_multiplier": 1,
-    "rpm": 550,
-    "mag_size": 18,
+    "rpm": 800,
+    "mag_size": 17,
     "reload_time": 2,
     "guntype": ["PISTOL", "SECONDARY"]
   },
   {
     "id": 2,
     "name": "M1911",
-    "damage": 37,
+    "damage": 45,
     "damage_multiplier": 1,
     "rpm": 580,
     "mag_size": 8,
@@ -22,9 +22,9 @@
   {
     "id": 3,
     "name": "M9A",
-    "damage": 31,
+    "damage": 65,
     "damage_multiplier": 1,
-    "rpm": 850,
+    "rpm": 300,
     "mag_size": 15,
     "reload_time": 2,
     "guntype": ["PISTOL", "SECONDARY"]
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "name": "M1911MK2",
-    "damage": 48,
+    "damage": 60,
     "damage_multiplier": 1,
     "rpm": 720,
     "mag_size": 16,
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Luger",
-    "damage": 58,
+    "damage": 150,
     "damage_multiplier": 1,
     "rpm": 500,
     "mag_size": 8,
@@ -142,9 +142,9 @@
   {
     "id": 16,
     "name": "Shorty",
-    "damage": 29,
+    "damage": 40,
     "damage_multiplier": 4,
-    "rpm": 185,
+    "rpm": 150,
     "mag_size": 8,
     "reload_time": 3.5,
     "guntype": ["SHOTGUN", "SECONDARY"]
@@ -182,10 +182,10 @@
   {
     "id": 22,
     "name": "Uzi",
-    "damage": 20,
+    "damage": 32,
     "damage_multiplier": 1,
-    "rpm": 850,
-    "mag_size": 32,
+    "rpm": 950,
+    "mag_size": 20,
     "reload_time": 2,
     "guntype": ["SMG", "SECONDARY"]
   },
@@ -202,7 +202,7 @@
   {
     "id": 24,
     "name": "MP5",
-    "damage": 23,
+    "damage": 26,
     "damage_multiplier": 1,
     "rpm": 800,
     "mag_size": 30,
@@ -212,7 +212,7 @@
   {
     "id": 25,
     "name": "U10",
-    "damage": 18,
+    "damage": 22,
     "damage_multiplier": 1,
     "rpm": 750,
     "mag_size": 65,
@@ -222,7 +222,7 @@
   {
     "id": 26,
     "name": "MPX",
-    "damage": 28,
+    "damage": 36,
     "damage_multiplier": 1,
     "rpm": 780,
     "mag_size": 30,
@@ -232,7 +232,7 @@
   {
     "id": 27,
     "name": "UMP45",
-    "damage": 28,
+    "damage": 36,
     "damage_multiplier": 1,
     "rpm": 600,
     "mag_size": 25,
@@ -242,7 +242,7 @@
   {
     "id": 28,
     "name": "Prototype",
-    "damage": 21,
+    "damage": 28,
     "damage_multiplier": 1,
     "rpm": 800,
     "mag_size": 25,
@@ -252,7 +252,7 @@
   {
     "id": 29,
     "name": "Prototype (Overcharged)",
-    "damage": 21,
+    "damage": 28,
     "damage_multiplier": 1.35,
     "rpm": 800,
     "mag_size": 25,
@@ -402,7 +402,7 @@
   {
     "id": 44,
     "name": "Improved G18",
-    "damage": 46,
+    "damage": 38,
     "damage_multiplier": 1,
     "rpm": 650,
     "mag_size": 18,
@@ -502,7 +502,7 @@
   {
     "id": 54,
     "name": "Improved P90",
-    "damage": 32,
+    "damage": 34,
     "damage_multiplier": 1,
     "rpm": 800,
     "mag_size": 50,
@@ -602,10 +602,10 @@
   {
     "id": 64,
     "name": "Improved Vector",
-    "damage": 34,
+    "damage": 36,
     "damage_multiplier": 1,
     "rpm": 1050,
-    "mag_size": 33,
+    "mag_size": 30,
     "reload_time": 2,
     "guntype": ["SMG", "PRIMARY"]
   },
