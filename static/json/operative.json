@@ -211,7 +211,7 @@
       "modifiers": [
         {
           "id": "armor-restructure-10-damage-perk",
-          "label": "Armor Restructure(10 HP Left) (+32% Damage)",
+          "label": "Armor Restructure (10 HP Left) (+32% Damage)",
           "value": 1.32,
           "type": "multiplicative",
           "appliesTo": ""
