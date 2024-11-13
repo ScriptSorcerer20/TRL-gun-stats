@@ -3,8 +3,8 @@ let selectedOperative = null;  // Store the selected operative's data
 let weapons = [];  // This will be populated by the fetched JSON data
 let globalModifiers = []; // This will be populated by the fetched JSON data
 let selectedGunTypes = [];  // Track selected gun types for filtering
-let headshotMultiplier = 0;
-let headshotBaseApplied = false;
+let headshotMultiplier = 0; // Track Headshot Multiplier
+let headshotBaseApplied = false; // Track if Base Headshot Multiplier (+25%) is active
 
 
 // Function to fetch operatives data from JSON
@@ -340,7 +340,7 @@ function applyModifiers() {
         }
         // Check if the modifier applies to any of the current weapon's tags
         if (mod.appliesTo && !weaponTags.includes(mod.appliesTo)) {
-            return;  // Skip this modifier if it does not apply to the selected weapon type
+            return;  // Skip this modifier
         }
         // Handle operative modifiers with multiple buffs
         if (mod.buffs) {
