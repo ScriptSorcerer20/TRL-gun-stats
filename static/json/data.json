@@ -2,52 +2,52 @@
   {
     "id": 1,
     "name": "G18",
-    "damage": 32,
+    "damage": 34,
     "damage_multiplier": 1,
-    "rpm": 550,
-    "mag_size": 18,
+    "rpm": 800,
+    "mag_size": 17,
     "reload_time": 2,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "SECONDARY"]
   },
   {
     "id": 2,
     "name": "M1911",
-    "damage": 37,
+    "damage": 45,
     "damage_multiplier": 1,
     "rpm": 580,
     "mag_size": 8,
     "reload_time": 1.15,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "SECONDARY", "WW2"]
   },
   {
     "id": 3,
     "name": "M9A",
-    "damage": 31,
+    "damage": 65,
     "damage_multiplier": 1,
-    "rpm": 850,
+    "rpm": 300,
     "mag_size": 15,
     "reload_time": 2,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "SECONDARY"]
   },
   {
     "id": 4,
     "name": "M1911MK2",
-    "damage": 48,
+    "damage": 60,
     "damage_multiplier": 1,
     "rpm": 720,
     "mag_size": 16,
     "reload_time": 3,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "SECONDARY"]
   },
   {
     "id": 5,
     "name": "Luger",
-    "damage": 58,
+    "damage": 150,
     "damage_multiplier": 1,
     "rpm": 500,
     "mag_size": 8,
     "reload_time": 1.95,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "WW2", "SECONDARY"]
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "rpm": 600,
     "mag_size": 30,
     "reload_time": 2.1,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY","SOVIET"]
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "rpm": 700,
     "mag_size": 30,
     "reload_time": 2.4,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "rpm": 400,
     "mag_size": 24,
     "reload_time": 2.6,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "SEMI-AUTO", "PRIMARY"]
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "rpm": 670,
     "mag_size": 30,
     "reload_time": 3.25,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
     "rpm": 700,
     "mag_size": 30,
     "reload_time": 2.35,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 11,
@@ -107,7 +107,7 @@
     "rpm": 60,
     "mag_size": 8,
     "reload_time": 2.8,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "SEMI-AUTO", "PRIMARY"]
   },
   {
     "id": 12,
@@ -117,7 +117,17 @@
     "rpm": 70,
     "mag_size": 12,
     "reload_time": 12,
-    "guntype": "SHOTGUN"
+    "guntype": ["SHOTGUN", "PRIMARY"]
+  },
+  {
+    "id": 87,
+    "name": "R870-B",
+    "damage": 92,
+    "damage_multiplier": 6,
+    "rpm": 70,
+    "mag_size": 12,
+    "reload_time": 12,
+    "guntype": ["SHOTGUN", "PRIMARY"]
   },
   {
     "id": 14,
@@ -126,18 +136,18 @@
     "damage_multiplier": 4,
     "rpm": 300,
     "mag_size": 7,
-    "reload_time": 4,
-    "guntype": "SHOTGUN"
+    "reload_time": 4.5,
+    "guntype": ["SHOTGUN", "PRIMARY"]
   },
   {
     "id": 16,
     "name": "Shorty",
-    "damage": 29,
+    "damage": 40,
     "damage_multiplier": 4,
-    "rpm": 185,
+    "rpm": 150,
     "mag_size": 8,
     "reload_time": 3.5,
-    "guntype": "SHOTGUN"
+    "guntype": ["SHOTGUN", "SECONDARY"]
   },
   {
     "id": 18,
@@ -147,7 +157,7 @@
     "rpm": 300,
     "mag_size": 20,
     "reload_time": 2.2,
-    "guntype": "SHOTGUN"
+    "guntype": ["SHOTGUN", "PRIMARY"]
   },
   {
     "id": 20,
@@ -157,7 +167,7 @@
     "rpm": 900,
     "mag_size": 50,
     "reload_time": 3,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 21,
@@ -167,17 +177,17 @@
     "rpm": 750,
     "mag_size": 50,
     "reload_time": 2.5,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY", "WW2"]
   },
   {
     "id": 22,
     "name": "Uzi",
-    "damage": 20,
+    "damage": 32,
     "damage_multiplier": 1,
-    "rpm": 850,
-    "mag_size": 32,
+    "rpm": 950,
+    "mag_size": 20,
     "reload_time": 2,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 23,
@@ -187,67 +197,67 @@
     "rpm": 1050,
     "mag_size": 33,
     "reload_time": 2,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 24,
     "name": "MP5",
-    "damage": 23,
+    "damage": 26,
     "damage_multiplier": 1,
     "rpm": 800,
     "mag_size": 30,
     "reload_time": 2.1,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 25,
     "name": "U10",
-    "damage": 18,
+    "damage": 22,
     "damage_multiplier": 1,
     "rpm": 750,
     "mag_size": 65,
     "reload_time": 2,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 26,
     "name": "MPX",
-    "damage": 28,
+    "damage": 36,
     "damage_multiplier": 1,
     "rpm": 780,
     "mag_size": 30,
     "reload_time": 2.65,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 27,
     "name": "UMP45",
-    "damage": 28,
+    "damage": 36,
     "damage_multiplier": 1,
     "rpm": 600,
     "mag_size": 25,
     "reload_time": 2,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 28,
     "name": "Prototype",
-    "damage": 21,
+    "damage": 28,
     "damage_multiplier": 1,
     "rpm": 800,
     "mag_size": 25,
     "reload_time": 2.5,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 29,
     "name": "Prototype (Overcharged)",
-    "damage": 21,
+    "damage": 28,
     "damage_multiplier": 1.35,
     "rpm": 800,
     "mag_size": 25,
     "reload_time": 2.5,
-    "guntype": "SMG"
+    "guntype": ["SMG", "SECONDARY"]
   },
   {
     "id": 30,
@@ -257,7 +267,7 @@
     "rpm": 550,
     "mag_size": 32,
     "reload_time": 3,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY", "WW2"]
   },
   {
     "id": 31,
@@ -267,7 +277,7 @@
     "rpm": 750,
     "mag_size": 100,
     "reload_time": 5.5,
-    "guntype": "LMG"
+    "guntype": ["LMG", "PRIMARY","SOVIET"]
   },
   {
     "id": 32,
@@ -277,7 +287,7 @@
     "rpm": 850,
     "mag_size": 100,
     "reload_time": 6,
-    "guntype": "LMG"
+    "guntype": ["LMG", "PRIMARY"]
   },
   {
     "id": 33,
@@ -287,7 +297,7 @@
     "rpm": 780,
     "mag_size": 125,
     "reload_time": 5.5,
-    "guntype": "LMG"
+    "guntype": ["LMG", "PRIMARY"]
   },
   {
     "id": 34,
@@ -297,7 +307,7 @@
     "rpm": 700,
     "mag_size": 50,
     "reload_time": 3.25,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 35,
@@ -307,7 +317,7 @@
     "rpm": 850,
     "mag_size": 125,
     "reload_time": 5.5,
-    "guntype": "LMG"
+    "guntype": ["LMG", "PRIMARY"]
   },
   {
     "id": 36,
@@ -317,7 +327,7 @@
     "rpm": 750,
     "mag_size": 50,
     "reload_time": 3.25,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 37,
@@ -327,7 +337,7 @@
     "rpm": 30,
     "mag_size": 5,
     "reload_time": 3.5,
-    "guntype": "RIFLE?"
+    "guntype": ["RIFLE", "SEMI-AUTO", "PRIMARY"]
   },
   {
     "id": 38,
@@ -337,7 +347,7 @@
     "rpm": 800,
     "mag_size": 50,
     "reload_time": 2.5,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 39,
@@ -347,7 +357,7 @@
     "rpm": 900,
     "mag_size": 64,
     "reload_time": 4,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 40,
@@ -357,7 +367,7 @@
     "rpm": 1000,
     "mag_size": 50,
     "reload_time": 2.45,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 41,
@@ -367,7 +377,7 @@
     "rpm": 3000,
     "mag_size": 10000000000000000000,
     "reload_time": 0,
-    "guntype": "SPECIAL"
+    "guntype": ["SPECIAL"]
   },
   {
     "id": 42,
@@ -377,7 +387,7 @@
     "rpm": 500,
     "mag_size": 650,
     "reload_time": 0,
-    "guntype": "SPECIAL"
+    "guntype": ["SPECIAL"]
   },
   {
     "id": 43,
@@ -387,7 +397,7 @@
     "rpm": 300,
     "mag_size": 650,
     "reload_time": 0,
-    "guntype": "SPECIAL"
+    "guntype": ["SPECIAL"]
   },
   {
     "id": 44,
@@ -397,7 +407,17 @@
     "rpm": 650,
     "mag_size": 18,
     "reload_time": 2,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL"]
+  },
+  {
+    "id": 89,
+    "name": "Improved G18 (150+ Kills)",
+    "damage": 51,
+    "damage_multiplier": 1,
+    "rpm": 650,
+    "mag_size": 23,
+    "reload_time": 2,
+    "guntype": ["PISTOL"]
   },
   {
     "id": 45,
@@ -407,7 +427,7 @@
     "rpm": 550,
     "mag_size": 18,
     "reload_time": 2,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL"]
   },
   {
     "id": 46,
@@ -417,7 +437,7 @@
     "rpm": 225,
     "mag_size": 10,
     "reload_time": 5,
-    "guntype": "SHOTGUN"
+    "guntype": ["SHOTGUN", "PRIMARY"]
   },
   {
     "id": 48,
@@ -427,7 +447,7 @@
     "rpm": 550,
     "mag_size": 30,
     "reload_time": 2.35,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 49,
@@ -437,7 +457,7 @@
     "rpm": 600,
     "mag_size": 30,
     "reload_time": 2.35,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 50,
@@ -447,7 +467,7 @@
     "rpm": 600,
     "mag_size": 32,
     "reload_time": 2.45,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 51,
@@ -457,7 +477,7 @@
     "rpm": 650,
     "mag_size": 32,
     "reload_time": 2.45,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 52,
@@ -467,7 +487,7 @@
     "rpm": 625,
     "mag_size": 100,
     "reload_time": 4.5,
-    "guntype": "LMG"
+    "guntype": ["LMG", "PRIMARY"]
   },
   {
     "id": 53,
@@ -477,17 +497,17 @@
     "rpm": 700,
     "mag_size": 100,
     "reload_time": 4.5,
-    "guntype": "LMG"
+    "guntype": ["LMG", "PRIMARY"]
   },
   {
     "id": 54,
     "name": "Improved P90",
-    "damage": 32,
+    "damage": 34,
     "damage_multiplier": 1,
     "rpm": 800,
     "mag_size": 50,
     "reload_time": 2.6,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 55,
@@ -497,7 +517,7 @@
     "rpm": 550,
     "mag_size": 32,
     "reload_time": 2.5,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY", "WW2"]
   },
   {
     "id": 56,
@@ -507,7 +527,7 @@
     "rpm": 700,
     "mag_size": 34,
     "reload_time": 3.5,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL"]
   },
   {
     "id": 57,
@@ -517,7 +537,7 @@
     "rpm": 440,
     "mag_size": 18,
     "reload_time": 3.5,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "SEMI-AUTO", "PRIMARY"]
   },
   {
     "id": 58,
@@ -527,7 +547,7 @@
     "rpm": 540,
     "mag_size": 18,
     "reload_time": 3.5,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "SEMI-AUTO", "PRIMARY"]
   },
   {
     "id": 59,
@@ -537,7 +557,7 @@
     "rpm": 780,
     "mag_size": 30,
     "reload_time": 2.25,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 60,
@@ -547,7 +567,7 @@
     "rpm": 900,
     "mag_size": 26,
     "reload_time": 2.5,
-    "guntype": "SMG?"
+    "guntype": ["PISTOL"]
   },
   {
     "id": 61,
@@ -557,7 +577,7 @@
     "rpm": 1200,
     "mag_size": 26,
     "reload_time": 2,
-    "guntype": "SMG?"
+    "guntype": ["PISTOL"]
   },
   {
     "id": 62,
@@ -567,7 +587,7 @@
     "rpm": 800,
     "mag_size": 30,
     "reload_time": 1.5,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 63,
@@ -587,7 +607,17 @@
     "rpm": 1050,
     "mag_size": 30,
     "reload_time": 2,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
+  },
+  {
+    "id": 88,
+    "name": "Improved Vector (150+ Kills)",
+    "damage": 39,
+    "damage_multiplier": 1,
+    "rpm": 1050,
+    "mag_size": 33,
+    "reload_time": 2,
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 65,
@@ -597,7 +627,7 @@
     "rpm": 850,
     "mag_size": 30,
     "reload_time": 2,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 66,
@@ -607,7 +637,7 @@
     "rpm": 850,
     "mag_size": 30,
     "reload_time": 2,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 67,
@@ -637,7 +667,7 @@
     "rpm": 830,
     "mag_size": 30,
     "reload_time": 2.5,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 70,
@@ -647,7 +677,7 @@
     "rpm": 900,
     "mag_size": 30,
     "reload_time": 2.5,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 71,
@@ -667,7 +697,7 @@
     "rpm": 700,
     "mag_size": 30,
     "reload_time": 3.25,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 73,
@@ -677,7 +707,7 @@
     "rpm": 400,
     "mag_size": 18,
     "reload_time": 2.1,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "DEAGLE"]
   },
   {
     "id": 74,
@@ -687,7 +717,7 @@
     "rpm": 400,
     "mag_size": 36,
     "reload_time": 3.5,
-    "guntype": "PISTOL"
+    "guntype": ["PISTOL", "DEAGLE"]
   },
   {
     "id": 75,
@@ -697,7 +727,7 @@
     "rpm": 300,
     "mag_size": 10,
     "reload_time": 3,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY", "SEMI-AUTO"]
   },
   {
     "id": 76,
@@ -707,7 +737,7 @@
     "rpm": 700,
     "mag_size": 10,
     "reload_time": 2,
-    "guntype": "RIFLE?"
+    "guntype": "RIFLE"
   },
   {
     "id": 77,
@@ -717,7 +747,7 @@
     "rpm": 1000,
     "mag_size": 71,
     "reload_time": 2.5,
-    "guntype": "UNKOWN"
+    "guntype": ["SMG", "PRIMARY", "SOVIET"]
   },
   {
     "id": 78,
@@ -727,7 +757,7 @@
     "rpm": 690,
     "mag_size": 30,
     "reload_time": 2.5,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY", "SOVIET"]
   },
   {
     "id": 79,
@@ -737,7 +767,7 @@
     "rpm": 800,
     "mag_size": 64,
     "reload_time": 4,
-    "guntype": "SMG"
+    "guntype": ["SMG"]
   },
   {
     "id": 80,
@@ -747,7 +777,7 @@
     "rpm": 800,
     "mag_size": 60,
     "reload_time": 4,
-    "guntype": "SMG"
+    "guntype": ["SMG"]
   },
   {
     "id": 81,
@@ -757,7 +787,7 @@
     "rpm": 800,
     "mag_size": 50,
     "reload_time": 2.5,
-    "guntype": "SMG"
+    "guntype": ["SMG", "PRIMARY"]
   },
   {
     "id": 82,
@@ -767,7 +797,7 @@
     "rpm": 400,
     "mag_size": 12,
     "reload_time": 2.6,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE"]
   },
   {
     "id": 83,
@@ -777,7 +807,7 @@
     "rpm": 150,
     "mag_size": 8,
     "reload_time": 2.2,
-    "guntype": "SHOTGUN"
+    "guntype": ["SHOTGUN", "PRIMARY"]
   },
   {
     "id": 84,
@@ -787,7 +817,7 @@
     "rpm": 200,
     "mag_size": 1000000000000000000000000000000000000000000000000000000000000000,
     "reload_time": 0,
-    "guntype": "SHOTGUN"
+    "guntype": ["SHOTGUN", "PRIMARY"]
   },
   {
     "id": 85,
@@ -797,7 +827,7 @@
     "rpm": 900,
     "mag_size": 30,
     "reload_time": 4,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   },
   {
     "id": 86,
@@ -807,6 +837,6 @@
     "rpm": 9999,
     "mag_size": 999,
     "reload_time": 1,
-    "guntype": "RIFLE"
+    "guntype": ["RIFLE", "PRIMARY"]
   }
 ]

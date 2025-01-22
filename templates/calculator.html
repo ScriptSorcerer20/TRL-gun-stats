@@ -25,6 +25,22 @@
                 dropdownContent.style.display = "block";
             }
         }
+
+        // Collapsible functionality for perks, buffs, etc.
+        document.addEventListener('DOMContentLoaded', function () {
+            var coll = document.getElementsByClassName("collapsible-header");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        });
     </script>
 </head>
 <header>
@@ -53,19 +69,49 @@
 
 </header>
 <main>
-    <label for="weapon-select">Choose a weapon:</label>
+    <label for="weapon-search"></label>
+    <input type="text" id="weapon-search" placeholder="Search weapons..." onkeyup="filterWeapons()">
+    <br>
+    <label for="weapon-select"></label>
     <select id="weapon-select" name="weapons">
-        <!-- Weapon options will be populated here dynamically -->
+        <option value="">Select a Weapon</option> <!-- This is the placeholder option -->
     </select>
+    <br>
+    <div id="guntype-filters">
+        <label><input type="checkbox" id="primary" value="PRIMARY"> Primary</label>
+        <label><input type="checkbox" id="secondary" value="SECONDARY"> Secondary</label>
+        <label><input type="checkbox" id="ww2" value="WW2"> WW2</label>
+        <label><input type="checkbox" id="soviet" value="SOVIET"> Soviet</label>
+        <label><input type="checkbox" id="rifle" value="RIFLE"> Rifle</label>
+        <label><input type="checkbox" id="smg" value="SMG"> SMG</label>
+        <label><input type="checkbox" id="shotgun" value="SHOTGUN"> Shotgun</label>
+        <label><input type="checkbox" id="lmg" value="LMG"> LMG</label>
+        <label><input type="checkbox" id="pistol" value="PISTOL"> Pistol</label>
+        <label><input type="checkbox" id="special" value="SPECIAL"> Special</label>
+        <label><input type="checkbox" id="semi-auto" value="SEMI-AUTO"> Semi-Auto</label>
+        <!-- Add more gun types as needed -->
+    </div>
 
-    <!-- Weapon Stats will be displayed here -->
+    <label for="operative-search"></label>
+    <input type="text" id="operative-search" placeholder="Search operatives..." onkeyup="filterOperatives()">
+    <br>
+    <label for="operative-select"></label>
+    <select id="operative-select">
+        <option value="">Select an operative</option> <!-- This is the placeholder option -->
+    </select><br>
+
+    <!-- Weapon Stats Display -->
     <div id="weapon-stats"></div>
-
-    <!-- Calculated DPS/DPM results will be shown here -->
     <div id="calculated-stats"></div>
 
-    <!-- Modifier Checkboxes -->
-    <div id="modifiers"></div>
+    <h3>Operative Specific Modifiers</h3>
+    <div id="operative-modifiers"></div>
+
+    <!-- Modifiers Display -->
+    <div id="modifiers-container">
+        <div id="modifiers"></div> <!-- Items and Perks go here -->
+        <div id="abilities"></div> <!-- Abilities go here -->
+    </div>
 
 
     <script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>

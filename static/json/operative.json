@@ -1,0 +1,1822 @@
+{
+  "operatives": [
+    {
+      "id": "Classic-Guard",
+      "name": "Guard",
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "smg-user-damage-perk",
+          "label": "SMG User (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "SMG"
+        }
+      ]
+    },
+    {
+      "id": "Classic-Scout",
+      "name": "Scout",
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "run-and-gun-damage-perk",
+          "label": "Run and Gun 100% (+12% Firerate, +16% Reload Speed)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 1.12,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.84,
+              "buffType": "multiplicative"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Classic-RCU",
+      "name": "RCU",
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "shotgun-expert-damage-perk",
+          "label": "Shotgun Expert (+25% Damage)",
+          "value": 1.25,
+          "type": "multiplicative",
+          "appliesTo": "SHOTGUN"
+        }
+      ]
+    },
+    {
+      "id": "Classic-Viper",
+      "name": "Viper",
+      "category": "Classic"
+    },
+    {
+      "id": "Classic-SD-Sergeant",
+      "name": "SD Sergeant",
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "max-corruption-damage-perk",
+          "label": "Max Corruption (+30% Damage)",
+          "value": 1.30,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "sergeant-high-velocity-bullets-damage-perk",
+          "label": "High Velocity Bullets (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "sergeant-quick-hands-reload-perk",
+          "label": "Quick Hands (+20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Classic-ISD",
+      "name": "ISD",
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "chaos-insurgency-damage-perk",
+          "label": "Chaos Insurgency (+50% Damage)",
+          "value": 1.50,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Classic-TRU",
+      "name": "TRU",
+      "category": "Classic"
+    },
+    {
+      "id": "Classic-SD-Captain",
+      "name": "SD Captain",
+      "category": "Classic"
+    },
+    {
+      "id": "Classic-Vanguard",
+      "name": "Vanguard",
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "bad-experience-damage-perk",
+          "label": "Bad Experience (+25% Damage, +25% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.75,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesNotTo": "LMG"
+        },
+        {
+          "id": "lmg-user-damage-perk",
+          "label": "LMG User (+35% Damage)",
+          "value": 1.35,
+          "type": "multiplicative",
+          "appliesTo": "LMG"
+        }
+      ]
+    },
+    {
+      "id": "Classic-Demolitionist",
+      "name": "Demolitionist",
+      "category": "Classic"
+    },
+    {
+      "id": "Classic-Juggernaut",
+      "name": "Juggernaut",
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "hold-the-line-damage-perk",
+          "label": "Hold The Line (+90% Damage)",
+          "value": 1.90,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Classic-Mercenary",
+      "name": "Mercenary",
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "all-upgrades-damage-perk",
+          "label": "All Upgrades (+25% Damage, +15% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.85,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "mcd-sandevistan-damage-perk",
+          "label": "MCD Sandevistan (+75% Damage)",
+          "value": 1.75,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Classic-CRT",
+      "name": "CRT",
+      "category": "Classic"
+    },
+    {
+      "id": "Classic-Anarchist",
+      "name": "Anarchist",
+      "category": "Classic",
+      "modifiers": [
+        {
+          "id": "armor-restructure-10-damage-perk",
+          "label": "Armor Restructure (10 HP Left) (+32% Damage)",
+          "value": 1.32,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "anarchist-threat-control-damage-perk",
+          "label": "Threat Control (Max Corruption) (+20 Damage)",
+          "value": 20,
+          "type": "additive",
+          "appliesTo": ""
+        },
+        {
+          "id": "berserker-damage-perk",
+          "label": "Berserker (+30 Damage)",
+          "value": 30,
+          "type": "additive",
+          "appliesTo": ""
+        },
+        {
+          "id": "anarchist-adrenaline-damage-perk",
+          "label": "Adrenaline (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Special-Squid-Guard",
+      "name": "Squid Guard",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "smg-user-damage-perk",
+          "label": "SMG User (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "SMG"
+        }
+      ]
+    },
+    {
+      "id": "Special-Researcher",
+      "name": "Researcher",
+      "category": "Special",
+      "modifiers": []
+    },
+    {
+      "id": "Special-RRT",
+      "name": "RRT",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "smg-user-damage-perk",
+          "label": "SMG User (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "SMG"
+        },
+        {
+          "id": "weapon-expert-reload-perk",
+          "label": "Weapon Expert (-1s Reload Time)",
+          "value": -1,
+          "type": "additive",
+          "appliesTo": ""
+        },
+        {
+          "id": "rrt-mastery-damage-rpm-perk",
+          "label": "Mastery (+25% Firerate, +25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Special-Private",
+      "name": "Private",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "nostalgia-reload-perk",
+          "label": "Nostalgia (+10% Reload Speed)",
+          "value": 0.9,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "adrenaline-damage-reload-perk",
+          "label": "Adrenaline (+30% Damage, +40% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.6,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "private-mastery-damage-perk",
+          "label": "Mastery (+32% Damage)",
+          "value": 1.32,
+          "type": "multiplicative",
+          "appliesTo": "WW2"
+        }
+      ]
+    },
+    {
+      "id": "Special-Delta",
+      "name": "Delta",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "weakpoints-damage-perk",
+          "label": "Weakpoints (+50% Damage)",
+          "value": 1.5,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "mastery-resurrection-damage-perk",
+          "label": "Resurrection (+100% Damage)",
+          "value": 2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Special-Engineer",
+      "name": "Engineer",
+      "category": "Special",
+      "modifiers": []
+    },
+    {
+      "id": "Special-Hunter",
+      "name": "Hunter",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "camper-damage-perk",
+          "label": "Camper [SEMI-AUTO] (+25% Damage)",
+          "value": 1.25,
+          "type": "multiplicative",
+          "appliesTo": "SEMI-AUTO"
+        },
+        {
+          "id": "detect-damage-perk",
+          "label": "Detect (+25% Damage)",
+          "value": 1.25,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "reaper-ammunition-damage-perk",
+          "label": "Reaper ammunition (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Special-Agent-X",
+      "name": "Agent X",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "agent-training-rifle-damage-perk",
+          "label": "Agent training [RIFLE] (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "agent-training-smg-damage-perk",
+          "label": "Agent training [SMG] (+25% Damage, 30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
+        },
+        {
+          "id": "sandevistan-damage-perk",
+          "label": "Sandevistan (+75% Damage)",
+          "value": 1.75,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "Special-Hacker",
+      "name": "Hacker",
+      "category": "Special"
+    },
+    {
+      "id": "Special-Accountant",
+      "name": "Accountant",
+      "category": "Special"
+    },
+    {
+      "id": "Special-Hogrider",
+      "name": "Hog Rider",
+      "category": "Special"
+    },
+    {
+      "id": "Special-IA",
+      "name": "Intelligence Agency",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "field-intelligence-damage-perk",
+          "label": "Field Intelligence (+20% Damage)",
+          "value": 1.2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "front-runner-damage-perk",
+          "label": "Front Runner (+?% Damage)",
+          "value": 1,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "SMG-Pro-reload-perk",
+          "label": "SMG Pro (+100% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
+        },
+        {
+          "id": "IA-smg-damage-perk",
+          "label": "SMG User (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "SMG"
+        }
+      ]
+    },
+    {
+      "id": "Special-High-Roller",
+      "name": "High Roller",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "lucky-shot-damage-perk",
+          "label": "Lucky Shot (+100% Damage)",
+          "value": 2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "risk-taker-damage-perk",
+          "label": "4 Experiments (+10% Damage, +10% Firerate)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.1,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.1,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "coinflip-damage-perk",
+          "label": "Coinflip (+20% Damage)",
+          "value": 1.20,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "coinflip-reload-perk",
+          "label": "Coinflip (+20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "coinflip-damage-perk-2",
+          "label": "Coinflip (+100% Damage)",
+          "value": 2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "maxed-stat-roll-damage-perk",
+          "label": "Maxed Stat Roll (+20% Damage, +20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "points-damage-perk",
+          "label": "6000 Points (+20% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.20,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "light-armor-damage-perk",
+          "label": "Light Armor [RIFLE] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "heavy-armor-damage-perk",
+          "label": "Heavy Armor [LMG] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "LMG"
+        },
+        {
+          "id": "fireproof-armor-damage-perk",
+          "label": "Fireproof Armor [SHOTGUN] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SHOTGUN"
+        },
+        {
+          "id": "hazmat-armor-damage-perk",
+          "label": "Hazmat Armor [SMG] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
+        },
+        {
+          "id": "no-armor-damage-perk",
+          "label": "Armorless [SEMI-AUTO] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SEMI-AUTO"
+        }
+      ]
+    },
+    {
+      "id": "Special-Veteran",
+      "name": "Veteran",
+      "category": "Special",
+      "modifiers": [
+        {
+          "id": "advanced-ammo-damage-perk",
+          "label": "Advanced Ammo (+8 Damage)",
+          "value": 8,
+          "type": "additive",
+          "appliesTo": ""
+        },
+        {
+          "id": "high-velocity-bullets-damage-perk",
+          "label": "High Velocity Bullets (+25% Damage)",
+          "value": 1.25,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "MTF-Epsilon-9",
+      "name": "Epsilon-9",
+      "category": "MTF"
+    },
+    {
+      "id": "MTF-Nu-7",
+      "name": "Nu-7",
+      "category": "MTF",
+      "modifiers": [
+        {
+          "id": "deadly-bullets-damage-perk",
+          "label": "Deadly Bullets (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "weapon-expert-reload-perk",
+          "label": "Weapon Expert (-1s Reload Time)",
+          "value": -1,
+          "type": "additive",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "MTF-Sigma-9",
+      "name": "Sigma-9",
+      "category": "MTF"
+    },
+    {
+      "id": "MTF-Beta-7",
+      "name": "Beta-7",
+      "category": "MTF",
+      "modifiers": [
+        {
+          "id": "toxic-rounds-damage-perk",
+          "label": "Toxic Rounds (+8 Damage)",
+          "value": 8,
+          "type": "additive",
+          "appliesTo": ""
+        },
+        {
+          "id": "toxic-rounds-exploders-damage-perk",
+          "label": "Toxic Rounds (Against Exploders) (+100% Damage)",
+          "value": 2,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "MTF-Commander",
+      "name": "MTF Commander",
+      "category": "MTF",
+      "modifiers": [
+        {
+          "id": "advanced-ammo-damage-perk",
+          "label": "Advanced Ammo (+8 Damage)",
+          "value": 8,
+          "type": "additive",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Assault",
+      "name": "UIU Assault",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-assault-ar-user-damage-perk",
+          "label": "AR User [RIFLE] (+30% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "RIFLE"
+        }
+      ]
+    },
+    {
+      "id": "UIU-HRU",
+      "name": "UIU HRU",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-hru-full-metal-jacket-damage-perk",
+          "label": "Full Metal Jacket (+10% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.1,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "uiu-hru-skull-cracker-damage-perk",
+          "label": "Skull Cracker (+15% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.15,
+              "buffType": "multiplicative-headshot"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "uiu-hru-deagle-8-damage-perk",
+          "label": "Anomalous Deagle (Raid) (+8 Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 8,
+              "buffType": "additive"
+            }
+          ],
+          "appliesTo": "DEAGLE"
+        },
+        {
+          "id": "uiu-hru-deagle-15-damage-perk",
+          "label": "Anomalous Deagle (Classic) (+15 Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 15,
+              "buffType": "additive"
+            }
+          ],
+          "appliesTo": "DEAGLE"
+        }
+      ]
+    },
+    {
+      "id": "UIU-Marksman",
+      "name": "UIU Marksman",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "camper-damage-perk-damage-perk",
+          "label": "Camper [SEMI-AUTO] (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SEMI-AUTO"
+        },
+        {
+          "id": "uiu-marksman-skull-cracker-damage-perk",
+          "label": "Skull Cracker (+15% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.15,
+              "buffType": "multiplicative-headshot"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Elite",
+      "name": "UIU Elite",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-elite-ar-user-damage-perk",
+          "label": "AR User [RIFLE] (+30% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "uiu-elite-moral-boost-damage-perk",
+          "label": "Moral Boost (+20% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "uiu-elite-master-teamwork-damage-perk",
+          "label": "Master Teamwork (+30% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "uiu-elite-reload-perk",
+          "label": "Mastery (+30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "RIFLE"
+        }
+      ]
+    },
+    {
+      "id": "UIU-Detective",
+      "name": "UIU Detective",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-detective-sense-damage-perk",
+          "label": "Sense (+100% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "uiu-detective-secondaries-boost-damage-perk",
+          "label": "Mastery [SECONDARY] (+50% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SECONDARY"
+        },
+        {
+          "id": "search-expert-reload-perk",
+          "label": "Search Expert (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Bulldozer",
+      "name": "UIU Bulldozer",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "shotgun-specialist-damage-perk",
+          "label": "Shotgun Specialist [SHOTGUN] (+30% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SHOTGUN"
+        },
+        {
+          "id": "cqc-experience-damage-perk",
+          "label": "CQC Experience (+20% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "double-reload-reload-perk",
+          "label": "Double Reload [SHOTGUN] (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SHOTGUN"
+        },
+        {
+          "id": "anger-issues-damage-perk",
+          "label": "Aggression bar (+20% Firerate, +20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "deadly-rush-damage-perk",
+          "label": "Deadly Rush Ability (+20% Damage, 25% RPM)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "bulldozer-time-damage-perk",
+          "label": "Bulldozer Time Ability (2x Firerate, 2x Reload Speed)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "mastery-damage-perk",
+          "label": "Mastery (+20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Cloaker",
+      "name": "UIU Cloaker",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-cloaker-ambusher-perk-damage-perk",
+          "label": "Ambusher (+50% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "quick-movements-reload-perk",
+          "label": "Quick Movements (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Captain",
+      "name": "UIU Captain",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "agent-training-rifle-damage-perk",
+          "label": "Agent training [RIFLE] (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "agent-training-smg-damage-perk",
+          "label": "Agent training [SMG] (+25% Damage, 30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
+        }
+      ]
+    },
+    {
+      "id": "UIU-MOOT",
+      "name": "UIU MOOT",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "uiu-moot-ar-user-damage-perk",
+          "label": "AR User [RIFLE] (+30% Damage)",
+          "value": 1.3,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "uiu-moot-anchoring-ammunition-damage-perk",
+          "label": "Anchoring Ammunition (+40% Damage)",
+          "value": 1.4,
+          "type": "multiplicative",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Technician",
+      "name": "UIU Technician",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "agent-training-rifle-damage-perk",
+          "label": "Agent training [RIFLE] (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "agent-training-smg-damage-perk",
+          "label": "Agent training [SMG] (+25% Damage, 30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
+        },
+        {
+          "id": "uiu-quick-hands-reload-perk",
+          "label": "Quick Hands (+20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "UIU-Oathbreaker",
+      "name": "UIU Oathbreaker",
+      "category": "UIU",
+      "modifiers": [
+        {
+          "id": "agent-training-rifle-damage-perk",
+          "label": "Agent training [RIFLE] (+15% Damage)",
+          "value": 1.15,
+          "type": "multiplicative",
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "agent-training-smg-damage-perk",
+          "label": "Agent training [SMG] (+25% Damage, 30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SMG"
+        }
+      ]
+    },
+    {
+      "id": "GRU-P-Assault",
+      "name": "GRU-P Assault",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "not-step-back-damage-perk",
+          "label": "Not one step back (+50% Damage)",
+          "value": 1.5,
+          "type": "multiplicative",
+          "appliesTo": ""
+        },
+        {
+          "id": "gru-p-assault-mastery-reload-perk",
+          "label": "Mastery [SOVIET WEAPONS] (+10% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.9,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SOVIET"
+        },
+        {
+          "id": "gru-p-assault-mastery-damage-perk",
+          "label": "Mastery (+20% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "gru-p-assault-patriotic-damage-perk",
+          "label": "Patriotic (+60% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.6,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "GRU-P-Specialist",
+      "name": "GRU-P Specialist",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "well-taught-reload-perk",
+          "label": "Well Taught (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesNotTo": "SHOTGUN"
+        },
+        {
+          "id": "heavy-bullets-damage-perk",
+          "label": "Heavy Bullets (+32% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.32,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "winter-soldier",
+      "name": "Winter Soldier",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "snow-beast-reload-perk",
+          "label": "Snow Beast (+25% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.75,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesNotTo": ""
+        },
+        {
+          "id": "heavy-bullets-damage-perk",
+          "label": "Heavy Bullets (+32% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.32,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "ws-mastery-damage-perk",
+          "label": "Mastery (+?% Damage, +?% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 1,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "shade",
+      "name": "Shade",
+      "category": "SCP",
+      "modifiers": [
+        {
+          "id": "hell-bullets-damage-perk",
+          "label": "Hell Bullets (+10% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.1,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "magmion",
+      "name": "Magmion",
+      "category": "SCP"
+    },
+    {
+      "id": "frostkill",
+      "name": "Frostkill",
+      "category": "SCP"
+    },
+    {
+      "id": "able",
+      "name": "Able",
+      "category": "SCP"
+    },
+    {
+      "id": "devil-hunter",
+      "name": "Devil Hunter",
+      "category": "SCP"
+    },
+    {
+      "id": "polatia-heath",
+      "name": "Heath",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "angel-of-death-damage-perk",
+          "label": "Angel of Death (+20% Damage, +20% Reload Speed, +20% Firerate)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "polatia-thavin",
+      "name": "Thavin",
+      "category": "Polatia"
+    },
+    {
+      "id": "polatia-dd",
+      "name": "Diamond Dog",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "experimental-kamui-damage-perk",
+          "label": "Experimental Kami (+40% Damage, +35% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.65,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "polatia-arms-dealer",
+      "name": "Polatia Arms Dealer",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "polatia-high-velocity-bullets-damage-perk",
+          "label": "High Velocity Bullets (+25% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.25,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "familiarity-reload-perk",
+          "label": "Familiarity (+30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "polatia-contractor",
+      "name": "Polatia Contractor",
+      "category": "Polatia"
+    },
+    {
+      "id": "polatia-consigliere",
+      "name": "Polatia Consigliere",
+      "category": "Polatia"
+    },
+    {
+      "id": "pratva-hitman",
+      "name": "Pratva Hitman",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "hit-list-damage-perk",
+          "label": "Hit List (+30% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "Backliner-damage-perk",
+          "label": "Backliner (+20% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.20,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "spree-damage-perk",
+          "label": "Headshot Spree (+50% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "pratva-machinegunner",
+      "name": "Pratva Machinegunner",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "spray-and-pary-damage-perk",
+          "label": "Spray and Pray (+50% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "static-defender-reload-perk",
+          "label": "Static Defender (+30% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "Polatia-LMG-User-perk",
+          "label": "LMG User (+35% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.35,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "LMG"
+        },
+        {
+          "id": "focus-reload-perk",
+          "label": "Focus (+20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "hollow-point-ammunition-damage-perk",
+          "label": "Hollow Point Ammunition (+10 Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 10,
+              "buffType": "additive"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "pratva-executor",
+      "name": "Pratva Executor",
+      "category": "Polatia",
+      "modifiers": [
+        {
+          "id": "undertaker-damage-perk",
+          "label": "Undertaker [SHOTGUN] (+30% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SHOTGUN"
+        },
+        {
+          "id": "execute-damage-perk",
+          "label": "Execute (+40% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "polatia-zero-day",
+      "name": "Zero Day",
+      "category": "Polatia"
+    },
+    {
+      "id": "goc-goc",
+      "name": "GOC",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "goc-special-ammo",
+          "label": "Special Ammo (+40% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "goc-weapon-expert-reload-perk",
+          "label": "Weapon Expert (-1s Reload Time)",
+          "value": -1,
+          "type": "additive",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "goc-BD",
+      "name": "Broken Dagger",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "BD-special-ammo",
+          "label": "Special Ammo (+40% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "BD-BED",
+          "label": "Break 'em down (+40% Damage, +40% Firerate, +100% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "BD-Vengeance",
+          "label": "Vengeance (+35% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.65,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "goc-SH",
+      "name": "Steelhead",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "sh-silver",
+          "label": "Silver Ammo (+30% Damage, +20% Firerate)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "sh-hammer",
+          "label": "Hammer Ammo (+50% Damage, -30% Firerate)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.5,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "rpm",
+              "value": 0.7,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "sh-hellfire",
+          "label": "Hellfire Ammo (-10% Firerate)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 0.9,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "sh-weapon-expert-reload-perk",
+          "label": "Weapon Expert (-1s Reload Time)",
+          "value": -1,
+          "type": "additive",
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "goc-ambassador",
+      "name": "GOC Ambassador",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "goca-civilian",
+          "label": "Civilian (-15% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 0.85,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "goc-thaumaturge",
+      "name": "Thaumaturge",
+      "category": "GOC"
+    },
+    {
+      "id": "goc-gs",
+      "name": "Gunslinger",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "deep-focus-reload-perk",
+          "label": "Deep Focus (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "bullet-hell-damage-perk",
+          "label": "Bullet Hell (+100% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "run-and-gun-damage-perk",
+          "label": "Run & Gun (+30% Firerate, +20%  Reload Speed)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 1.3,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "suppressive-fire-firerate-perk",
+          "label": "Hammer Ammo (+100% Firerate)",
+          "buffs": [
+            {
+              "type": "rpm",
+              "value": 2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    }
+  ]
+}
