@@ -1,7 +1,7 @@
 {
   "operatives": [
     {
-      "id": "Classic-Guard",
+      "id": 1,
       "name": "Guard",
       "buffs": [
         {
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "id": "Classic-Scout",
+      "id": 2,
       "name": "Scout",
       "buffs": [
         {
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "id": "Classic-RCU",
+      "id": 3,
       "name": "RCU",
       "buffs": [
         {
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "id": "Classic-Viper",
+      "id": 4,
       "name": "Viper",
       "buffs": [
         {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "id": "Classic-SD-Sergeant",
+      "id": 5,
       "name": "SD Sergeant",
       "buffs": [
         {
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "id": "Classic-ISD",
+      "id": 6,
       "name": "ISD",
       "buffs": [
         {
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "id": "Classic-TRU",
+      "id": 7,
       "name": "TRU",
       "buffs": [
         {
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "id": "Classic-SD-Captain",
+      "id": 8,
       "name": "SD Captain",
       "buffs": [
         {
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "id": "Classic-Vanguard",
+      "id": 9,
       "name": "Vanguard",
       "buffs": [
         {
@@ -139,7 +139,7 @@
       ]
     },
     {
-      "id": "Classic-Demolitionist",
+      "id": 10,
       "name": "Demolitionist",
       "buffs": [
         {
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "id": "Classic-Juggernaut",
+      "id": 11,
       "name": "Juggernaut",
       "buffs": [
         {
@@ -165,7 +165,7 @@
       ]
     },
     {
-      "id": "Classic-Mercenary",
+      "id": 12,
       "name": "Mercenary",
       "buffs": [
         {
@@ -195,7 +195,7 @@
       ]
     },
     {
-      "id": "Classic-CRT",
+      "id": 13,
       "name": "CRT",
       "buffs": [
         {
@@ -208,7 +208,7 @@
       ]
     },
     {
-      "id": "Classic-Anarchist",
+      "id": 14,
       "name": "Anarchist",
       "buffs": [
         {
