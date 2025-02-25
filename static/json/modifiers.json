@@ -286,6 +286,14 @@
       "type": "multiplicative",
       "operatives": "",
       "appliesTo": ""
+    },
+    {
+      "id": "damage-item-additive-GOC-2",
+      "label": "[All Operatives] Shotgun Training (+4 damage)",
+      "value": 4,
+      "type": "additive",
+      "operatives": "",
+      "appliesTo": "SHOTGUN"
     }
   ]
 }

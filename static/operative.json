@@ -233,6 +233,32 @@
           "buffType": "multiplicative"
         }
       ]
+    },
+    {
+      "id": "goc-goc",
+      "name": "GOC",
+      "category": "GOC",
+      "modifiers": [
+        {
+          "id": "goc-special-ammo",
+          "label": "Special Ammo (+40% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.4,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "goc-weapon-expert-reload-perk",
+          "label": "Weapon Expert (-1s Reload Time)",
+          "value": -1,
+          "type": "additive",
+          "appliesTo": ""
+        }
+      ]
     }
   ]
 }
