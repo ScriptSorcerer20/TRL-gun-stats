@@ -58,6 +58,20 @@
       "value": 1.25,
       "type": "multiplicative",
       "operatives": ""
+    },
+    {
+      "id": "damage-item-multiplicative-nightvision",
+      "label": "Night Vision Goggles (+50% damage)",
+      "value": 1.5,
+      "type": "multiplicative",
+      "operatives": ""
+    },
+    {
+      "id": "damage-item-multiplicative-snow-glass",
+      "label": "Snow Globe (+50% damage)",
+      "value": 1.5,
+      "type": "multiplicative",
+      "operatives": ""
     }
   ],
   "operativePerks": [
@@ -240,8 +254,16 @@
       "appliesTo": ""
     },
     {
-      "id": "damage-ability-multiplicative-scan grenade",
+      "id": "damage-ability-multiplicative-scan-grenade",
       "label": "[All Operatives] Scan Grenade (+15% Damage)",
+      "value": 1.15,
+      "type": "multiplicative",
+      "operatives": "",
+      "appliesTo": ""
+    },
+    {
+      "id": "damage-ability-multiplicative-aura-grenade",
+      "label": "[All Operatives] Aura Grenade (+15% Damage)",
       "value": 1.15,
       "type": "multiplicative",
       "operatives": "",
@@ -283,6 +305,27 @@
       "id": "damage-item-additive-uiu-1",
       "label": "[All Operatives] UIU Upgraded Towers (+10% damage)",
       "value": 1.1,
+      "type": "multiplicative",
+      "operatives": "",
+      "appliesTo": ""
+    },
+    {
+      "id": "reload-buff-frontline-leader",
+      "label": "[All Operatives] Frontline Leader (+20% Reload Speed)",
+      "buffs": [
+        {
+          "type": "reloadTime",
+          "value": 0.8,
+          "buffType": "multiplicative"
+        }
+      ],
+      "operatives": "",
+      "appliesTo": ""
+    },
+    {
+      "id": "damage-item-grup-charge",
+      "label": "[All Operatives] GRU-P Starshina Charge Whistle (+30% damage)",
+      "value": 1.3,
       "type": "multiplicative",
       "operatives": "",
       "appliesTo": ""
