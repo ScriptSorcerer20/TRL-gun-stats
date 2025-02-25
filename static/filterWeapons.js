@@ -284,7 +284,7 @@ function applyModifiers() {
         if (mod.dataset.operatives && mod.dataset.operatives.trim() !== "" && (!selectedOperative || selectedOperative.category !== mod.dataset.operatives)) {
             return; // Skip if operative category doesn't match.
         }
-        const weaponTags = selectedWeapon.guntype;  // e.g., ["PISTOL", "SHOTGUN"]
+        const weaponTags = selectedWeapon.guntype;
         const appliesNotTo = mod.dataset.appliesNotTo;
         const appliesTo = mod.dataset.appliesTo;
         if (appliesNotTo && weaponTags.includes(appliesNotTo)) {
