@@ -838,5 +838,55 @@
     "mag_size": 999,
     "reload_time": 1,
     "guntype": ["RIFLE", "PRIMARY"]
+  },
+  {
+      "id": 90,
+      "name": "M1915",
+      "damage": 65,
+      "damage_multiplier": 1,
+      "rpm": 400,
+      "mag_size": 30,
+      "reload_time": 3,
+      "guntype": ["RIFLE", "PRIMARY", "SOVIET"]
+  },
+  {
+      "id": 91,
+      "name": "M1985",
+      "damage": 250,
+      "damage_multiplier": 1,
+      "rpm": 40,
+      "mag_size": 6,
+      "reload_time": 2,
+      "guntype": ["PISTOL", "SECONDARY", "SOVIET"]
+  },
+  {
+    "id": 92,
+    "name": "Steelhead's M249",
+    "damage": 42,
+    "damage_multiplier": 1,
+    "rpm": 850,
+    "mag_size": 150,
+    "reload_time": 6,
+    "guntype": ["LMG", "PRIMARY"]
+  },
+  {
+    "id": 93,
+    "name": "Steelhead's R870",
+    "damage": 92,
+    "damage_multiplier": 6,
+    "rpm": 120,
+    "mag_size": 12,
+    "reload_time": 12,
+    "guntype": ["SHOTGUN", "PRIMARY"]
+  },
+  {
+    "id": 94,
+    "name": "Steelhead's G36",
+    "damage": 42,
+    "damage_multiplier": 1,
+    "rpm": 770,
+    "mag_size": 50,
+    "reload_time": 2.4,
+    "guntype": ["RIFLE", "PRIMARY"]
   }
 ]
