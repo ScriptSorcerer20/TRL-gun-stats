@@ -1,6 +1,5 @@
 Welcome to our comprehensive resource on The Red Lake weapon statistics.
 
-About The Red Lake
 The Red Lake is a Roblox PvE game where players must fend off waves of zombies using an array of unique weapons and operatives, each with their own specialties.
 
 Our Project
