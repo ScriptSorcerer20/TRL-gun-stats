@@ -1,11 +1,7 @@
-Welcome to our Project about The Red lake weapon stats.
+Welcome to our comprehensive resource on The Red Lake weapon statistics.
 
-If u don't know what the Red lake is?
-dont worry, it's a roblox PvE game, where your goal is to fend off a waves of zombies.
-That features unique weapons and operatives, each featuring their specialities.
+About The Red Lake
+The Red Lake is a Roblox PvE game where players must fend off waves of zombies using an array of unique weapons and operatives, each with their own specialties.
 
-we started developping this game around April 2024. It was the first somewhat big Project.
-Because we liked trl and played it alot in that tine being, we thought on making an advanced calculator about all the weapons.
-For the whole process we used a Weapon sheet featuring everything to calculate all the values.
-
-this file will be edited, it's a lilttle placeholder,
+Our Project
+Inspired by our passion for programming, The Red Lake and the enthusiasm it generated during its early days, we embarked on creating an advanced weapon calculator in April 2024. This tool leverages a meticulously compiled weapon sheet, enabling us to calculate and present detailed statistics for every weapon available in the game. Our goal is to provide players and enthusiasts with a reliable resource that enhances gameplay strategy and overall enjoyment.
