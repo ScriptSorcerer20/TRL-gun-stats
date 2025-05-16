@@ -35,7 +35,7 @@
             }
           ]
         }
-      ]
+        ]
     },
     {
       "id": "Classic-RCU",
@@ -211,8 +211,8 @@
       "modifiers": [
         {
           "id": "armor-restructure-10-damage-perk",
-          "label": "Armor Restructure (10 HP Left) (+32% Damage)",
-          "value": 1.32,
+          "label": "Armor Restructure(10 HP Left) (+52% Damage)",
+          "value": 1.52,
           "type": "multiplicative",
           "appliesTo": ""
         },
@@ -221,6 +221,13 @@
           "label": "Threat Control (Max Corruption) (+20 Damage)",
           "value": 20,
           "type": "additive",
+          "appliesTo": ""
+        },
+        {
+            "id": "anarchist-world-on-fire-damage-perk",
+          "label": "World on Fire (+50% damage)",
+          "value": 1.5,
+          "type": "multiplicative",
           "appliesTo": ""
         },
         {
@@ -601,7 +608,7 @@
               "buffType": "multiplicative"
             }
           ],
-          "appliesTo": "SHOTGUN"
+              "appliesTo": "SHOTGUN"
         },
         {
           "id": "hazmat-armor-damage-perk",
@@ -1806,11 +1813,136 @@
         },
         {
           "id": "suppressive-fire-firerate-perk",
-          "label": "Hammer Ammo (+100% Firerate)",
+          "label": "Suppressive Fire (+100% Firerate, Infinite Ammo)",
           "buffs": [
             {
               "type": "rpm",
               "value": 2,
+              "buffType": "multiplicative"
+            },
+            {
+                "type": "reloadTime",
+                "value": 0,
+                "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "GRU-P-Starshina",
+      "name": "GRU-P Starshina",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "traditionalist-damage-perk",
+          "label": "Traditionalist (-20% Damage, -20% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 0.8,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesNotTo": "SOVIET"
+        },
+        {
+          "id": "cold-rivalry-damage-perk",
+          "label": "Cold Rivalry: 10 UIU Teammates (+30% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "cold-rivalry-damage-perk-2",
+          "label": "Cold Rivalry: UIU Ally (+10% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.1,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "resilience-damage-perk",
+          "label": "Resilience: Under 20% Health (+15% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.15,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "GRU-P-Marksman",
+      "name": "GRU-P Sharpshooter",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "dmr-conversion-damage-perk-reload-perk",
+          "label": "DMR Conversion Kit [Rifles] (+125% Damage, -50% RPM)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 2.25,
+              "buffType": "multiplicative"
+            },
+            {
+                "type": "RPM",
+                "value": 0.5,
+                "buffType": "multiplicative"
+            },
+            {
+              "type": "damage",
+              "value": 1.7,
+              "buffType": "multiplicative-headshot"
+            }
+          ],
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "weapon-expert-reload-perk-sharp",
+          "label": "Weapon Expert (-1s Reload Time)",
+          "value": -1,
+          "type": "additive",
+          "appliesTo": ""
+        },
+        {
+          "id": "grup-sharpshooter-skull-cracker-damage-perk",
+          "label": "Skull Cracker (+15% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.15,
+              "buffType": "multiplicative-headshot"
+            }
+          ],
+          "appliesTo": ""
+        },
+        {
+          "id": "headhunter-reload-perk",
+          "label": "Headhunter Ritual: 100 Score (+50% Reload Speed)",
+          "buffs": [
+            {
+              "type": "reloadTime",
+              "value": 0.5,
               "buffType": "multiplicative"
             }
           ],

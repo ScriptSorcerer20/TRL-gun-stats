@@ -116,7 +116,7 @@
     "damage_multiplier": 6,
     "rpm": 70,
     "mag_size": 12,
-    "reload_time": 12,
+    "reload_time": 6,
     "guntype": ["SHOTGUN", "PRIMARY"]
   },
   {
@@ -126,7 +126,7 @@
     "damage_multiplier": 6,
     "rpm": 70,
     "mag_size": 12,
-    "reload_time": 12,
+    "reload_time": 6,
     "guntype": ["SHOTGUN", "PRIMARY"]
   },
   {
