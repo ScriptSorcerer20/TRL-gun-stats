@@ -1905,7 +1905,7 @@
               "buffType": "multiplicative"
             },
             {
-                "type": "RPM",
+                "type": "rpm",
                 "value": 0.5,
                 "buffType": "multiplicative"
             },
