@@ -6,43 +6,19 @@
     <link rel="icon" type="image/x-icon" href="/static/img/TRL_Logo_Custom.jpg">
     <title>Gun Stats</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-
-        function toggleDropdown() {
-            var dropdownContent = document.querySelector(".dropdown-content");
-            // Toggle the display property between 'block' and 'none'
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        }
-    </script>
 </head>
 <header>
     <nav>
-        <p class="divider">_</p>
-        <div class="topnav" id="myTopnav">
-            <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()"><img src="/static/img/menu-list-icon-app-navigation-option-page-interface-dropdown-three-lines-button-dots-sign-symbol-black-artwork-graphic-illustration-clipart-eps-vector.jpg" height="50" width="50">
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" style="display: none;">
-                    <a href="{{ url_for('calculator') }}">DPS/DPM CALCULATOR</a><br>
-                    <a href="{{ url_for('about_us') }}">ABOUT US</a><br>
-                    <a href="{{ url_for('suggestion') }}">SUGGESTIONS & FEEDBACK</a><br>
-                    <a href="https://www.roblox.com/games/5766084948/SCP-The-Red-Lake-EVENT">PLAY THE RED LAKE</a>
-                </div>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        <button class="hamburger" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="nav-menu">
+            <a href="{{ url_for('calculator') }}">DPS/DPM CALCULATOR</a>
+            <a href="{{ url_for('about_us') }}">ABOUT US</a>
+            <a href="{{ url_for('suggestion') }}">SUGGESTIONS & FEEDBACK</a>
+            <a href="https://www.roblox.com/games/5766084948/SCP-The-Red-Lake-EVENT">PLAY THE RED LAKE</a>
         </div>
     </nav>
 </header>
@@ -72,6 +48,22 @@
     </table>
     <script src="{{ url_for('static', filename='populateTable.js') }}"></script>
     <script src="{{ url_for('static', filename='filterTable.js') }}"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        navMenu.querySelectorAll('a').forEach(link =>
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            })
+        );
+    </script>
 </main>
 </body>
 </html>

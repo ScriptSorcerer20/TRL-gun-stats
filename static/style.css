@@ -381,8 +381,92 @@ textarea {
     color: black;
 }
 
-/* Horizontal styling specifically for the table */
 .horizontal-table tr:first-child th {
     text-align: center;
     font-weight: bold;
+}
+
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 0.4rem;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger .bar {
+  transform-origin: left center;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 0.4rem;
+  background-color: #fff;
+  margin: 0.15rem 0;
+  transition: transform 0.3s ease, width 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translate(8px, 8px) rotate(45deg);
+  width: 60%;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  transform: translateX(10px);
+  width: 80%;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translate(8px, -8px) rotate(-45deg);
+  width: 60%;
+}
+
+.nav-menu {
+  position: fixed;
+  top:     0;
+  right:  -100%;
+  width:   250px;
+  height:  100vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 1.5rem;
+  gap:     1.5rem;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 1500;
+}
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.nav-menu a:hover {
+  color: #4CAF50;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+body.menu-open {
+  overflow: hidden;
 }

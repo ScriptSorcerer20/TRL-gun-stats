@@ -1,73 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/static/img/TRL_Logo_Custom.jpg">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Suggestion</title>
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-
-        function toggleDropdown() {
-            var dropdownContent = document.querySelector(".dropdown-content");
-            // Toggle the display property between 'block' and 'none'
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        }
-    </script>
 </head>
 <header>
     <nav>
-        <p class="divider">_</p>
-        <div class="topnav" id="myTopnav">
-            <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()"><img
-                        src="/static/img/menu-list-icon-app-navigation-option-page-interface-dropdown-three-lines-button-dots-sign-symbol-black-artwork-graphic-illustration-clipart-eps-vector.jpg"
-                        height="50" width="50">
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" style="display: none;">
-                    <a href="{{ url_for('index') }}">GUN STATS</a><br>
-                    <a href="{{ url_for('calculator') }}">DPS/DPM CALCULATOR</a><br>
-                    <a href="{{ url_for('about_us') }}">ABOUT US</a><br>
-                    <a href="https://www.roblox.com/games/5766084948/SCP-The-Red-Lake-EVENT">PLAY THE RED LAKE</a>
-                </div>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        <button class="hamburger" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="nav-menu">
+            <a href="{{ url_for('calculator') }}">DPS/DPM CALCULATOR</a>
+            <a href="{{ url_for('about_us') }}">ABOUT US</a>
+            <a href="{{ url_for('suggestion') }}">SUGGESTIONS & FEEDBACK</a>
+            <a href="https://www.roblox.com/games/5766084948/SCP-The-Red-Lake-EVENT">PLAY THE RED LAKE</a>
         </div>
     </nav>
 </header>
 <body>
-    <main class="background-image">
-        <h1>Suggestion</h1>
-        <h3 class="suggestion-title"><b>Welcome to Suggestions!</b><br> We encourage you to share your ideas, improvments, or even fun comments with us, so we can develop this website further.</h3>
-        <article>
-            <label for="name">Pseudoname:</label>
-            <input type="text" id="name" name="name" placeholder="not required"><br><br>
+<main class="background-image">
+    <h1>Suggestion</h1>
+    <h3 class="suggestion-title"><b>Welcome to Suggestions!</b><br> We encourage you to share your ideas, improvments,
+        or even fun comments with us, so we can develop this website further.</h3>
+    <article>
+        <label for="name">Pseudoname:</label>
+        <input type="text" id="name" name="name" placeholder="not required"><br><br>
 
-            <label for="rate">Rating:</label>
-            <input type="number" id="rate" name="rating" min="1" max="10" required><br><br>
+        <label for="rate">Rating:</label>
+        <input type="number" id="rate" name="rating" min="1" max="10" required><br><br>
 
-            <label for="text">Text:</label>
-            <textarea id="text" name="text" rows="4" cols="50" placeholder="Enter your comments here..." minlength="5" maxlength="500" required></textarea><br><br>
-        </article>
-        <button class="button1" type="button" onclick="sendMessage()">Send</button>
+        <label for="text">Text:</label>
+        <textarea id="text" name="text" rows="4" cols="50" placeholder="Enter your comments here..." minlength="5"
+                  maxlength="500" required></textarea><br><br>
+    </article>
+    <button class="button1" type="button" onclick="sendMessage()">Send</button>
 
-        <!-- Success message (initially hidden) -->
-        <p id="successMessage" style="display: none; color: green;"></p>
-    </main>
-    <script src="{{ url_for('static', filename='suggestion.js') }}"></script>
-
+    <!-- Success message (initially hidden) -->
+    <p id="successMessage" style="display: none; color: green;"></p>
+</main>
+<script src="{{ url_for('static', filename='suggestion.js') }}"></script>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+    navMenu.querySelectorAll('a').forEach(link =>
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        })
+    );
+</script>
 </body>
 </html>

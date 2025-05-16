@@ -7,57 +7,35 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>About Us</title>
     <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-
-        function toggleDropdown() {
-            var dropdownContent = document.querySelector(".dropdown-content");
-            // Toggle the display property between 'block' and 'none'
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        }
     </script>
 </head>
 <header>
     <nav>
-        <p class="divider">_</p>
-        <div class="topnav" id="myTopnav">
-            <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()"><img
-                        src="/static/img/menu-list-icon-app-navigation-option-page-interface-dropdown-three-lines-button-dots-sign-symbol-black-artwork-graphic-illustration-clipart-eps-vector.jpg"
-                        height="50" width="50">
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" style="display: none;">
-                    <a href="{{ url_for('index') }}">GUN STATS</a><br>
-                    <a href="{{ url_for('calculator') }}">DPS/DPM CALCULATOR</a><br>
-                    <a href="{{ url_for('suggestion') }}">SUGGESTIONS & FEEDBACK</a><br>
-                    <a href="https://www.roblox.com/games/5766084948/SCP-The-Red-Lake-EVENT">PLAY THE RED LAKE</a>
-                </div>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        <button class="hamburger" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="nav-menu">
+            <a href="{{ url_for('calculator') }}">DPS/DPM CALCULATOR</a>
+            <a href="{{ url_for('about_us') }}">ABOUT US</a>
+            <a href="{{ url_for('suggestion') }}">SUGGESTIONS & FEEDBACK</a>
+            <a href="https://www.roblox.com/games/5766084948/SCP-The-Red-Lake-EVENT">PLAY THE RED LAKE</a>
         </div>
     </nav>
 </header>
 <body class="background-image">
 <main>
     <h1>About Us</h1>
-    <h3><b>Hey there!</b> You seem to have stumbled upon the TRL Stat Page created by <b>Fretux</b> and <b>Losernoob124!</b></h3><br>
+    <h3><b>Hey there!</b> You seem to have stumbled upon the TRL Stat Page created by <b>Fretux</b> and
+        <b>Losernoob124!</b></h3><br>
     <h2>Our Mission</h2>
     <p class="about_us_text">This website exists because we want to provide the
         TRL Community with an easy go-to way to calculate DPS and DPM values to help players make informed decisions
         about their gameplay. Whether you're fine-tuning your new Deathwish Strategy or simply curious about firearm
         performance, we’ve got you covered. If you have suggestions, feedback, or want to contribute new stats or
-    features, we’d love to hear from you, just contact us on Discord or on the <a href="{{ url_for('suggestion') }}">Suggestion Page!</a>
+        features, we’d love to hear from you, just contact us on Discord or on the <a
+                href="{{ url_for('suggestion') }}">Suggestion Page!</a>
     </p>
     <h2>Our Story</h2>
     <p class="about_us_text">
@@ -81,22 +59,44 @@
     <p class="about_us_text"><b>How do you calculate DPS and DPM?</b></p>
     <p class="about_us_text">We put the data given by
         <a href="https://docs.google.com/spreadsheets/d/1hGGLMOKB5Tj3FSo38HX7WbIvOmMbgfE5ZApTSOZgnS8/edit?gid=0#gid=0">Lanz1021's
-            Stat Sheet</a> into a <a href="https://www.w3schools.com/whatis/whatis_json.asp">.JSON (Javascript Object Notation)</a> file, which we use to calculate the DPS
-        (damage per second) and DPM (damage per minute) of each weapon via a formula that is also mentioned on Lanz1021' Spreadsheet.</p>
+            Stat Sheet</a> into a <a href="https://www.w3schools.com/whatis/whatis_json.asp">.JSON (Javascript Object
+            Notation)</a> file, which we use to calculate the DPS
+        (damage per second) and DPM (damage per minute) of each weapon via a formula that is also mentioned on Lanz1021'
+        Spreadsheet.</p>
 
     <p class="about_us_text"><b>How often are stats updated?</b></p>
     <p class="about_us_text">We update the weapon stats every time a new update is released for TRL.</p>
     <h2>Special Thanks</h2>
     <p class="about_us_text">
-        <b>gameknight90999(holdenn/holdenisch)</b>: For telling me what Sandevistan does. (The wiki doesn't tell what it does, lol)<br>
-        <b>delete(real_delete)</b>: For the info about the 'Weapon Expert' perk (I don't know where else I would've found that).<br>
-        <b>Epicdragon99999999(epicdog999)</b>: For helping me categorize WW2 and Soviet weapons (I don't think I would've thought about the PKM)<br>
-        <b>NocturnalAndrea(nocturnalandrea)</b>: For helping me categorize Semi-auto weapons (again, why isn't this listed on the wiki?)<br>
+        <b>gameknight90999(holdenn/holdenisch)</b>: For telling me what Sandevistan does. (The wiki doesn't tell what it
+        does, lol)<br>
+        <b>delete(real_delete)</b>: For the info about the 'Weapon Expert' perk (I don't know where else I would've
+        found that).<br>
+        <b>Epicdragon99999999(epicdog999)</b>: For helping me categorize WW2 and Soviet weapons (I don't think I
+        would've thought about the PKM)<br>
+        <b>NocturnalAndrea(nocturnalandrea)</b>: For helping me categorize Semi-auto weapons (again, why isn't this
+        listed on the wiki?)<br>
         <b>Kris HD(krishd1337)</b>: For the motivation and help with finding bugs.<br>
         <b>Lanz1021</b>: For reviewing and giving feedback.<br>
         <b>AND YOU!</b>: We are thankful for every visitor we get on this website, and we hope you're enjoying it!
     </p>
     <h3 class="about_us_text">Thank you for visiting <b>TRL Stats</b>.</h3>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        navMenu.querySelectorAll('a').forEach(link =>
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            })
+        );
+    </script>
 </main>
 </body>
 </html>
