@@ -125,6 +125,18 @@
         }
       ],
       "operatives": "GOC"
+    },
+    {
+      "id": "damage-perk-multiplicative-war-medal",
+      "label": "War Medal (-0.05s Reload Speed)",
+      "buffs": [
+        {
+          "type": "reloadTime",
+          "value": -0.05,
+          "buffType": "additive"
+        }
+      ],
+      "operatives": ""
     }
   ],
   "abilityPerks": [
@@ -195,6 +207,19 @@
         }
       ],
       "operatives": "",
+      "appliesTo": ""
+    },
+    {
+      "id": "consigliere-buff-high-command",
+      "label": "[POLATIA] High Command (+50% Reload Speed)",
+      "buffs": [
+        {
+          "type": "reloadTime",
+          "value": 0.5,
+          "buffType": "multiplicative"
+        }
+      ],
+      "operatives": "Polatia",
       "appliesTo": ""
     },
     {
