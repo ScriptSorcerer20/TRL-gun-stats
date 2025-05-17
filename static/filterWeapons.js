@@ -5,6 +5,7 @@ let globalModifiers = []; // This will be populated by the modifiers
 let selectedGunTypes = [];  // Track selected gun types for filtering
 let headshotMultiplier = 0; // Initialize Headshots as 0
 let headshotBaseApplied = false; //Initialize Headshots Applied as false
+let ignoreHeadshots = false;
 
 // Function to fetch operatives data from JSON
 function fetchOperativesData() {
@@ -265,19 +266,20 @@ function populateModifiers(modifiers) {
     modifiersContainer.addEventListener('change', applyModifiers);
 }
 
-// Function to apply the modifiers and recalculate damage, RPM, and reloadTime
 function applyModifiers() {
     if (!selectedWeapon) return;
-    // Base stats
+    const hasNVG = !!document.querySelector(
+        "#modifiers input[id='damage-item-multiplicative-nightvision']:checked"
+    );
     let baseDamage = selectedWeapon.damage;
     let baseRpm = selectedWeapon.rpm;
     let baseReloadTime = selectedWeapon.reload_time;
-    // Modifiers initialization
     let damageModifier = {additive: 0, multiplicative: 1};
     let rpmModifier = {additive: 0, multiplicative: 1};
     let reloadTimeModifier = {additive: 0, multiplicative: 1};
-    headshotMultiplier = 0;  // Reset headshot multiplier
+    headshotMultiplier = 0;
     headshotBaseApplied = false;
+    ignoreHeadshots = hasNVG;
 
     // Function to process global modifiers
     function processModifier(mod) {
@@ -413,6 +415,11 @@ function applyModifiers() {
 }
 
 function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier) {
+    if (ignoreHeadshots &&
+      (buff.buffType === 'multiplicative-headshot' ||
+       buff.buffType === 'multiplicative-headshot-base')) {
+    return;
+  }
     const {type, buffType, value} = buff;
     // Handle headshot multipliers
     if (buffType === 'multiplicative-headshot-base' && !headshotBaseApplied) {

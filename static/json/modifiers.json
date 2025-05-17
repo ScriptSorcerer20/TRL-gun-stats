@@ -61,7 +61,7 @@
     },
     {
       "id": "damage-item-multiplicative-nightvision",
-      "label": "Night Vision Goggles (+50% damage)",
+      "label": "Night Vision Goggles (+50% damage) | Resets Headshot Multiplier",
       "value": 1.5,
       "type": "multiplicative",
       "operatives": ""
