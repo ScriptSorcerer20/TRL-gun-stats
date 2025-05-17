@@ -1,14 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/static/img/TRL_Logo_Custom.jpg">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>About Us</title>
-    <script>
-    </script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us - TRL Stats</title>
+    <link rel="icon" type="image/x-icon" href="/trlstats/static/img/TRL_Logo_Custom.jpg"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+    <style>
+        main {
+            background-color: rgba(255, 255, 255, 0.92);
+            margin: 8vh auto;
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #111;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            color: #222;
+            font-size: 1.8rem;
+            border-left: 5px solid red;
+            padding-left: 12px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            color: #333;
+        }
+
+        .about_us_text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-top: 1rem;
+            color: #444;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .team-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .team-member {
+            background-color: #f7f7f7;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .thanks-section {
+            background-color: #fff;
+            padding: 20px;
+            border-left: 4px solid red;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+        }
+
+        .faq p {
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 600px) {
+            main {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .about_us_text {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
 </head>
+
+<body>
 <header>
     <nav>
         <button class="hamburger" aria-label="Toggle menu">
@@ -21,75 +118,89 @@
             <a href="{{ url_for('about_us') }}">ABOUT US</a>
             <a href="{{ url_for('suggestion') }}">SUGGESTIONS & FEEDBACK</a>
             <a href="https://www.roblox.com/games/5766084948/SCP-The-Red-Lake-EVENT">PLAY THE RED LAKE</a>
+            <a href="https://discord.gg/2jDevH8aTd">OUR DISCORD</a>
         </div>
     </nav>
 </header>
-<body class="background-image">
+
 <main>
     <h1>About Us</h1>
-    <h3><b>Hey there!</b> You seem to have stumbled upon the TRL Stat Page created by <b>Fretux</b> and
-        <b>Losernoob124!</b></h3><br>
+
+    <h3><b>Hey there!</b> You found the TRL Stats Page by <b>Fretux</b> and <b>Losernoob124</b> 🎯</h3>
+
     <h2>Our Mission</h2>
-    <p class="about_us_text">This website exists because we want to provide the
-        TRL Community with an easy go-to way to calculate DPS and DPM values to help players make informed decisions
-        about their gameplay. Whether you're fine-tuning your new Deathwish Strategy or simply curious about firearm
-        performance, we’ve got you covered. If you have suggestions, feedback, or want to contribute new stats or
-        features, we’d love to hear from you, just contact us on Discord or on the <a
-                href="{{ url_for('suggestion') }}">Suggestion Page!</a>
+    <p class="about_us_text">
+        We created this platform to help the TRL community quickly and easily calculate gun DPS and DPM — no
+        spreadsheets, no hassle. Whether you're theorycrafting a Deathwish loadout or comparing your sidearms, our
+        tool’s built to support your grind.
     </p>
+    <p class="about_us_text">
+        Got ideas or stat suggestions? Hit us up on Discord or submit feedback via our <a
+            href="{{ url_for('suggestion') }}">Suggestions Page</a>.
+    </p>
+
     <h2>Our Story</h2>
     <p class="about_us_text">
-        In the beginning, the only way to calculate DPS/DPM stats for certain operatives was, by using the Spreadsheet
-        by Lanz1021 and a calculator, which quickly turned out to be (shockers) really annoying. TRL Stats started out
-        as a side project, initially started by Losernoob124 to calculate gun stats more easily, but given up one after
-        a couple of weeks. Eventually Fretux started working on it again and what initially was just a fun hobby grew
-        into something much bigger, and through the help of Stack Overflow and many hours of programming, we
-        turned it into a full-fledged website.
+        It started with a spreadsheet... and frustration. Calculating DPS manually was tedious — and we knew we could do
+        better. What began as a side hobby by Losernoob124 was reignited by Fretux and evolved into a full web app
+        through plenty of bug fixing, community help, and caffeine.
     </p>
-    <h2>The Team</h2>
-    <p class="about_us_text">
-        <b>Fretux</b> - Frontend Developer and Data Specialist. Responsible for the designing of the website and making
-        sure the gun stats are accurate and up to date.
-    </p>
-    <p class="about_us_text">
-        <b>Losernoob124</b> - Backend Developer. Responsible for all the scripts that make sure the website functions
-        correctly.
-    </p>
-    <h2>Frequently Asked Questions</h2>
-    <p class="about_us_text"><b>How do you calculate DPS and DPM?</b></p>
-    <p class="about_us_text">We put the data given by
-        <a href="https://docs.google.com/spreadsheets/d/1hGGLMOKB5Tj3FSo38HX7WbIvOmMbgfE5ZApTSOZgnS8/edit?gid=0#gid=0">Lanz1021's
-            Stat Sheet</a> into a <a href="https://www.w3schools.com/whatis/whatis_json.asp">.JSON (Javascript Object
-            Notation)</a> file, which we use to calculate the DPS
-        (damage per second) and DPM (damage per minute) of each weapon via a formula that is also mentioned on Lanz1021'
-        Spreadsheet.</p>
 
-    <p class="about_us_text"><b>How often are stats updated?</b></p>
-    <p class="about_us_text">We update the weapon stats every time a new update is released for TRL.</p>
-    <h2>Special Thanks</h2>
-    <p class="about_us_text">
-        <b>gameknight90999(holdenn/holdenisch)</b>: For supporting us with various informations, helping us add some unmentioned Balance Changes and overall supporting us all the way through development.<br>
-        <b>Kris HD(krishd1337)</b>: For the motivation and help with finding bugs.<br>
-        <b>Lanz1021</b>: For reviewing and giving feedback.<br>
-        <b>AND YOU!</b>: We are thankful for every visitor we get on this website, and we hope you're enjoying it!
-    </p>
-    <h3 class="about_us_text">Thank you for visiting <b>TRL Stats</b>.</h3>
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-        navMenu.querySelectorAll('a').forEach(link =>
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            })
-        );
-    </script>
+    <h2>The Team</h2>
+    <div class="team-section">
+        <div class="team-member">
+            <b>Fretux</b> – Frontend Developer & Data Specialist. Designs the UI and ensures stat accuracy.
+        </div>
+        <div class="team-member">
+            <b>Losernoob124</b> – Backend Developer. Handles everything under the hood and makes sure the calculators
+            work.
+        </div>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+        <p><b>How do you calculate DPS and DPM?</b></p>
+        <p class="about_us_text">
+            We use data from <a
+                href="https://docs.google.com/spreadsheets/d/1hGGLMOKB5Tj3FSo38HX7WbIvOmMbgfE5ZApTSOZgnS8/edit?gid=0#gid=0"
+                target="_blank">Lanz1021's Stat Sheet</a>, convert it into a JSON structure, and use it with formulas
+            similar to what’s on the sheet.
+        </p>
+
+        <p><b>How often are stats updated?</b></p>
+        <p class="about_us_text">
+            We update our database every time TRL releases a gameplay patch or changes weapon stats.
+        </p>
+    </div>
+
+    <h2>Special Thanks 🙏</h2>
+    <div class="thanks-section">
+        <p><b>gameknight90999 (holdenn)</b>: Helped with various stat and weapon data and ideas</p>
+        <p><b>Kris HD</b>: Motivation + bug hunting</p>
+        <p><b>Lanz1021</b>: Feedback & review</p>
+        <p><b>YOU</b>: For visiting — thank you!</p>
+    </div>
+
+    <h3 class="about_us_text" style="text-align: center; margin-top: 2rem;">
+        Thanks for using <b>TRL Stats</b> 💚
+    </h3>
 </main>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+    navMenu.querySelectorAll('a').forEach(link =>
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        })
+    );
+</script>
 </body>
 </html>

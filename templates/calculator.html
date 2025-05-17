@@ -6,23 +6,6 @@
     <link rel="icon" type="image/x-icon" href="/static/img/TRL_Logo_Custom.jpg">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>DPM/DPS Calculator</title>
-    <script>
-        // Collapsible functionality for perks, buffs, etc.
-        document.addEventListener('DOMContentLoaded', function () {
-            var coll = document.getElementsByClassName("collapsible-header");
-            for (var i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.display === "block") {
-                        content.style.display = "none";
-                    } else {
-                        content.style.display = "block";
-                    }
-                });
-            }
-        });
-    </script>
 </head>
 <header>
     <nav>
@@ -32,7 +15,7 @@
             <span class="bar"></span>
         </button>
         <div class="nav-menu">
-            <a href="{{ url_for('calculator') }}">DPS/DPM CALCULATOR</a>
+            <a href="{{ url_for('index') }}">GUN STATS</a>
             <a href="{{ url_for('about_us') }}">ABOUT US</a>
             <a href="{{ url_for('suggestion') }}">SUGGESTIONS & FEEDBACK</a>
             <a href="https://www.roblox.com/games/5766084948/SCP-The-Red-Lake-EVENT">PLAY THE RED LAKE</a>
@@ -47,7 +30,7 @@
     <br>
     <label for="weapon-select"></label>
     <select id="weapon-select" name="weapons">
-        <option value="">Select a Weapon</option> <!-- This is the placeholder option -->
+        <option value="">Select a Weapon</option>
     </select>
     <br>
     <div id="guntype-filters">
@@ -62,7 +45,6 @@
         <label><input type="checkbox" id="pistol" value="PISTOL"> Pistol</label>
         <label><input type="checkbox" id="special" value="SPECIAL"> Special</label>
         <label><input type="checkbox" id="semi-auto" value="SEMI-AUTO"> Semi-Auto</label>
-        <!-- Add more gun types as needed -->
     </div>
 
     <label for="operative-search"></label>
@@ -70,20 +52,15 @@
     <br>
     <label for="operative-select"></label>
     <select id="operative-select">
-        <option value="">Select an operative</option> <!-- This is the placeholder option -->
+        <option value="">Select an operative</option>
     </select><br>
-
-    <!-- Weapon Stats Display -->
     <div id="weapon-stats"></div>
     <div id="calculated-stats"></div>
-
     <h3>Operative Specific Modifiers</h3>
     <div id="operative-modifiers"></div>
-
-    <!-- Modifiers Display -->
     <div id="modifiers-container">
-        <div id="modifiers"></div> <!-- Items and Perks go here -->
-        <div id="abilities"></div> <!-- Abilities go here -->
+        <div id="modifiers"></div>
+        <div id="abilities"></div>
     </div>
     <script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>
     <script>
@@ -101,6 +78,20 @@
                 document.body.classList.remove('menu-open');
             })
         );
+        document.addEventListener('DOMContentLoaded', function () {
+            var coll = document.getElementsByClassName("collapsible-header");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        });
     </script>
 </main>
 </body>
