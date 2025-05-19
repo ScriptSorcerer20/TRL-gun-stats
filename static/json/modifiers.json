@@ -362,6 +362,14 @@
       "type": "additive",
       "operatives": "",
       "appliesTo": "SHOTGUN"
+    },
+    {
+      "id": "damage-item-multiplicative-stone-dead-mertvec",
+      "label": "[All Operatives] Mertvec 'Soothe the dead' (+20% damage)",
+      "value": 1.2,
+      "type": "multiplicative",
+      "operatives": "",
+      "appliesTo": ""
     }
   ]
 }

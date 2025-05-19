@@ -35,7 +35,7 @@
             }
           ]
         }
-        ]
+      ]
     },
     {
       "id": "Classic-RCU",
@@ -224,7 +224,7 @@
           "appliesTo": ""
         },
         {
-            "id": "anarchist-world-on-fire-damage-perk",
+          "id": "anarchist-world-on-fire-damage-perk",
           "label": "World on Fire (+50% damage)",
           "value": 1.5,
           "type": "multiplicative",
@@ -608,7 +608,7 @@
               "buffType": "multiplicative"
             }
           ],
-              "appliesTo": "SHOTGUN"
+          "appliesTo": "SHOTGUN"
         },
         {
           "id": "hazmat-armor-damage-perk",
@@ -1821,9 +1821,9 @@
               "buffType": "multiplicative"
             },
             {
-                "type": "reloadTime",
-                "value": 0,
-                "buffType": "multiplicative"
+              "type": "reloadTime",
+              "value": 0,
+              "buffType": "multiplicative"
             }
           ],
           "appliesTo": ""
@@ -1905,9 +1905,9 @@
               "buffType": "multiplicative"
             },
             {
-                "type": "rpm",
-                "value": 0.5,
-                "buffType": "multiplicative"
+              "type": "rpm",
+              "value": 0.5,
+              "buffType": "multiplicative"
             },
             {
               "type": "damage",
@@ -1947,6 +1947,49 @@
             }
           ],
           "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "GRU-P-WM",
+      "name": "GRU-P Winter Menace",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "grup-reckless-damage-perk",
+          "label": "Reckless (+35% Damage)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.35,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": ""
+        }
+      ]
+    },
+    {
+      "id": "GRU-P-Mertvec",
+      "name": "GRU-P Mertvec",
+      "category": "GRU-P",
+      "modifiers": [
+        {
+          "id": "faded training-damage-perk-reload-perk",
+          "label": "Faded Training [Soviet] (+20% Damage, +10% Reload Speed)",
+          "buffs": [
+            {
+              "type": "damage",
+              "value": 1.2,
+              "buffType": "multiplicative"
+            },
+            {
+              "type": "reloadTime",
+              "value": 0.9,
+              "buffType": "multiplicative"
+            }
+          ],
+          "appliesTo": "SOVIET"
         }
       ]
     }
