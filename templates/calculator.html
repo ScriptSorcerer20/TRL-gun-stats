@@ -25,13 +25,15 @@
 </header>
 <body>
 <main>
-    <label for="weapon-search"></label>
-    <input type="text" id="weapon-search" placeholder="Search weapons..." onkeyup="filterWeapons()">
-    <br>
-    <label for="weapon-select"></label>
-    <select id="weapon-select" name="weapons">
-        <option value="">Select a Weapon</option>
-    </select>
+    <div class="select-wrapper">
+        <label for="weapon-search"></label>
+        <input type="text" id="weapon-search" placeholder="Search weapons..." onkeyup="filterWeapons()">
+        <br>
+        <label for="weapon-select"></label>
+        <select id="weapon-select" name="weapons">
+            <option value="">Select a Weapon</option>
+        </select>
+    </div>
     <br>
     <div id="guntype-filters">
         <label><input type="checkbox" id="primary" value="PRIMARY"> Primary</label>
@@ -46,14 +48,15 @@
         <label><input type="checkbox" id="special" value="SPECIAL"> Special</label>
         <label><input type="checkbox" id="semi-auto" value="SEMI-AUTO"> Semi-Auto</label>
     </div>
-
-    <label for="operative-search"></label>
-    <input type="text" id="operative-search" placeholder="Search operatives..." onkeyup="filterOperatives()">
-    <br>
-    <label for="operative-select"></label>
-    <select id="operative-select">
-        <option value="">Select an operative</option>
-    </select><br>
+    <div class="select-wrapper">
+        <label for="operative-search"></label>
+        <input type="text" id="operative-search" placeholder="Search operatives..." onkeyup="filterOperatives()">
+        <br>
+        <label for="operative-select"></label>
+        <select id="operative-select">
+            <option value="">Select an operative</option>
+        </select><br>
+    </div>
     <div id="weapon-stats"></div>
     <div id="calculated-stats"></div>
     <h3>Operative Specific Modifiers</h3>
