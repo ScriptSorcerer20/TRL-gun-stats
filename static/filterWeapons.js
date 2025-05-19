@@ -416,10 +416,10 @@ function applyModifiers() {
 
 function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier) {
     if (ignoreHeadshots &&
-      (buff.buffType === 'multiplicative-headshot' ||
-       buff.buffType === 'multiplicative-headshot-base')) {
-    return;
-  }
+        (buff.buffType === 'multiplicative-headshot' ||
+            buff.buffType === 'multiplicative-headshot-base')) {
+        return;
+    }
     const {type, buffType, value} = buff;
     // Handle headshot multipliers
     if (buffType === 'multiplicative-headshot-base' && !headshotBaseApplied) {
@@ -538,6 +538,64 @@ document.getElementById('weapon-search').addEventListener('keyup', filterWeapons
 document.getElementById('operative-search').addEventListener('keyup', filterOperatives);
 document.querySelectorAll('#guntype-filters input').forEach(checkbox => {
     checkbox.addEventListener('change', filterWeapons);
+});
+
+// function for Creating a Weapon
+const openBtn = document.getElementById('weapon-create');
+const closeBtn = document.getElementById('weapon-cancel');
+const modal = document.getElementById('weapon-form');
+const form = document.getElementById('weaponForm');
+
+// Show the modal
+openBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+});
+
+// Hide the modal
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    form.reset();
+});
+
+// Handle form submission
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const newId = weapons.length
+        ? Math.max(...weapons.map(w => w.id)) + 1
+        : 1;
+
+    const weapon = {
+        id: newId,
+        name: data.get('name'),
+        damage: parseFloat(data.get('damage')),
+        rpm: parseFloat(data.get('rpm')),
+        mag_size: parseFloat(data.get('magazin')),
+        reload_time: parseFloat(data.get('reload-time')),
+        damage_multiplier: parseFloat(data.get('multiplier')),
+        guntype: data.getAll('gun-type')
+    };
+
+    // 2) Add it locally
+    weapons.push(weapon);
+
+    // 3) Refresh UI
+    populateWeapons();      // repopulate <select id="weapon-select">
+
+    // **Here you can pass `weapon` to your game logic**
+    console.log('Created weapon:', weapon);
+
+    // Close & reset
+    modal.style.display = 'none';
+    form.reset();
+});
+
+// Optional: click outside form to close
+modal.addEventListener('click', e => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        form.reset();
+    }
 });
 
 

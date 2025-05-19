@@ -32,6 +32,57 @@
     <select id="weapon-select" name="weapons">
         <option value="">Select a Weapon</option>
     </select>
+    <button id="weapon-create">Create New Weapon</button>
+    <div id="weapon-form">
+        <div>
+            <h2>New Weapon</h2>
+            <form id="weaponForm">
+                <label>
+                    Name:<br>
+                    <input type="text" name="name" required>
+                </label><br><br>
+
+                <label>
+                    Damage:<br>
+                    <input type="number" name="damage" min="0" required>
+                </label><br><br>
+
+                <label>
+                    Rounds Per Minute:<br>
+                    <input type="number" name="rpm" min="0" required>
+                </label><br><br>
+
+                <label>
+                    Magazine Size:<br>
+                    <input type="number" name="magazin" min="1" required>
+                </label><br><br>
+
+                <label>
+                    Reload Time:<br>
+                    <input type="number" name="reload-time" min="0" required>
+                </label><br><br>
+
+                <label>
+                    Damage Multiplier:<br>
+                    <input type="number" name="multiplier" min="0" required>
+                </label><br><br>
+
+                <label>
+                    Weapon Type:<br>
+                    <select name="gun-type" multiple>
+                        <option value="PISTOL">Pistol</option>
+                        <option value="SECONDARY">Secondary</option>
+                        <option value="WW2">WW2</option>
+                        <option value="RIFLE">Rifle</option>
+                        <option value="SOVIET">Soviet</option>
+                    </select>
+                </label><br><br>
+
+                <button type="submit">Create</button>
+                <button type="button" id="weapon-cancel">Cancel</button>
+            </form>
+        </div>
+    </div>
     <br>
     <div id="guntype-filters">
         <label><input type="checkbox" id="primary" value="PRIMARY"> Primary</label>
