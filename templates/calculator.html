@@ -25,13 +25,15 @@
 </header>
 <body>
 <main>
-    <label for="weapon-search"></label>
-    <input type="text" id="weapon-search" placeholder="Search weapons..." onkeyup="filterWeapons()">
-    <br>
-    <label for="weapon-select"></label>
-    <select id="weapon-select" name="weapons">
-        <option value="">Select a Weapon</option>
-    </select>
+    <div class="select-wrapper">
+        <label for="weapon-search"></label>
+        <input type="text" id="weapon-search" placeholder="Search weapons..." onkeyup="filterWeapons()">
+        <br>
+        <label for="weapon-select"></label>
+        <select id="weapon-select" name="weapons">
+            <option value="">Select a Weapon</option>
+        </select>
+    </div>
     <button id="weapon-create">Create New Weapon</button>
     <div id="weapon-form">
         <div>
@@ -67,16 +69,18 @@
                     <input type="number" name="multiplier" min="0" required>
                 </label><br><br>
 
-                <label>
-                    Weapon Type:<br>
-                    <select name="gun-type" multiple>
+                <div class="select-wrapper">
+                    <label for="gun-type">Weapon Type:</label>
+                    <select id="gun-type" name="gun-type">
+                        <option value="">Select a type</option>
                         <option value="PISTOL">Pistol</option>
                         <option value="SECONDARY">Secondary</option>
                         <option value="WW2">WW2</option>
                         <option value="RIFLE">Rifle</option>
                         <option value="SOVIET">Soviet</option>
                     </select>
-                </label><br><br>
+                </div>
+
 
                 <button type="submit">Create</button>
                 <button type="button" id="weapon-cancel">Cancel</button>
@@ -97,14 +101,16 @@
         <label><input type="checkbox" id="special" value="SPECIAL"> Special</label>
         <label><input type="checkbox" id="semi-auto" value="SEMI-AUTO"> Semi-Auto</label>
     </div>
-
-    <label for="operative-search"></label>
-    <input type="text" id="operative-search" placeholder="Search operatives..." onkeyup="filterOperatives()">
+    <div class="select-wrapper">
+        <label for="operative-search"></label>
+        <input type="text" id="operative-search" placeholder="Search operatives..." onkeyup="filterOperatives()">
+        <br>
+        <label for="operative-select"></label>
+        <select id="operative-select">
+            <option value="">Select an operative</option>
+        </select>
+    </div>
     <br>
-    <label for="operative-select"></label>
-    <select id="operative-select">
-        <option value="">Select an operative</option>
-    </select><br>
     <div id="weapon-stats"></div>
     <div id="calculated-stats"></div>
     <h3>Operative Specific Modifiers</h3>

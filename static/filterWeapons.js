@@ -573,7 +573,7 @@ form.addEventListener('submit', e => {
         mag_size: parseFloat(data.get('magazin')),
         reload_time: parseFloat(data.get('reload-time')),
         damage_multiplier: parseFloat(data.get('multiplier')),
-        guntype: data.getAll('gun-type')
+        guntype: data.get('gun-type') ? [data.get('gun-type')] : []
     };
 
     // 2) Add it local
