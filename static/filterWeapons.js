@@ -576,7 +576,7 @@ form.addEventListener('submit', e => {
         guntype: data.getAll('gun-type')
     };
 
-    // 2) Add it locally
+    // 2) Add it local
     weapons.push(weapon);
 
     // 3) Refresh UI
