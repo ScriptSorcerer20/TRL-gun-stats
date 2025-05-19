@@ -9,7 +9,7 @@ let ignoreHeadshots = false;
 
 // Function to fetch operatives data from JSON
 function fetchOperativesData() {
-    fetch('/static/json/operative.json')
+    fetch('/trlstats/static/json/operative.json')
         .then(response => response.json())
         .then(data => {
             populateOperatives(data.operatives);  // Populate the operative dropdown once data is loaded
@@ -573,7 +573,7 @@ form.addEventListener('submit', e => {
         mag_size: parseFloat(data.get('magazin')),
         reload_time: parseFloat(data.get('reload-time')),
         damage_multiplier: parseFloat(data.get('multiplier')),
-        guntype: data.get('gun-type') ? [data.get('gun-type')] : []
+        guntype: data.getAll('gun-type')
     };
 
     // 2) Add it local
