@@ -545,12 +545,10 @@ body.menu-open {
     transition: border-color 0.2s ease;
 }
 
-/* Multi-select box a bit taller */
 #weapon-form form select[multiple] {
     min-height: 120px;
 }
 
-/* On focus, highlight */
 #weapon-form form input:focus,
 #weapon-form form select:focus {
     outline: none;
@@ -558,7 +556,6 @@ body.menu-open {
     box-shadow: 0 0 4px rgba(139, 0, 0, 0.4);
 }
 
-/* Buttons in the modal */
 #weapon-form form button {
     padding: 10px 20px;
     border: none;
@@ -568,7 +565,6 @@ body.menu-open {
     margin-right: 8px;
 }
 
-/* Confirm (Create) */
 #weapon-form form button[type="submit"] {
     background-color: darkred;
     color: #fff;
@@ -578,7 +574,6 @@ body.menu-open {
     background-color: red;
 }
 
-/* Cancel */
 #weapon-form form button#weapon-cancel {
     background-color: #666;
     color: #fff;
@@ -588,7 +583,6 @@ body.menu-open {
     background-color: #444;
 }
 
-/* The “Create New Weapon” opener button */
 #weapon-create {
     margin: 0 0 20px;
     padding: 10px 16px;
