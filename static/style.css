@@ -506,12 +506,10 @@ body.menu-open {
     z-index: 2500;
 }
 
-/* When JS opens it, we set display:flex */
 #weapon-form.show {
     display: flex;
 }
 
-/* The white “card” in the center */
 #weapon-form > div {
     background: #fff;
     padding: 24px;
@@ -522,7 +520,6 @@ body.menu-open {
     position: relative;
 }
 
-/* Header inside the card */
 #weapon-form h2 {
     margin-top: 0;
     color: #222;
@@ -530,7 +527,6 @@ body.menu-open {
     text-align: center;
 }
 
-/* All form inputs stretch full width */
 #weapon-form form input[type="text"],
 #weapon-form form input[type="number"],
 #weapon-form form select {
