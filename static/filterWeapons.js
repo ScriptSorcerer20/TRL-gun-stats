@@ -564,7 +564,6 @@ form.addEventListener('submit', e => {
     const newId = weapons.length
         ? Math.max(...weapons.map(w => w.id)) + 1
         : 1;
-
     const weapon = {
         id: newId,
         name: data.get('name'),
@@ -575,22 +574,12 @@ form.addEventListener('submit', e => {
         damage_multiplier: parseFloat(data.get('multiplier')),
         guntype: data.getAll('gun-type')
     };
-
-    // 2) Add it local
     weapons.push(weapon);
-
-    // 3) Refresh UI
-    populateWeapons();      // repopulate <select id="weapon-select">
-
-    // **Here you can pass `weapon` to your game logic**
-    console.log('Created weapon:', weapon);
-
-    // Close & reset
+    populateWeapons();
     modal.style.display = 'none';
     form.reset();
 });
 
-// Optional: click outside form to close
 modal.addEventListener('click', e => {
     if (e.target === modal) {
         modal.style.display = 'none';
