@@ -61,31 +61,28 @@
 
                 <label>
                     Reload Time:<br>
-                    <input type="number" name="reload-time" min="0" required>
+                    <input type="number" step="0.01" name="reload-time" min="0" required>
                 </label><br><br>
 
                 <label>
-                    Damage Multiplier:<br>
+                    Damage Multiplier (Amount of bullets per shot):<br>
                     <input type="number" name="multiplier" min="0" required>
                 </label><br><br>
 
-                <div class="select-wrapper">
-                    <label for="gun-type">Weapon Type:</label>
-                    <select id="gun-type" name="gun-type" multiple required>
-                        <option value="">Select a type</option>
-                        <option value="PRIMARY">Primary</option>
-                        <option value="SECONDARY">Secondary</option>
-                        <option value="WW2">WW2</option>
-                        <option value="RIFLE">Rifle</option>
-                        <option value="SOVIET">Soviet</option>
-                        <option value="SMG">SMG</option>
-                        <option value="SHOTGUN">Shotgun</option>
-                        <option value="LMG">LMG</option>
-                        <option value="PISTOL">Pistol</option>
-                        <option value="SPECIAL">Special</option>
-                        <option value="SEMI-AUTO">Semi-Auto</option>
-                    </select>
-                </div>
+                <fieldset class="checkbox-group">
+                    <legend>Weapon Type<span class="required">*</span></legend>
+                    <label><input type="checkbox" name="gun-type" value="PRIMARY"> Primary</label>
+                    <label><input type="checkbox" name="gun-type" value="SECONDARY"> Secondary</label>
+                    <label><input type="checkbox" name="gun-type" value="WW2"> WW2</label>
+                    <label><input type="checkbox" name="gun-type" value="RIFLE"> Rifle</label>
+                    <label><input type="checkbox" name="gun-type" value="SOVIET"> Soviet</label>
+                    <label><input type="checkbox" name="gun-type" value="SMG"> SMG</label>
+                    <label><input type="checkbox" name="gun-type" value="SHOTGUN"> Shotgun</label>
+                    <label><input type="checkbox" name="gun-type" value="LMG"> LMG</label>
+                    <label><input type="checkbox" name="gun-type" value="PISTOL"> Pistol</label>
+                    <label><input type="checkbox" name="gun-type" value="SPECIAL"> Special</label>
+                    <label><input type="checkbox" name="gun-type" value="SEMI-AUTO"> Semi-Auto</label>
+                </fieldset>
 
 
                 <button type="submit">Create</button>
@@ -119,6 +116,8 @@
     <br>
     <div id="weapon-stats"></div>
     <div id="calculated-stats"></div>
+    <button id="copy-stats">Copy to Clipboard</button>
+    <div id="copy-message" aria-live="polite"></div>
     <h3>Operative Specific Modifiers</h3>
     <div id="operative-modifiers"></div>
     <div id="modifiers-container">
@@ -154,6 +153,13 @@
                         content.style.display = "block";
                     }
                 });
+            }
+        });
+        document.getElementById('weaponForm').addEventListener('submit', function (event) {
+            const checkboxes = document.querySelectorAll('input[name="gun-type"]:checked');
+            if (checkboxes.length === 0) {
+                event.preventDefault();
+                alert('Please select at least one weapon type.');
             }
         });
     </script>

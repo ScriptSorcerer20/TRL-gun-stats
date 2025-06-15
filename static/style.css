@@ -597,3 +597,52 @@ body.menu-open {
 #weapon-create:hover {
     background-color: red;
 }
+
+#copy-stats {
+  background: darkred;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#copy-stats:hover {
+  background: red;
+}
+
+#copy-message {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  min-height: 1.2em;
+}
+
+#copy-message.success {
+  color: green;
+}
+
+#copy-message.error {
+  color: crimson;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  border: none;
+  padding: 0;
+}
+.checkbox-group legend {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-size: 0.95em;
+}
+.checkbox-group input {
+  margin-right: 6px;
+}

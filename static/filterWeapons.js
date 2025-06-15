@@ -587,6 +587,54 @@ modal.addEventListener('click', e => {
     }
 });
 
+document.getElementById('copy-stats').addEventListener('click', async () => {
+  const statsTable = document.querySelector('#weapon-stats table tr + tr');
+  if (!statsTable) {
+    showCopyMessage('No weapon selected to copy.', 'error');
+    return;
+  }
+  const cells = Array.from(statsTable.querySelectorAll('td')).map(td => td.innerText.trim());
+  const [ name, dmg, rpm, mag, reload, dps, dpm, avgDps ] = cells;
+  const globalMods = Array.from(
+    document.querySelectorAll('#modifiers label input:checked')
+  ).map(cb => cb.parentNode.textContent.trim());
+  const opMods = Array.from(
+    document.querySelectorAll('#operative-modifiers label input:checked')
+  ).map(cb => cb.parentNode.textContent.trim());
+  const allMods = globalMods.concat(opMods);
+  const modsString = allMods.length
+    ? allMods.join(', ')
+    : 'None';
+  const payload = [
+    `Weapon: ${name}`,
+    `Damage: ${dmg}`,
+    `RPM: ${rpm}`,
+    `Mag Size: ${mag}`,
+    `Reload Time: ${reload}`,
+    `DPS: ${dps}`,
+    `DPM: ${dpm}`,
+    `Average DPS: ${avgDps}`,
+    `Modifiers used for this calculation: ${modsString}`
+  ].join('\n');
+  try {
+    await navigator.clipboard.writeText(payload);
+    showCopyMessage('✅ Stats copied to clipboard!', 'success');
+  } catch (err) {
+    console.error(err);
+    showCopyMessage('Failed to copy.', 'error');
+  }
+});
+
+function showCopyMessage(text, type) {
+  const msg = document.getElementById('copy-message');
+  msg.textContent = text;
+  msg.className = type;
+  setTimeout(() => {
+    msg.textContent = '';
+    msg.className = '';
+  }, 3000);
+}
+
 
 // Initialize
 fetchWeaponsData();
