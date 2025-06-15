@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/trlstats/static/json/data.json')  // Fetch the JSON file directly
+    fetch('/trlstats/static/json/data.json')
         .then(response => response.json())
         .then(data => {
             const updatedGuns = data.map(gun => {
@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const reload_time_min = gun['reload_time'] / 60;
                 const dpm = (gun['mag_size'] * total_damage) / (reload_time_min + (gun['mag_size'] / gun['rpm']));
                 const avg_dps = dpm / 60;
-
-                // Add the calculated stats to the gun object
                 return {
                     ...gun,
                     total_damage: total_damage,
@@ -28,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function populateTable(data) {
     const table = document.getElementById('gun-stats').getElementsByTagName('tbody')[0];
-    table.innerHTML = ''; // Clear existing table data
+    table.innerHTML = '';
     data.forEach(gun => {
         const row = table.insertRow();
         row.insertCell(0).innerText = gun.name;
