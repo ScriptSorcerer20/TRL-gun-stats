@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/static/json/data.json')  // Fetch the JSON file directly
+    fetch('/trlstats/static/json/data.json')  // Fetch the JSON file directly
         .then(response => response.json())
         .then(data => {
             const updatedGuns = data.map(gun => {
