@@ -6,103 +6,6 @@
     <title>About Us - TRL Stats</title>
     <link rel="icon" type="image/x-icon" href="/trlstats/static/img/TRL_Logo_Custom.jpg"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
-    <style>
-        main {
-            background-color: rgba(255, 255, 255, 0.92);
-            margin: 8vh auto;
-            padding: 40px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 900px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: #111;
-        }
-
-        h2 {
-            margin-top: 2rem;
-            color: #222;
-            font-size: 1.8rem;
-            border-left: 5px solid red;
-            padding-left: 12px;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            margin-top: 1.5rem;
-            color: #333;
-        }
-
-        .about_us_text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-top: 1rem;
-            color: #444;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: #d32f2f;
-        }
-
-        a {
-            color: red;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .team-section {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .team-member {
-            background-color: #f7f7f7;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        }
-
-        .thanks-section {
-            background-color: #fff;
-            padding: 20px;
-            border-left: 4px solid red;
-            border-radius: 6px;
-            margin-top: 1.5rem;
-        }
-
-        .faq p {
-            margin-top: 0.5rem;
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 600px) {
-            main {
-                padding: 25px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .about_us_text {
-                font-size: 0.95rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -123,12 +26,12 @@
     </nav>
 </header>
 
-<main>
-    <h1>About Us</h1>
+<main class="about_us_main">
+    <h1 class="about_us_h1">About Us</h1>
 
-    <h3><b>Hey there!</b> You found the TRL Stats Page by <b>Fretux</b> and <b>Losernoob124</b> 🎯</h3>
+    <h3 class="about_us_h3"><b>Hey there!</b> You found the TRL Stats Page by <b>Fretux</b> and <b>Losernoob124</b> 🎯</h3>
 
-    <h2>Our Mission</h2>
+    <h2 class="about_us_h2">Our Mission</h2>
     <p class="about_us_text">
         We created this platform to help the TRL community quickly and easily calculate gun DPS and DPM — no
         spreadsheets, no hassle. Whether you're theorycrafting a Deathwish loadout or comparing your sidearms, our
@@ -139,14 +42,14 @@
             href="{{ url_for('suggestion') }}">Suggestions Page</a>.
     </p>
 
-    <h2>Our Story</h2>
+    <h2 class="about_us_h2">Our Story</h2>
     <p class="about_us_text">
         It started with a spreadsheet... and frustration. Calculating DPS manually was tedious — and we knew we could do
         better. What began as a side hobby by Losernoob124 was reignited by Fretux and evolved into a full web app
         through plenty of bug fixing, community help, and caffeine.
     </p>
 
-    <h2>The Team</h2>
+    <h2 class="about_us_h2">The Team</h2>
     <div class="team-section">
         <div class="team-member">
             <b>Fretux</b> – Frontend Developer & Data Specialist. Designs the UI and ensures stat accuracy.
@@ -157,7 +60,7 @@
         </div>
     </div>
 
-    <h2>Frequently Asked Questions</h2>
+    <h2 class="about_us_h2">Frequently Asked Questions</h2>
     <div class="faq">
         <p><b>How do you calculate DPS and DPM?</b></p>
         <p class="about_us_text">
@@ -173,7 +76,7 @@
         </p>
     </div>
 
-    <h2>Special Thanks 🙏</h2>
+    <h2 class="about_us_h2">Special Thanks 🙏</h2>
     <div class="thanks-section">
         <p><b>gameknight90999 (holdenn)</b>: Helped with various stat and weapon data and ideas</p>
         <p><b>Kris HD</b>: Motivation + bug hunting</p>

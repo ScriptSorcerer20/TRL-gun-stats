@@ -44,7 +44,7 @@
     "name": "Luger",
     "damage": 150,
     "damage_multiplier": 1,
-    "rpm": 500,
+    "rpm": 116,
     "mag_size": 8,
     "reload_time": 1.95,
     "guntype": ["PISTOL", "WW2", "SECONDARY"]
