@@ -594,8 +594,28 @@ body.menu-open {
     cursor: pointer;
 }
 
+#weapon-edit {
+    margin: 0 0 20px;
+    padding: 10px 16px;
+    background-color: darkred;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 #weapon-create:hover {
     background-color: red;
+}
+
+#weapon-edit:hover {
+    background-color: red;
+}
+
+#weapon-edit:disabled {
+    background-color: #666;
+    cursor: not-allowed;
 }
 
 #copy-stats {

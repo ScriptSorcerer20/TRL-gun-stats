@@ -35,6 +35,8 @@
         </select>
     </div>
     <button id="weapon-create">Create New Weapon</button>
+    <button id="weapon-edit" disabled>Edit Weapon</button>
+    <div id="edit-error" class="error-message" aria-live="polite"></div>
     <div id="weapon-form">
         <div>
             <h2>New Weapon</h2>
@@ -126,7 +128,6 @@
     </div>
     <script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>
     <script>
-        //
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
         hamburger.addEventListener('click', () => {
@@ -153,13 +154,6 @@
                         content.style.display = "block";
                     }
                 });
-            }
-        });
-        document.getElementById('weaponForm').addEventListener('submit', function (event) {
-            const checkboxes = document.querySelectorAll('input[name="gun-type"]:checked');
-            if (checkboxes.length === 0) {
-                event.preventDefault();
-                alert('Please select at least one weapon type.');
             }
         });
     </script>

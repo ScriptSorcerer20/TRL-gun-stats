@@ -6,6 +6,7 @@ let selectedGunTypes = [];
 let headshotMultiplier = 0;
 let headshotBaseApplied = false;
 let ignoreHeadshots = false;
+let isEditing = false;
 
 //fetch operatives data from JSON
 function fetchOperativesData() {
@@ -96,15 +97,17 @@ function populateWeapons() {
         select.appendChild(option);
     });
     select.addEventListener('change', (event) => {
-        const selectedWeaponId = parseInt(event.target.value);
-        if (!selectedWeaponId) {
+        const id = parseInt(event.target.value, 10);
+        if (!id) {
             document.getElementById('weapon-stats').innerHTML = '';
+            editBtn.disabled = true;
             return;
         }
-        selectedWeapon = weapons.find(weapon => weapon.id === selectedWeaponId);
+        selectedWeapon = weapons.find(w => w.id === id);
         if (selectedWeapon) {
             updateWeaponStats(selectedWeapon);
             applyModifiers();
+            editBtn.disabled = false;
         }
     });
 }
@@ -493,51 +496,75 @@ document.querySelectorAll('#guntype-filters input').forEach(checkbox => {
     checkbox.addEventListener('change', filterWeapons);
 });
 
-//Create a Weapon
+//Create/Edit a Weapon
 const openBtn = document.getElementById('weapon-create');
 const closeBtn = document.getElementById('weapon-cancel');
 const modal = document.getElementById('weapon-form');
 const form = document.getElementById('weaponForm');
+const editBtn = document.getElementById('weapon-edit');
+const editError = document.getElementById('edit-error');
 
 //Show the modal
 openBtn.addEventListener('click', () => {
     modal.style.display = 'flex';
 });
 
-//Hide the modal
 closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
     form.reset();
-});
-
-//Handle form submission
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const newId = weapons.length
-        ? Math.max(...weapons.map(w => w.id)) + 1
-        : 1;
-    const weapon = {
-        id: newId,
-        name: data.get('name'),
-        damage: parseFloat(data.get('damage')),
-        rpm: parseFloat(data.get('rpm')),
-        mag_size: parseFloat(data.get('magazin')),
-        reload_time: parseFloat(data.get('reload-time')),
-        damage_multiplier: parseFloat(data.get('multiplier')),
-        guntype: data.getAll('gun-type')
-    };
-    weapons.push(weapon);
-    populateWeapons();
-    modal.style.display = 'none';
-    form.reset();
+    isEditing = false;
 });
 
 modal.addEventListener('click', e => {
     if (e.target === modal) {
         modal.style.display = 'none';
         form.reset();
+        isEditing = false;
     }
+});
+
+
+//Handle form submission
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const types = Array.from(form.querySelectorAll('input[name="gun-type"]:checked'))
+        .map(cb => cb.value);
+    if (types.length === 0) {
+        alert('Please select at least one weapon type.');
+        return;
+    }
+    if (isEditing) {
+        selectedWeapon.name = data.get('name');
+        selectedWeapon.damage = parseFloat(data.get('damage'));
+        selectedWeapon.rpm = parseFloat(data.get('rpm'));
+        selectedWeapon.mag_size = parseFloat(data.get('magazin'));
+        selectedWeapon.reload_time = parseFloat(data.get('reload-time'));
+        selectedWeapon.damage_multiplier = parseFloat(data.get('multiplier'));
+        selectedWeapon.guntype = types;
+    } else {
+        const newId = weapons.length
+            ? Math.max(...weapons.map(w => w.id)) + 1
+            : 1;
+        weapons.push({
+            id: newId,
+            name: data.get('name'),
+            damage: parseFloat(data.get('damage')),
+            rpm: parseFloat(data.get('rpm')),
+            mag_size: parseFloat(data.get('magazin')),
+            reload_time: parseFloat(data.get('reload-time')),
+            damage_multiplier: parseFloat(data.get('multiplier')),
+            guntype: types
+        });
+    }
+    populateWeapons();
+    const weaponSelect = document.getElementById('weapon-select');
+    weaponSelect.value = selectedWeapon.id;
+    weaponSelect.dispatchEvent(new Event('change'));
+    modal.style.display = 'none';
+    form.reset();
+    isEditing = false;
+    editBtn.disabled = true;
 });
 
 document.getElementById('copy-stats').addEventListener('click', async () => {
@@ -576,6 +603,26 @@ document.getElementById('copy-stats').addEventListener('click', async () => {
         console.error(err);
         showCopyMessage('Failed to copy.', 'error');
     }
+});
+
+editBtn.addEventListener('click', () => {
+    if (!selectedWeapon) {
+        editError.textContent = '⚠️ You must select a weapon first.';
+        return;
+    }
+    editError.textContent = '';
+    isEditing = true;
+    isEditing = true;
+    form.elements['name'].value = selectedWeapon.name;
+    form.elements['damage'].value = selectedWeapon.damage;
+    form.elements['rpm'].value = selectedWeapon.rpm;
+    form.elements['magazin'].value = selectedWeapon.mag_size;
+    form.elements['reload-time'].value = selectedWeapon.reload_time;
+    form.elements['multiplier'].value = selectedWeapon.damage_multiplier;
+    form.querySelectorAll('input[name="gun-type"]').forEach(cb => {
+        cb.checked = selectedWeapon.guntype.includes(cb.value);
+    });
+    modal.style.display = 'flex';
 });
 
 function showCopyMessage(text, type) {
