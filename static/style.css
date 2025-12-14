@@ -32,8 +32,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     position: relative;
-    z-index: -1;
-    font-family: Arial, sans-serif;
+    z-index: auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     margin: 20px;
 }
 
@@ -119,13 +119,15 @@ input {
 
 main {
     position: relative;
-    z-index: -1;
-    background-color: rgba(255, 255, 255, 0.9);
-    margin-top: 10%;
-    padding: 20px 35px 35px 35px;
-    border-radius: 10px;
-    border: 2px solid black;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-top: 8vh;
+    padding: 24px 32px 32px 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.08);
     overflow: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    backdrop-filter: blur(8px);
 }
 
 nav {
@@ -764,4 +766,126 @@ a:hover {
     .about_us_text {
         font-size: 0.95rem;
     }
+}
+
+/* --------------------------
+   Modern theme enhancements
+   -------------------------- */
+:root {
+    --bg-tint: rgba(15, 23, 42, 0.45);
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --text-900: #0f172a;
+    --text-700: #334155;
+    --text-500: #64748b;
+    --border: rgba(2, 6, 23, 0.08);
+    --shadow: 0 10px 30px rgba(2, 6, 23, 0.18);
+    --primary: #dc2626; /* red-600 */
+    --primary-700: #b91c1c;
+    --primary-50: #fef2f2;
+    --success: #16a34a;
+    --warning: #f59e0b;
+}
+
+/* Subtle overlay to improve contrast on busy backgrounds */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(2,6,23,0.35), rgba(2,6,23,0.25)) , var(--bg-tint);
+    pointer-events: none;
+    z-index: 0;
+}
+
+main {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+h1, h2, h3 {
+    color: var(--text-900);
+}
+
+.about_us_text, p, label, th, td, a {
+    color: var(--text-700);
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+/* Inputs */
+input[type="text"], input[type="number"], textarea, select, #search {
+    border: 1px solid var(--border);
+    background-color: #f8fafc;
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus, select:focus, #search:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-50);
+}
+
+/* Buttons */
+button, .button1, #weapon-create, #weapon-edit, #copy-stats, #weapon-form form button[type="submit"] {
+    background-color: var(--primary);
+    border-radius: 10px;
+    padding: 10px 16px;
+    box-shadow: 0 2px 6px rgba(2, 6, 23, 0.15);
+}
+button:hover, .button1:hover, #weapon-create:hover, #weapon-edit:hover, #copy-stats:hover, #weapon-form form button[type="submit"]:hover {
+    background-color: var(--primary-700);
+}
+
+/* Table modernization */
+table {
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+}
+
+tbody tr:nth-child(odd) { background: #fafafa; }
+tbody tr:hover { background: #f1f5f9; }
+
+th, td {
+    border-color: var(--border);
+}
+
+/* Hamburger + nav menu tweaks */
+.hamburger {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(6px);
+}
+.nav-menu {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+}
+.nav-menu a {
+    color: var(--text-900);
+}
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+/* Success/error text */
+#successMessage { color: var(--success); }
+#copy-message.success { color: var(--success); }
+#copy-message.error { color: var(--primary); }
+
+/* Responsive table spacing */
+@media (max-width: 768px) {
+    th, td { padding: 12px; }
+    main { padding: 20px; }
 }

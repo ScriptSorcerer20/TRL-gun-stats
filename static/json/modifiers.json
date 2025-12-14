@@ -72,6 +72,23 @@
       "value": 1.5,
       "type": "multiplicative",
       "operatives": ""
+    },
+    {
+      "id": "multiple-buffs-sharpshooter-drink",
+      "label": "Sharpshooter Drink (-40% Firerate, +60% Damage)",
+      "buffs": [
+        {
+          "type": "rpm",
+          "value": 0.6,
+          "buffType": "multiplicative"
+        },
+        {
+          "type": "damage",
+          "value": 1.6,
+          "buffType": "multiplicative"
+        }
+      ],
+      "operatives": ""
     }
   ],
   "operativePerks": [

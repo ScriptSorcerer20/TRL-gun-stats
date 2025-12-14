@@ -211,8 +211,8 @@
       "modifiers": [
         {
           "id": "armor-restructure-10-damage-perk",
-          "label": "Armor Restructure(10 HP Left) (+52% Damage)",
-          "value": 1.52,
+          "label": "Armor Restructure (10 HP Left) (+32% Damage)",
+          "value": 1.32,
           "type": "multiplicative",
           "appliesTo": ""
         },
@@ -221,13 +221,6 @@
           "label": "Threat Control (Max Corruption) (+20 Damage)",
           "value": 20,
           "type": "additive",
-          "appliesTo": ""
-        },
-        {
-          "id": "anarchist-world-on-fire-damage-perk",
-          "label": "World on Fire (+50% damage)",
-          "value": 1.5,
-          "type": "multiplicative",
           "appliesTo": ""
         },
         {
@@ -1908,14 +1901,21 @@
               "type": "rpm",
               "value": 0.5,
               "buffType": "multiplicative"
-            },
+            }
+          ],
+          "appliesTo": "RIFLE"
+        },
+        {
+          "id": "dmr-conversion-damage-headshot-perk",
+          "label": "DMR Conversion Kit (+70% Headshot Damage)",
+          "buffs": [
             {
               "type": "damage",
               "value": 1.7,
               "buffType": "multiplicative-headshot"
             }
           ],
-          "appliesTo": "RIFLE"
+          "appliesTo": ""
         },
         {
           "id": "weapon-expert-reload-perk-sharp",
