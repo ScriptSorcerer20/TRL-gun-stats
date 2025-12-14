@@ -10,7 +10,7 @@ let isEditing = false;
 
 //fetch operatives data from JSON
 function fetchOperativesData() {
-    fetch('/trlstats/static/json/operative.json')
+    fetch('static/json/operative.json')
         .then(response => response.json())
         .then(data => {
             populateOperatives(data.operatives);
@@ -283,15 +283,10 @@ function applyModifiers() {
             return;
         }
         if (mod.dataset.type === 'multiplicative-headshot') {
-            if (!headshotBaseApplied) {
-                const baseHeadshotModifier = document.querySelector("#modifiers input[data-type='multiplicative-headshot-base']");
-                if (baseHeadshotModifier && !baseHeadshotModifier.checked) {
-                    baseHeadshotModifier.checked = true;
-                    headshotMultiplier += parseFloat(baseHeadshotModifier.value) - 1;
-                    headshotBaseApplied = true;
-                }
+            // Only apply headshot multipliers if the base headshot modifier is active
+            if (headshotBaseApplied) {
+                headshotMultiplier += parseFloat(mod.value) - 1;
             }
-            headshotMultiplier += parseFloat(mod.value) - 1;
         } else if (mod.dataset.type === 'multiplicative-headshot-base') {
             if (!headshotBaseApplied) {
                 headshotMultiplier += parseFloat(mod.value) - 1;
@@ -396,7 +391,10 @@ function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier) {
         return;
     }
     if (buffType === 'multiplicative-headshot') {
-        headshotMultiplier += value - 1;
+        // Only apply if base headshot modifier is active
+        if (headshotBaseApplied) {
+            headshotMultiplier += value - 1;
+        }
         return;
     }
     if (type === 'rpm') {

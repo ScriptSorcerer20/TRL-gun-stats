@@ -107,7 +107,7 @@
     "rpm": 60,
     "mag_size": 8,
     "reload_time": 2.8,
-    "guntype": ["RIFLE", "SEMI-AUTO", "PRIMARY"]
+    "guntype": ["RIFLE", "SEMI-AUTO", "PRIMARY", "WW2"]
   },
   {
     "id": 12,
