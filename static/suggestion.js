@@ -41,7 +41,7 @@ async function sendMessage() {
     }
 
     try {
-        const res = await fetch("/api/feedback", {
+        const res = await fetch("/trlstats/api/feedback", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({

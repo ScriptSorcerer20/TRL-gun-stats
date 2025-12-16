@@ -1,18 +1,15 @@
-import json
 import os
 import time
-from urllib import request as urlrequest
 from urllib.error import URLError, HTTPError
-import requests
 
-from flask import Flask, render_template, jsonify, request
-from flask.cli import load_dotenv
+import requests
+from flask import Flask, render_template, jsonify, request, Blueprint
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
-
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024
 
-load_dotenv()
 DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 
 COOLDOWN_SECONDS = 60 * 60
@@ -29,6 +26,8 @@ PROHIBITED_WORDS = {
     'wetback', 'homo', 'fudgepacker', 'tard', 'cocks', 'numbnuts', 'knob', 'muppet',
     'git', 'shag', 'minge', 'nonce', 'plonker', 'pillock'
 }
+
+api = Blueprint("api", __name__, url_prefix="/api")
 
 
 def _get_client_ip() -> str:
@@ -47,17 +46,19 @@ def _post_to_discord(payload: dict) -> None:
     url = DISCORD_WEBHOOK_URL.strip()
     if "?" not in url:
         url += "?wait=true"
+
     headers = {
         "User-Agent": "TRLStatsFeedback/1.0 (contact: fretux@fretux.ch)",
         "Content-Type": "application/json",
         "Accept": "application/json",
     }
+
     resp = requests.post(url, json=payload, headers=headers, timeout=10)
     if resp.status_code not in (200, 204):
         raise RuntimeError(f"Discord returned {resp.status_code}: {resp.text[:500]}")
 
 
-@app.post("/api/feedback")
+@api.post("/feedback")
 def api_feedback():
     ip = _get_client_ip()
     now = time.time()
@@ -76,7 +77,6 @@ def api_feedback():
     rating = data.get("rating")
     comment = (data.get("comment") or "").strip()
 
-    # Normalize and validate
     if len(name) > 32:
         name = name[:32]
 
@@ -97,10 +97,7 @@ def api_feedback():
     content = f"**Rating:** {rating_int}\n**Comment:**\n{comment}"
 
     try:
-        _post_to_discord({
-            "username": name,
-            "content": content
-        })
+        _post_to_discord({"username": name, "content": content})
     except (HTTPError, URLError, RuntimeError) as e:
         return jsonify({"ok": False, "error": f"Failed to forward feedback: {str(e)}"}), 502
 
@@ -108,24 +105,27 @@ def api_feedback():
     return jsonify({"ok": True}), 200
 
 
-@app.route('/')
+app.register_blueprint(api)
+
+
+@app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/calculator')
+@app.route("/calculator")
 def calculator():
-    return render_template('calculator.html')
+    return render_template("calculator.html")
 
 
-@app.route('/about_us')
+@app.route("/about_us")
 def about_us():
-    return render_template('about_us.html')
+    return render_template("about_us.html")
 
 
-@app.route('/suggestion')
+@app.route("/suggestion")
 def suggestion():
-    return render_template('suggestion.html')
+    return render_template("suggestion.html")
 
 
 if __name__ == '__main__':
