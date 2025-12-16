@@ -116,76 +116,76 @@ function populateWeapons() {
 function updateWeaponStats(weapon) {
     const statsElement = document.getElementById('weapon-stats');
     statsElement.innerHTML = `
-        <table class="weapon-stats-table horizontal-table">
-            <tr>
-                <th>Name</th>
-                <th>Damage</th>
-                <th>RPM</th>
-                <th>Mag Size</th>
-                <th>Reload Time</th>
-                <th>DPS</th>
-                <th>DPM</th>
-                <th>Average DPS</th>
-            </tr>
-            <tr>
-                <td>${weapon.name}</td>
-                <td>${(weapon.damage * weapon.damage_multiplier).toFixed(2)}</td>
-                <td>${weapon.rpm}</td>
-                <td>${weapon.mag_size}</td>
-                <td>${weapon.reload_time.toFixed(2)} seconds</td>
-                <td id="dps-value"></td>
-                <td id="dpm-value"></td>
-                <td id="average-dps-value"></td>
-            </tr>
-        </table>
-    `;
+  <table class="weapon-stats-table horizontal-table">
+    <tr>
+      <th>Name</th>
+      <th>
+        <span class="tooltip-wrap">
+          <span>Damage</span>
+          <button type="button" class="tooltip-trigger" aria-label="Damage definition">?</button>
+          <span class="tooltip" role="tooltip">Per-bullet (or per-pellet) damage after the weapon’s internal multiplier is applied.</span>
+        </span>
+      </th>
+      <th>RPM</th>
+      <th>Mag Size</th>
+      <th>Reload Time</th>
+      <th>
+        <span class="tooltip-wrap">
+          <span>DPS</span>
+          <button type="button" class="tooltip-trigger" aria-label="DPS definition">?</button>
+          <span class="tooltip" role="tooltip">Damage per second while continuously firing. Does not include reload downtime.</span>
+        </span>
+      </th>
+      <th>
+        <span class="tooltip-wrap">
+          <span>DPM</span>
+          <button type="button" class="tooltip-trigger" aria-label="DPM definition">?</button>
+          <span class="tooltip" role="tooltip">Damage per minute including reload time (sustained output).</span>
+        </span>
+      </th>
+      <th>
+        <span class="tooltip-wrap">
+          <span>Average DPS</span>
+          <button type="button" class="tooltip-trigger" aria-label="Average DPS definition">?</button>
+          <span class="tooltip" role="tooltip">Sustained DPS including reload time and magazine downtime (DPM ÷ 60).</span>
+        </span>
+      </th>
+    </tr>
+<tr>
+  <td data-label="Name" id="name-value">${weapon.name}</td>
+  <td data-label="Damage" id="damage-value"></td>
+  <td data-label="RPM" id="rpm-value"></td>
+  <td data-label="Mag Size" id="mag-value">${weapon.mag_size}</td>
+  <td data-label="Reload Time" id="reload-value"></td>
+  <td data-label="DPS" id="dps-value"></td>
+  <td data-label="DPM" id="dpm-value"></td>
+  <td data-label="Average DPS" id="average-dps-value"></td>
+</tr>
+  </table>
+`;
     const damage = weapon.damage * weapon.damage_multiplier;
     const rpm = weapon.rpm;
-    const magSize = weapon.mag_size;
     const reloadTime = weapon.reload_time;
-    calculateDPSAndDPM(damage, rpm, magSize, reloadTime);
-}
-
-//display the modified weapon's stats in the table
-function updateModifiedWeaponStats(damage, rpm, reloadTime) {
-    const statsElement = document.getElementById('weapon-stats');
-    statsElement.innerHTML = `
-        <table class="weapon-stats-table horizontal-table">
-            <tr>
-                <th>Name</th>
-                <th>Modified Damage</th>
-                <th>Modified RPM</th>
-                <th>Mag Size</th>
-                <th>Modified Reload Time</th>
-                <th>DPS</th>
-                <th>DPM</th>
-                <th>Average DPS</th>
-            </tr>
-            <tr>
-                <td>${selectedWeapon.name}</td>
-                <td>${damage.toFixed(2)}</td>
-                <td>${rpm.toFixed(2)}</td>
-                <td>${selectedWeapon.mag_size}</td>
-                <td>${reloadTime.toFixed(2)} seconds</td>
-                <td id="dps-value"></td>
-                <td id="dpm-value"></td>
-                <td id="average-dps-value"></td>
-            </tr>
-        </table>
-    `;
-    calculateDPSAndDPM(damage, rpm, selectedWeapon.mag_size, reloadTime);
+    document.getElementById('damage-value').innerText = damage.toFixed(2);
+    document.getElementById('rpm-value').innerText = rpm.toFixed(2);
+    document.getElementById('reload-value').innerText = reloadTime.toFixed(2) + ' seconds';
+    calculateDPSAndDPM(damage, rpm, weapon.mag_size, reloadTime);
 }
 
 //calculate DPS, DPM, and Average DPS, and update the values in the table
 function calculateDPSAndDPM(damage, rpm, magSize, reloadTime) {
-    const rps = rpm / 60; // Rounds per second
-    let dps = damage * rps; //damage per second
-    const reloadTimeMin = reloadTime / 60; //variable used for dpm calculation
-    let dpm = (magSize * damage) / (reloadTimeMin + (magSize / rpm)); //damage per minute (including reload time)
-    let averageDPS = dpm / 60; //average damage per second considering reload time and mag size
+    const rps = rpm / 60;
+    const dps = damage * rps;
+    const reloadTimeMin = reloadTime / 60;
+    const dpm = (magSize * damage) / (reloadTimeMin + (magSize / rpm));
+    const averageDPS = dpm / 60;
     document.getElementById('dps-value').innerText = dps.toFixed(2);
     document.getElementById('dpm-value').innerText = dpm.toFixed(2);
     document.getElementById('average-dps-value').innerText = averageDPS.toFixed(2);
+    const announcer = document.getElementById("stats-announcer");
+    if (announcer) {
+        announcer.textContent = `Stats updated. DPS ${dps.toFixed(2)}. Average DPS ${averageDPS.toFixed(2)}. Reload time ${reloadTime.toFixed(2)} seconds.`;
+    }
 }
 
 //fetch and populate modifiers from the JSON file
@@ -374,8 +374,11 @@ function applyModifiers() {
     if (reloadTime < 0.1) {
         reloadTime = 0.1;
     }
+    document.getElementById('damage-value').innerText = damage.toFixed(2);
+    document.getElementById('rpm-value').innerText = rpm.toFixed(2);
+    document.getElementById('reload-value').innerText =
+        reloadTime.toFixed(2) + ' seconds';
     calculateDPSAndDPM(damage, rpm, selectedWeapon.mag_size, reloadTime);
-    updateModifiedWeaponStats(damage, rpm, reloadTime);
 }
 
 function applyBuff(buff, rpmModifier, reloadTimeModifier, damageModifier) {
@@ -501,6 +504,7 @@ const modal = document.getElementById('weapon-form');
 const form = document.getElementById('weaponForm');
 const editBtn = document.getElementById('weapon-edit');
 const editError = document.getElementById('edit-error');
+const submitBtn = document.getElementById('submit-btn')
 
 //Show the modal
 openBtn.addEventListener('click', () => {
@@ -596,7 +600,7 @@ document.getElementById('copy-stats').addEventListener('click', async () => {
     ].join('\n');
     try {
         await navigator.clipboard.writeText(payload);
-        showCopyMessage('✅ Stats copied to clipboard!', 'success');
+        showCopyMessage('Stats copied to clipboard!', 'success');
     } catch (err) {
         console.error(err);
         showCopyMessage('Failed to copy.', 'error');
@@ -605,7 +609,7 @@ document.getElementById('copy-stats').addEventListener('click', async () => {
 
 editBtn.addEventListener('click', () => {
     if (!selectedWeapon) {
-        editError.textContent = '⚠️ You must select a weapon first.';
+        editError.textContent = 'You must select a weapon first.';
         return;
     }
     editError.textContent = '';

@@ -9,12 +9,12 @@
 </head>
 <header>
     <nav>
-        <button class="hamburger" aria-label="Toggle menu">
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
-        <div class="nav-menu">
+        <div class="nav-menu" id="nav-menu">
             <a href="{{ url_for('calculator') }}">DPS/DPM CALCULATOR</a>
             <a href="{{ url_for('about_us') }}">ABOUT US</a>
             <a href="{{ url_for('index') }}">GUN STATS</a>
@@ -40,25 +40,32 @@
                   maxlength="500" required></textarea><br><br>
     </article>
     <button class="button1" type="button" onclick="sendMessage()">Send</button>
-
-    <!-- Success message (initially hidden) -->
-    <p id="successMessage" style="display: none; color: green;"></p>
+    <p id="successMessage" style="display: none;" aria-live="polite" role="status"></p>
+    <p id="errorMessage" style="display: none; color: crimson;" aria-live="polite" role="status"></p>
 </main>
 <script src="{{ url_for('static', filename='suggestion.js') }}"></script>
 <script>
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+
+    function setMenu(open) {
+        hamburger.classList.toggle('active', open);
+        navMenu.classList.toggle('active', open);
+        document.body.classList.toggle('menu-open', open);
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
+        const isOpen = hamburger.classList.contains('active');
+        setMenu(!isOpen);
     });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setMenu(false);
+    });
+
     navMenu.querySelectorAll('a').forEach(link =>
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        })
+        link.addEventListener('click', () => setMenu(false))
     );
 </script>
 </body>

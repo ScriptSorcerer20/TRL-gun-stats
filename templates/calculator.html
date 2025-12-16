@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/static/img/TRL_Logo_Custom.jpg">
+    <link rel="icon" type="image/x-icon" href="/trlstats/static/img/TRL_Logo_Custom.jpg">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>DPM/DPS Calculator</title>
 </head>
 <header>
     <nav>
-        <button class="hamburger" aria-label="Toggle menu">
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
-        <div class="nav-menu">
+        <div class="nav-menu" id="nav-menu">
             <a href="{{ url_for('index') }}">GUN STATS</a>
             <a href="{{ url_for('about_us') }}">ABOUT US</a>
             <a href="{{ url_for('suggestion') }}">SUGGESTIONS & FEEDBACK</a>
@@ -26,10 +26,9 @@
 <body>
 <main>
     <div class="select-wrapper">
-        <label for="weapon-search"></label>
-        <input type="text" id="weapon-search" placeholder="Search weapons..." onkeyup="filterWeapons()">
-        <br>
-        <label for="weapon-select"></label>
+        <label for="weapon-search" class="sr-only">Search weapons</label>
+        <input type="text" id="weapon-search" placeholder="Search weapons...">
+        <label for="weapon-select" class="sr-only">Select a weapon</label>
         <select id="weapon-select" name="weapons">
             <option value="">Select a Weapon</option>
         </select>
@@ -37,61 +36,6 @@
     <button id="weapon-create">Create New Weapon</button>
     <button id="weapon-edit" disabled>Edit Weapon</button>
     <div id="edit-error" class="error-message" aria-live="polite"></div>
-    <div id="weapon-form">
-        <div>
-            <h2>New Weapon</h2>
-            <form id="weaponForm">
-                <label>
-                    Name:<br>
-                    <input type="text" name="name" required>
-                </label><br><br>
-
-                <label>
-                    Damage:<br>
-                    <input type="number" step="0.01" name="damage" min="0" required>
-                </label><br><br>
-
-                <label>
-                    Rounds Per Minute:<br>
-                    <input type="number" step="0.01" name="rpm" min="0" required>
-                </label><br><br>
-
-                <label>
-                    Magazine Size:<br>
-                    <input type="number" name="magazin" min="1" required>
-                </label><br><br>
-
-                <label>
-                    Reload Time:<br>
-                    <input type="number" step="0.01" name="reload-time" min="0" required>
-                </label><br><br>
-
-                <label>
-                    Damage Multiplier (Amount of bullets per shot):<br>
-                    <input type="number" name="multiplier" min="0" required>
-                </label><br><br>
-
-                <fieldset class="checkbox-group">
-                    <legend>Weapon Type<span class="required">*</span></legend>
-                    <label><input type="checkbox" name="gun-type" value="PRIMARY"> Primary</label>
-                    <label><input type="checkbox" name="gun-type" value="SECONDARY"> Secondary</label>
-                    <label><input type="checkbox" name="gun-type" value="WW2"> WW2</label>
-                    <label><input type="checkbox" name="gun-type" value="RIFLE"> Rifle</label>
-                    <label><input type="checkbox" name="gun-type" value="SOVIET"> Soviet</label>
-                    <label><input type="checkbox" name="gun-type" value="SMG"> SMG</label>
-                    <label><input type="checkbox" name="gun-type" value="SHOTGUN"> Shotgun</label>
-                    <label><input type="checkbox" name="gun-type" value="LMG"> LMG</label>
-                    <label><input type="checkbox" name="gun-type" value="PISTOL"> Pistol</label>
-                    <label><input type="checkbox" name="gun-type" value="SPECIAL"> Special</label>
-                    <label><input type="checkbox" name="gun-type" value="SEMI-AUTO"> Semi-Auto</label>
-                </fieldset>
-
-
-                <button type="submit">Create</button>
-                <button type="button" id="weapon-cancel">Cancel</button>
-            </form>
-        </div>
-    </div>
     <br>
     <div id="guntype-filters">
         <label><input type="checkbox" id="primary" value="PRIMARY"> Primary</label>
@@ -107,15 +51,15 @@
         <label><input type="checkbox" id="semi-auto" value="SEMI-AUTO"> Semi-Auto</label>
     </div>
     <div class="select-wrapper">
-        <label for="operative-search"></label>
-        <input type="text" id="operative-search" placeholder="Search operatives..." onkeyup="filterOperatives()">
-        <br>
-        <label for="operative-select"></label>
+        <label for="operative-search" class="sr-only">Search operatives</label>
+        <input type="text" id="operative-search" placeholder="Search operatives...">
+        <label for="operative-select" class="sr-only">Select an operative</label>
         <select id="operative-select">
             <option value="">Select an operative</option>
         </select>
     </div>
     <br>
+    <div id="stats-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     <div id="weapon-stats"></div>
     <div id="calculated-stats"></div>
     <button id="copy-stats">Copy to Clipboard</button>
@@ -126,37 +70,133 @@
         <div id="modifiers"></div>
         <div id="abilities"></div>
     </div>
-    <script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-        navMenu.querySelectorAll('a').forEach(link =>
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            })
-        );
-        document.addEventListener('DOMContentLoaded', function () {
-            var coll = document.getElementsByClassName("collapsible-header");
-            for (var i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.display === "block") {
-                        content.style.display = "none";
-                    } else {
-                        content.style.display = "block";
-                    }
-                });
-            }
-        });
-    </script>
 </main>
+<div id="weapon-form">
+    <div>
+        <h2>New Weapon</h2>
+        <form id="weaponForm">
+            <label>
+                Name:<br>
+                <input type="text" name="name" required>
+            </label><br><br>
+
+            <label>
+                Damage:<br>
+                <input type="number" step="0.01" name="damage" min="0" required>
+            </label><br><br>
+
+            <label>
+                Rounds Per Minute:<br>
+                <input type="number" step="0.01" name="rpm" min="0" required>
+            </label><br><br>
+
+            <label>
+                Magazine Size:<br>
+                <input type="number" name="magazin" min="1" required>
+            </label><br><br>
+            <label>
+                Reload Time:<br>
+                <input type="number" step="0.01" name="reload-time" min="0" required>
+            </label><br><br>
+            <label>
+                Damage Multiplier (bullets per shot):
+                <br>
+                <input type="number" name="multiplier" min="0" required>
+            </label>
+            <fieldset class="checkbox-group">
+                <legend>Weapon Type<span class="required">*</span></legend>
+                <label><input type="checkbox" name="gun-type" value="PRIMARY"> Primary</label>
+                <label><input type="checkbox" name="gun-type" value="SECONDARY"> Secondary</label>
+                <label><input type="checkbox" name="gun-type" value="WW2"> WW2</label>
+                <label><input type="checkbox" name="gun-type" value="RIFLE"> Rifle</label>
+                <label><input type="checkbox" name="gun-type" value="SOVIET"> Soviet</label>
+                <label><input type="checkbox" name="gun-type" value="SMG"> SMG</label>
+                <label><input type="checkbox" name="gun-type" value="SHOTGUN"> Shotgun</label>
+                <label><input type="checkbox" name="gun-type" value="LMG"> LMG</label>
+                <label><input type="checkbox" name="gun-type" value="PISTOL"> Pistol</label>
+                <label><input type="checkbox" name="gun-type" value="SPECIAL"> Special</label>
+                <label><input type="checkbox" name="gun-type" value="SEMI-AUTO"> Semi-Auto</label>
+            </fieldset>
+
+
+            <button type="submit" id="submit-btn">Create</button>
+            <button type="button" id="weapon-cancel">Cancel</button>
+        </form>
+    </div>
+</div>
 </body>
+<script src="{{ url_for('static', filename='filterWeapons.js') }}"></script>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    function lockBodyScroll() {
+        document.body.style.overflow = 'hidden';
+    }
+
+    function unlockBodyScroll() {
+        document.body.style.overflow = '';
+    }
+
+    openBtn.addEventListener('click', () => {
+        modal.classList.add('show');
+        lockBodyScroll();
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+        form.reset();
+        isEditing = false;
+        unlockBodyScroll();
+    });
+
+    modal.addEventListener('click', e => {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+            form.reset();
+            isEditing = false;
+            unlockBodyScroll();
+        }
+    });
+
+    submitBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+        unlockBodyScroll();
+    })
+
+    function setMenu(open) {
+        hamburger.classList.toggle('active', open);
+        navMenu.classList.toggle('active', open);
+        document.body.classList.toggle('menu-open', open);
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.contains('active');
+        setMenu(!isOpen);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setMenu(false);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link =>
+        link.addEventListener('click', () => setMenu(false))
+    );
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var coll = document.getElementsByClassName("collapsible-header");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    });
+</script>
 </html>
