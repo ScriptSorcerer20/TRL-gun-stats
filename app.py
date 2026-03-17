@@ -100,7 +100,6 @@ def api_feedback():
         _post_to_discord({"username": name, "content": content})
     except (HTTPError, URLError, RuntimeError) as e:
         return jsonify({"ok": False, "error": f"Failed to forward feedback: {str(e)}"}), 502
-
     _last_feedback_by_ip[ip] = now
     return jsonify({"ok": True}), 200
 
